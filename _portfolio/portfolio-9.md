@@ -3,7 +3,7 @@ title: "Explicit topography design for complex shell structures based on embedde
 excerpt: "Explicit topography design"
 img:
 collection: portfolio
-<!-- date: 2024-12-04  -->
+<!-- date: 2024-11-24  -->
 ---
 
 We develop 123. A brief report is [here]().
