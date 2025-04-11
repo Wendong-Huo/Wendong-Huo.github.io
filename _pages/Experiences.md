@@ -14,6 +14,8 @@ author_profile: true
 ---
 
 ## In Progress / Preparation
+- **SCIML** *(ongoing)*  
+  2024.10--present  
 - **Rob, LDM, SC** *(in preparation)*  
   2023.03--present  
 - **Hit think** *(in preparation)*  
