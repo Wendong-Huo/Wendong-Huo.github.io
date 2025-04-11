@@ -13,17 +13,20 @@ Research
 * Explicit design of complex surface structures (almost done, 98%, topic of doctoral dissertation)
   * Supervised by Prof. Xu Guo and Prof. Chang Liu, 2019.09-present
 
+
 * Rob, LDM, SC, 2023.03-present (in preparation)
 * Hit think, 2023.05-present (in preparation)
 * Fracture, 2023.01-present (ongoing)
 * RST, 2022.10-present (ongoing)
 
+
 * CC_IGA_Solid_CCM (almost done, 80%)
   * supervised by Prof. Xu Guo and Prof. Chang Liu, 2023.08-present
 * Stiffener Design for maximizing fundamental frequency (almost done, 80%)
-  * Collaborated with Jia'ao Gao, 2024.10-present
+  * Collaborated with Jia'ao Gao and Dr. Xudong Jiang, 2024.08-present
 * Concurrent Design of Shape and Stiffener (ongoing, 60%)
   * Collaborated with Yanbo Ren, 2024.10-present
+
 
 * Hierarchical Shape Design (done)
   * Collaborated with Yanbo Ren, 2024.10-2025.02
@@ -36,6 +39,7 @@ Research
 * Explicit layout optimization of complex rib-reinforced thin-walled structures (done)
   * Collaborated with Dr. Xudong Jiang, 2022.03-2022.10
 * Explicit topology optimization of shell surfaces (done), 2021.03-2022.02
+
 
 * Substructuring multi-resolution topology optimization with template (done)
   * Collaborated with Dr. Mengcheng Huang, 2021.01-2021.05
