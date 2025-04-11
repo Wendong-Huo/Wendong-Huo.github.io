@@ -23,7 +23,7 @@ Research
 * Stiffener Design for maximizing fundamental frequency (almost done, 80%)
   * Collaborated with Jia'ao Gao, 2024.10-present
 * Concurrent Design of Shape and Stiffener (ongoing, 60%)
-  * Collaborated with Jia'ao Gao, 2024.10-present
+  * Collaborated with Yanbo Ren, 2024.10-present
 
 * Hierarchical Shape Design (done)
   * Collaborated with Yanbo Ren, 2024.10-2025.02
@@ -36,9 +36,9 @@ Research
 * Explicit layout optimization of complex rib-reinforced thin-walled structures (done)
   * Collaborated with Dr. Xudong Jiang, 2022.03-2022.10
 * Explicit topology optimization of shell surfaces (done), 2021.03-2022.02
+
 * Substructuring multi-resolution topology optimization with template (done)
   * Collaborated with Dr. Mengcheng Huang, 2021.01-2021.05
-
 * Texture-guided structure optimization and design (to be continued)
   * Subproject of texture synthesis and its application to computational mechanics, 2020.10-2021.03
 * Structure design considering EMS and EMI (to be continued)
