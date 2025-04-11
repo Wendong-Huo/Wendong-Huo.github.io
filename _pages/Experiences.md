@@ -15,15 +15,15 @@ author_profile: true
 
 ## In Progress / Preparation
 - **SCIML** *(ongoing)*  
-  2024.10--present  
+  *2024.10--present*
 - **Rob, LDM, SC** *(in preparation)*  
-  2023.03--present  
+  *2023.03--present*
 - **Hit think** *(in preparation)*  
-  2023.05--present  
+  *2023.05--present*
 - **Fracture** *(ongoing)*  
-  2023.01--present  
+  *2023.01--present*
 - **RST** *(ongoing)*  
-  2022.10--present  
+  *2022.10--present*
 
 ---
 
@@ -45,13 +45,13 @@ author_profile: true
 - **Surface Lattice Design**  
   *Collaborated with Wu Xu, 2022.10--2025.04*
 - **Explicit Topography Design**  
-  2022.06--2025.02
+  *2022.06--2025.02*
 - **Solid Embedded Components for Thin-Walled Structures**  
-  2022.03--2023.06
+  *2022.03--2023.06*
 - **Explicit Layout Optimization of Complex Rib-Reinforced Thin-Walled Structures**  
   *Collaborated with Dr. Xudong Jiang, 2022.03--2022.10*
 - **Explicit Topology Optimization of Shell Surfaces**  
-  2021.03--2022.02
+  *2021.03--2022.02*
 
 ---
 
