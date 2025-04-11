@@ -9,13 +9,13 @@ author_profile: true
 
 # Research
 
-## ?? Doctoral Dissertation
+## Doctoral Dissertation
 - **Explicit design of complex surface structures** *(almost done, 98%)*  
   *Supervised by Prof. Xu Guo and Prof. Chang Liu, 2019.09每present*
 
 ---
 
-## ?? In Progress / Preparation
+## In Progress / Preparation
 - **Rob, LDM, SC** *(in preparation)*  
   2023.03每present  
 - **Hit think** *(in preparation)*  
@@ -27,7 +27,7 @@ author_profile: true
 
 ---
 
-## ?? Current Work
+## Current Work
 - **CC_IGA_Solid_CCM** *(almost done, 80%)*  
   *Supervised by Prof. Xu Guo and Prof. Chang Liu, 2023.08每present*
 - **Stiffener Design for Maximizing Fundamental Frequency** *(almost done, 80%)*  
@@ -37,7 +37,7 @@ author_profile: true
 
 ---
 
-## ? Completed Projects
+## Completed Projects
 - **Hierarchical Shape Design**  
   *Collaborated with Yanbo Ren, 2024.10每2025.02*
 - **Component Innovation**  
@@ -55,7 +55,7 @@ author_profile: true
 
 ---
 
-## ?? Early Projects & Foundations
+## Early Projects
 - **Substructuring Multi-Resolution Topology Optimization with Template**  
   *Collaborated with Dr. Mengcheng Huang, 2021.01每2021.05*
 - **Texture-Guided Structure Optimization and Design** *(to be continued)*  
@@ -70,7 +70,6 @@ author_profile: true
 
 ---
 
-![Project Visual](https://upload.wikimedia.org/wikipedia/commons/7/70/08terminal5.jpg)
 
 ---
 
