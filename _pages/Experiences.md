@@ -15,31 +15,22 @@ Research
 * CC_IGA_Solid_CCM (Almost done (80%))
   * supervised by Prof. Xu Guo and Prof. Chang Liu, 2023.08-present
 * Rob, LDM, SC, 2023.03-present (in preparation)
-* Hit think, supervised by Prof. Xu Guo and Prof. Chang Liu, 2023.05-present (in preparation)
-* Fracture, supervised by Prof. Xu Guo and Prof. Chang Liu, 2023.01-present (ongoing)
-* RST, supervised by Prof. Xu Guo and Prof. Chang Liu, 2022.10-present (ongoing)
+* Hit think, 2023.05-present (in preparation)
+* Fracture, 2023.01-present (ongoing)
+* RST, 2022.10-present (ongoing)
 * Component innovation (done)
-  * Collaborated with Xiaoyang Li and Yunpu Liu
-  * Supervised by Prof. Xu Guo and Prof. Chang Liu, 2023.06-present
+  * Collaborated with Xiaoyang Li and Yunpu Liu, 2023.06-present
 * Surface Lattice Design (done)
-  * Collaborated with Wu Xu
-  * Supervised by Prof. Xu Guo, Prof. Weisheng Zhang, and Prof. Chang Liu, 2022.06-present
-* Explicit topography design (done)
-  * Collaborated with Wu Xu
-  * Supervised by Prof. Xu Guo, Prof. Weisheng Zhang, and Prof. Chang Liu, 2022.06-present
-* Solid embedded components for thin-walled structures (done)
-  * Supervised by Prof. Xu Guo and Prof. Chang Liu, 2022.03-2023.06
+  * Collaborated with Wu Xu, 2022.06-present
+* Explicit topography design (done), 2022.06-present
+* Solid embedded components for thin-walled structures (done), 2022.03-2023.06
 * Explicit layout optimization of complex rib-reinforced thin-walled structures (done)
-  * Collaborated with Dr. Xudong Jiang
-  * Supervised by Prof. Xu Guo and Prof. Chang Liu, 2022.03-2022.10
-* Explicit topology optimization of shell surfaces (done)
-  * Supervised by Prof. Xu Guo and Prof. Chang Liu, 2021.03-2022.02
+  * Collaborated with Dr. Xudong Jiang, 2022.03-2022.10
+* Explicit topology optimization of shell surfaces (done), 2021.03-2022.02
 * Substructuring multi-resolution topology optimization with template (done)
-  * Collaborated with Mr. Mengcheng Huang
-  * Supervised by Prof. Xu Guo and Prof. Chang Liu, 2021.01-2021.05
+  * Collaborated with Dr. Mengcheng Huang, 2021.01-2021.05
 * Texture-guided structure optimization and design (to be continued)
-  * Subproject of texture synthesis and its application to computational mechanics
-  * Supervised by Prof. Xu Guo and Prof. Chang Liu, 2020.10-2021.03
+  * Subproject of texture synthesis and its application to computational mechanics, 2020.10-2021.03
 * Structure design considering EMS and EMI (to be continued)
   * Supervised by Prof. Xu Guo and Prof. Chang Liu,  2020.04-2020.09
 * Constructing the underlying algorithm of IGBEM (done)
