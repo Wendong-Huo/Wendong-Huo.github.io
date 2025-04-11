@@ -10,7 +10,7 @@ author_profile: true
 
 Research
 ======
-* Explicit design of complex surface structures (Almost done (95%), topic of doctoral dissertation)
+* Explicit design of complex surface structures (Almost done (97%), topic of doctoral dissertation)
   * Supervised by Prof. Xu Guo and Prof. Chang Liu, 2019.09-present
 * CC_IGA_Solid_CCM (Almost done (80%))
   * supervised by Prof. Xu Guo and Prof. Chang Liu, 2023.08-present
