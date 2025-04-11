@@ -7,13 +7,13 @@ author_profile: true
 
 {% include base_path %}
 
-## 📘Doctoral Dissertation
+## 📘 Doctoral Dissertation
 - **Explicit optimization and design of complex surface structures** *(almost done, 98%)*  
   *Supervised by Prof. Xu Guo and Prof. Chang Liu, 2019.09--present*
 
 ---
 
-## In Progress / Preparation
+## 🔬 In Progress / Preparation
 - **Rob, LDM, SC** *(in preparation)*  
   *2023.03--present*
 - **Hit think** *(in preparation)*  
@@ -23,7 +23,7 @@ author_profile: true
 
 ---
 
-## Current Work
+## 🛠 Current Work
 - **SCIML** *(ongoing)*  
   *2024.10--present*
 - **Fracture** *(ongoing)*  
@@ -37,7 +37,7 @@ author_profile: true
 
 ---
 
-## Completed Projects
+## ✅ Completed Projects
 - **Hierarchical Shape Design**  
   *Collaborated with Yanbo Ren, 2024.10--2025.02*
 - **Component Innovation**  
@@ -55,7 +55,7 @@ author_profile: true
 
 ---
 
-## Early Projects
+## 📦 Early Projects
 - **Substructuring Multi-Resolution Topology Optimization with Template**  
   *Collaborated with Dr. Mengcheng Huang, 2021.01--2021.05*
 - **Texture-Guided Structure Optimization and Design** *(to be continued)*  
