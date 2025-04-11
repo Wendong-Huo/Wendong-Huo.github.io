@@ -14,20 +14,20 @@ author_profile: true
 ---
 
 ## In Progress / Preparation
-- **SCIML** *(ongoing)*  
-  *2024.10--present*
 - **Rob, LDM, SC** *(in preparation)*  
   *2023.03--present*
 - **Hit think** *(in preparation)*  
   *2023.05--present*
-- **Fracture** *(ongoing)*  
-  *2023.01--present*
 - **RST** *(ongoing)*  
   *2022.10--present*
 
 ---
 
 ## Current Work
+- **SCIML** *(ongoing)*  
+  *2024.10--present*
+- **Fracture** *(ongoing)*  
+  *2023.01--present*
 - **CC_IGA_Solid_CCM** *(almost done, 80%)*  
   *Supervised by Prof. Xu Guo and Prof. Chang Liu, 2023.08--present*
 - **Stiffener Design for Maximizing Fundamental Frequency** *(almost done, 80%)*  
@@ -41,7 +41,7 @@ author_profile: true
 - **Hierarchical Shape Design**  
   *Collaborated with Yanbo Ren, 2024.10--2025.02*
 - **Component Innovation**  
-  *Collaborated with Xiaoyang Li and Yunpu Liu, 2023.06--present*
+  *Collaborated with Xiaoyang Li and Yunpu Liu, 2023.06--2024.12*
 - **Surface Lattice Design**  
   *Collaborated with Wu Xu, 2022.10--2025.04*
 - **Explicit Topography Design**  
