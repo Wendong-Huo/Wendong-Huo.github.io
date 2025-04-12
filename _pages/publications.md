@@ -21,4 +21,8 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
     <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
     <p><strong>Authors:</strong> {{ post.authors }}</p> <!-- 显示作者信息 -->
     <p><strong>Published in:</strong> {{ post.journal }}</p> <!-- 显示期刊名称 -->
-    <p><strong>DOI:</strong> <
+    <p><strong>DOI:</strong> <a href="{{ post.doi_url }}">{{ post.doi }}</a></p> <!-- DOI 链接 -->
+    <p><strong>Abstract:</strong> {{ post.excerpt }}</p> <!-- 摘要或简介 -->
+    <p><em>Published on: {{ post.date | date: "%B %d, %Y" }}</em></p>
+  </div>
+{% endfor %}
