@@ -19,8 +19,6 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 {% for post in site.publications reversed %}
   <div class="publication-item">
     <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-    <p><em>{{ post.date | date: "%B %d, %Y" }}</em></p>
-    <p>{{ post.excerpt }}</p>
-  </div>
-{% endfor %}
-
+    <p><strong>Authors:</strong> {{ post.authors }}</p> <!-- 显示作者信息 -->
+    <p><strong>Published in:</strong> {{ post.journal }}</p> <!-- 显示期刊名称 -->
+    <p><strong>DOI:</strong> <
