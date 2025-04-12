@@ -14,7 +14,9 @@ My research interests include applied and computational mechanics, structure ana
 
 I am working in the direction of improving the understanding of complex surface structures. 
 The most intuitive feature, i.e., the curved and slender geometry, profoundly influences every aspect of such a structure form, e.g., displacement pattern, strain energy distribution, etc., which results in abnormal phenomena in various scenarios. 
-How to analyze and further make use of these novel mechanisms forms the cornerstones of my research. The methodology can be analysis, simulation, design, and optimization, etc. 
+How to analyze and further make use of these novel mechanisms forms the cornerstones of my research. 
+
+The methodology can be analysis, simulation, design, and optimization, etc. 
 One achieved study is concluded as "Explicit Structure Optimization TOwards Complex Shell Structures, ESOTOCSS". 
 Based on the explicit structure optimization method and the computational conformal mapping technique, we construct a general framework to design complex surface structures. 
 Potential applications include the {lightweight design, stiffness enhancement, and structure manipulation} of {shells, membranes, and low-dimensional materials}.
