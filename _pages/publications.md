@@ -19,10 +19,11 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 {% for post in site.publications reversed %}
   <div class="publication-item">
     <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-    <p><strong>Authors:</strong> {{ post.authors }}</p> <!-- ÏÔÊ¾×÷ÕßÐÅÏ¢ -->
-    <p><strong>Published in:</strong> {{ post.journal }}</p> <!-- ÏÔÊ¾ÆÚ¿¯Ãû³Æ -->
-    <p><strong>DOI:</strong> <a href="{{ post.doi_url }}">{{ post.doi }}</a></p> <!-- DOI Á´½Ó -->
-    <p><strong>Abstract:</strong> {{ post.excerpt }}</p> <!-- ÕªÒª»ò¼ò½é -->
+    <p><strong>Authors:</strong> {{ post.authors }}</p> <!-- æ˜¾ç¤ºä½œè€…ä¿¡æ¯ -->
+    <p><strong>Published in:</strong> <a href="{{ post.venue_url }}" target="_blank">{{ post.venue }}</a></p> <!-- æ˜¾ç¤ºæœŸåˆŠåç§° -->
+    <p><strong>DOI:</strong> <a href="{{ post.doi_url }}">{{ post.doi }}</a></p> <!-- DOI é“¾æŽ¥ -->
+    <p><strong>Abstract:</strong> {{ post.excerpt }}</p> <!-- æ‘˜è¦ -->
     <p><em>Published on: {{ post.date | date: "%B %d, %Y" }}</em></p>
+    <p><a href="{{ post.paperurl }}" target="_blank">Full Paper (PDF)</a></p> <!-- é“¾æŽ¥åˆ°PDF -->
   </div>
 {% endfor %}
