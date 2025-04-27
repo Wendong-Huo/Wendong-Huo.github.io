@@ -13,7 +13,7 @@ author_profile: true
 
 ---
 
-## 🔬 In Progress / Preparation
+## 🎯 In Progress / Preparation
 - **Rob, LDM, SC** *(in preparation)*  
   *2023.03--present*
 - **Hit think** *(in preparation)*  
@@ -23,7 +23,7 @@ author_profile: true
 
 ---
 
-## 🛠 Current Work
+## 🔬 Current Work
 - **SCIML** *(ongoing)*  
   *2024.10--present*
 - **Fracture** *(ongoing)*  
