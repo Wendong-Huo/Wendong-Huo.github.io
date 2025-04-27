@@ -38,12 +38,12 @@ author_profile: true
 ---
 
 ## ✅ Completed Projects
-- **Hierarchical Shape Design**  
-  *Collaborated with Yanbo Ren, 2024.10--2025.02*
 - **Component Innovation**  
   *Collaborated with Xiaoyang Li and Yunpu Liu, 2023.06--2024.12*
 - **Surface Lattice Design**  
   *Collaborated with Wu Xu, 2022.10--2025.04*
+- **Hierarchical Shape Design**  
+  *Collaborated with Yanbo Ren, 2024.10--2025.02*
 - **Explicit Topography Design**  
   *2022.06--2025.02*
 - **Solid Embedded Components for Thin-Walled Structures**  
