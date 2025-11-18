@@ -72,14 +72,6 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 /* Inline PDF Viewer */
 .pdf-viewer.hidden { display:none; }
 
-/* PPT Modal */
-.ppt-modal { display:flex; justify-content:center; align-items:center; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; }
-.ppt-modal.hidden { display:none; }
-.ppt-modal-content { background:#fff; padding:1rem; border-radius:12px; max-width:90%; max-height:90%; position:relative; }
-.ppt-modal-content .close { position:absolute; top:8px; right:12px; font-size:1.5rem; cursor:pointer; }
-</style>
-
-<style>
 /* PPT Modal 调整为与小卡片风格一致 */
 .ppt-modal-content {
   background: linear-gradient(135deg, #e6f5e9 0%, #ffffff 80%); /* 与小卡片一致 */
