@@ -4,7 +4,7 @@ permalink: /publication/2025-11-18-thesis-number-1
 excerpt: "Research on Topology Optimization for Thin-Walled Structures with Complex Surfaces Based on the Moving Morphable Components (MMC) Method and the Conformal Parameterization Technique"
 date: 2025-11-18
 paperurl: "http://wendong-huo.github.io/files/thesis-1.pdf"
-venue: 'Department of Engineering, DUT'
+venue: 'Department of Engineering Mechanics, DUT'
 type: thesis
 ---
 
