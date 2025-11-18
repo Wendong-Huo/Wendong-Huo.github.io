@@ -33,10 +33,10 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
     </details>
 
     <div class="thesis-buttons">
-      <!-- PDF Inline Viewer Button -->
-      <button class="btn-icon pdf-btn" onclick="togglePDF('pdf-viewer-thesis')">📄</button>
       <!-- PPT Modal Trigger -->
-      <button class="btn-icon ppt-btn" onclick="openPPTModal()">🎤📊</button>
+      <button class="btn-icon ppt-btn" onclick="document.getElementById('pptModal').classList.toggle('hidden')" title="Preview Defense Slides">
+        🎤
+      </button>
     </div>
 
     <!-- Inline PDF Viewer -->
