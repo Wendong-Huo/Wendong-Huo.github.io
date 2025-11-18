@@ -3,7 +3,7 @@ title: "Explicit layout optimization of complex rib-reinforced thin-walled struc
 authors: Jiang X., Huo W., Liu C., Du Z., Zhang X., Li X., & Guo X.
 venue_url: 'https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering'
 venue: 'Comput. Methods Appl. Mech. Eng.'
-doi: 'doi.org/10.1016/j.cma.2022.115745'
+doi: 'https://doi.org/10.1016/j.cma.2022.115745'
 excerpt: 'Enhancing stiffness of complex thin-walled structures via optimizing the layout of the attached ribs'
 date: 2023-02-01
 paperurl: 'http://wendong-huo.github.io/files/paper-3.pdf'
