@@ -1,6 +1,6 @@
 ﻿---
 layout: archive
-title: "Publications"
+title: ""
 permalink: /publications/
 author_profile: true
 ---
@@ -17,7 +17,7 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
   </h3>
 
   <p class="publication-authors"><strong>Author:</strong> Wendong Huo</p>
-
+  <p class="publication-advisors"><strong>Author:</strong> Prof. Xu Guo and Prof. Chang Liu</p>
   <p class="publication-venue"><strong>Institution:</strong> Department of Engineering Mechanics, DUT</p>
 
   <p class="publication-date"><strong>Published on:</strong> November 18, 2025</p>
@@ -33,6 +33,7 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
   <p><a href="http://wendong-huo.github.io/files/thesis-1.pdf" target="_blank" class="btn-paper">Full Thesis (PDF)</a></p>
 </div>
 
+<h2>Journal Publications</h2>
 
 <div class="publications-grid">
 {% for post in site.publications reversed %}
