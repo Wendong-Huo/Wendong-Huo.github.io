@@ -1,6 +1,6 @@
 ﻿---
 layout: archive
-title: "Publications"
+title: ""
 permalink: /publications/
 author_profile: true
 ---
@@ -28,10 +28,6 @@ author_profile: true
 ## Journal Publications
 
 You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
-
-{% if author.googlescholar %}
-  <p>You can browse my publications and citations in more detail on my <u><a href="https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao">Google Scholar profile</a>.</u></p>
-{% endif %}
 
 <!-- Display the publications -->
 {% include base_path %}
