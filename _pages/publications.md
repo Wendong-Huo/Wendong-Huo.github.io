@@ -8,22 +8,23 @@ author_profile: true
 ## Thesis
 
 {% assign theses = site.publications | where: "type", "thesis" | sort: "date" | reverse %}
-{% if theses.size > 0 %}
-  {% for thesis in theses %}
-    <div class="publication-item">
-      <h3><a href="{{ thesis.url }}">{{ thesis.title }}</a></h3>
-      <p><strong>Authors:</strong> {{ thesis.authors }}</p>
-      <p><strong>Institution:</strong> {{ thesis.venue }}</p>
-      <p><strong>Abstract:</strong> {{ thesis.excerpt }}</p>
-      <p><em>Published on: {{ thesis.date | date: "%B %d, %Y" }}</em></p>
-      {% if thesis.paperurl %}
-        <p><a href="{{ thesis.paperurl }}" target="_blank">Full Thesis (PDF)</a></p>
-      {% endif %}
-    </div>
-  {% endfor %}
+{% assign latest_thesis = theses.first %}
+
+{% if latest_thesis %}
+  <div class="publication-item">
+    <h3><a href="{{ latest_thesis.url }}">{{ latest_thesis.title }}</a></h3>
+    <p><strong>Authors:</strong> {{ latest_thesis.authors }}</p>
+    <p><strong>Institution:</strong> {{ latest_thesis.venue }}</p>
+    <p><strong>Abstract:</strong> {{ latest_thesis.excerpt }}</p>
+    <p><em>Published on: {{ latest_thesis.date | date: "%B %d, %Y" }}</em></p>
+    {% if latest_thesis.paperurl %}
+      <p><a href="{{ latest_thesis.paperurl }}" target="_blank">Full Thesis (PDF)</a></p>
+    {% endif %}
+  </div>
 {% else %}
   <p>No thesis entries found.</p>
 {% endif %}
+
 
 ## Journal Publications
 
