@@ -9,7 +9,7 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 
 ## Doctoral Thesis
 
-{% assign theses = site.publications | where: "type", "Thesis" | sort: "date" | reverse %}
+{% assign theses = site.publications | where: "type", "thesis" | sort: "date" | reverse %}
 {% assign latest_thesis = theses.first %}
 
 {% if latest_thesis %}
