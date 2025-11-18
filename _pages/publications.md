@@ -35,7 +35,7 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 
     {% if post.excerpt %}
       <details class="publication-excerpt">
-        <summary>Abstract (click to expand)</summary>
+        <summary>Excerpt (click to expand)</summary>
         <p>{{ post.excerpt }}</p>
       </details>
     {% endif %}
