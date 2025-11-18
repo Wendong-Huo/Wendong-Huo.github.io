@@ -39,16 +39,6 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
       </button>
     </div>
 
-    <!-- Inline PDF Viewer -->
-    <div id="pdf-viewer-thesis" class="pdf-viewer hidden">
-      <div id="skeleton-thesis" class="skeleton"></div>
-      <iframe
-        id="iframe-thesis"
-        class="pdf-container"
-        src="/pdfjs/web/viewer.html?file=/files/thesis-1.pdf"
-      ></iframe>
-    </div>
-
   </div>
 </div>
 
@@ -60,10 +50,10 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
     <iframe
       id="iframe-ppt"
       class="pdf-container"
-      src="/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf"
+      src="/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pptx"
     ></iframe>
     <div style="text-align:center; margin-top:1em;">
-      <a href="/files/thesis-defense-slides.pdf" download="thesis-defense-slides.pdf" class="download-btn">
+      <a href="/files/thesis-defense-slides.pdf" download="thesis-defense-slides.pptx" class="download-btn">
         Download PPT PDF
       </a>
     </div>
