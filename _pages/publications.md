@@ -1,22 +1,18 @@
 ﻿---
 layout: archive
-title: ""
+title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
 
 You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
 
-## Doctoral Thesis
-
-## Journal Publications
-
-{% include base_path %}
-
 <div class="publications-grid">
 {% for post in site.publications reversed %}
   <div class="publication-card">
-    <h3 class="publication-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    <h3 class="publication-title">
+      <a href="{{ post.url }}" target="_blank">{{ post.title }}</a>
+    </h3>
 
     <p class="publication-authors"><strong>Authors:</strong> {{ post.authors }}</p>
 
@@ -30,19 +26,15 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
       </p>
     {% endif %}
 
- 
     {% if post.doi %}
-      <p class="publication-doi">
-        <strong>DOI:</strong> 
-        <a href=post.doi target="_blank">{{ post.doi }}</a>
+      <p class="publication-doi"><strong>DOI:</strong> 
+        <a href="{{ post.doi }}" target="_blank">{{ post.doi }}</a>
       </p>
     {% endif %}
 
-
-
     {% if post.excerpt %}
       <details class="publication-excerpt">
-        <summary><strong>Abstract:</strong> (click to expand)</summary>
+        <summary>Abstract (click to expand)</summary>
         <p>{{ post.excerpt }}</p>
       </details>
     {% endif %}
@@ -57,37 +49,44 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 </div>
 
 <style>
-/* Grid layout for publications */
+/* Grid layout */
 .publications-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: 1.5em;
+  padding: 1em 0;
 }
 
 /* Card style */
 .publication-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1.2em;
-  background-color: #fafafa;
-  transition: transform 0.2s, box-shadow 0.2s;
+  background: linear-gradient(145deg, #f9f9f9, #ffffff);
+  border-radius: 12px;
+  padding: 1.5em;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .publication-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 .publication-title {
   margin-top: 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  color: #007acc;
+}
+
+.publication-title a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .publication-authors,
 .publication-venue,
 .publication-doi,
 .publication-date {
-  margin: 0.3em 0;
+  margin: 0.4em 0;
   font-size: 0.95rem;
   color: #555;
 }
@@ -95,24 +94,26 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 .publication-excerpt summary {
   cursor: pointer;
   font-weight: bold;
+  color: #333;
 }
 
 .publication-excerpt p {
   margin-top: 0.5em;
   font-size: 0.9rem;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
-/* Button style for PDF */
+/* Button style */
 .btn-paper {
   display: inline-block;
-  padding: 0.4em 0.9em;
+  padding: 0.45em 1em;
   margin-top: 0.5em;
   background-color: #007acc;
   color: #fff;
   text-decoration: none;
-  border-radius: 4px;
-  transition: all 0.3s;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .btn-paper:hover {
