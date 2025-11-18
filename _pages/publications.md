@@ -36,7 +36,7 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 
     {% if post.excerpt %}
       <details class="publication-excerpt">
-        <summary><strong>Abstract:</strong> (click to expand)</summary>
+        <summary><strong>Excerpt:</strong> (click to expand)</summary>
         <p>{{ post.excerpt }}</p>
       </details>
     {% endif %}
@@ -113,5 +113,32 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
   background-color: #005f99;
   transform: scale(1.05);
 }
+
+.publication-item {
+  background-color: #f9f9f9; /* 浅灰色背景 */
+  border: 1px solid #ddd;    /* 边框颜色 */
+  border-radius: 8px;         /* 圆角 */
+  padding: 16px;
+  margin-bottom: 1.5em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 轻微阴影 */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.publication-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* 可以单独给 DOI 或期刊链接加颜色 */
+.publication-item a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+.publication-item a:hover {
+  text-decoration: underline;
+}
 </style>
+
+
 
