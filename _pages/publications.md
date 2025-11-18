@@ -20,7 +20,7 @@
     {% endif %}
 
     {% if post.doi %}
-      <p class="publication-doi"><strong>DOI:</strong> <a href="{{ post.doi_url }}">{{ post.doi }}</a></p>
+      <p class="publication-doi"><strong>DOI:</strong> <a href="https://doi.org/{{ post.doi }}" target="_blank">{{ post.doi }}</a></p>
     {% endif %}
 
     {% if post.excerpt %}
