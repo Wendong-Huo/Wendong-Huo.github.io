@@ -5,7 +5,9 @@ permalink: /publications/
 author_profile: true
 ---
 
-## Thesis
+You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
+
+## Doctoral Thesis
 
 {% assign theses = site.publications | where: "type", "thesis" | sort: "date" | reverse %}
 {% assign latest_thesis = theses.first %}
@@ -13,22 +15,19 @@ author_profile: true
 {% if latest_thesis %}
   <div class="publication-item">
     <h3><a href="{{ latest_thesis.url }}">{{ latest_thesis.title }}</a></h3>
-    <p><strong>Authors:</strong> {{ latest_thesis.authors }}</p>
     <p><strong>Institution:</strong> {{ latest_thesis.venue }}</p>
-    <p><strong>Abstract:</strong> {{ latest_thesis.excerpt }}</p>
-    <p><em>Published on: {{ latest_thesis.date | date: "%B %d, %Y" }}</em></p>
+    <p><em>Finished on: {{ latest_thesis.date | date: "%B %d, %Y" }}</em></p>
     {% if latest_thesis.paperurl %}
       <p><a href="{{ latest_thesis.paperurl }}" target="_blank">Full Thesis (PDF)</a></p>
     {% endif %}
   </div>
+
 {% else %}
   <p>No thesis entries found.</p>
 {% endif %}
 
 
 ## Journal Publications
-
-You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
 
 <!-- Display the publications -->
 {% include base_path %}
