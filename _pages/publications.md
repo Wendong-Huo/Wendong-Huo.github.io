@@ -34,8 +34,8 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 
     <div class="thesis-buttons">
       <!-- PPT Modal Trigger -->
-      <button class="btn-icon ppt-btn" onclick="document.getElementById('pptModal').classList.toggle('hidden')" title="Preview Defense Slides">
-        🎤
+      <button class="btn-icon ppt-btn" onclick="openPPTModal()" title="Preview Defense Slides">🎤
+
       </button>
     </div>
 
@@ -175,16 +175,23 @@ function openPPTModal() {
   const modal = document.getElementById('pptModal');
   const iframe = document.getElementById('iframe-ppt');
   const skeleton = document.getElementById('skeleton-ppt');
+
   modal.classList.remove('hidden');
 
-  iframe.onload = () => {
-    skeleton.style.display = "none";
-    iframe.style.display = "block";
-  };
+  // 只在第一次打开时加载 PDF
+  if (!iframe.srcLoaded) {
+    iframe.onload = () => {
+      skeleton.style.display = "none";
+      iframe.style.display = "block";
+    };
+    iframe.srcLoaded = true;  // 标记已经加载过
+  }
 }
+
 function closePPTModal() {
   document.getElementById('pptModal').classList.add('hidden');
 }
+
 </script>
 
 
