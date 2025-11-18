@@ -7,6 +7,33 @@ author_profile: true
 
 You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
 
+<h2>Doctoral Thesis</h2>
+
+<div class="publication-card" style="margin-bottom: 2em;">
+  <h3 class="publication-title">
+    <a href="http://wendong-huo.github.io/files/thesis-1.pdf" target="_blank">
+      基于移动可变形组件法和共形参数化技术的复杂曲面薄壁结构拓扑优化研究
+    </a>
+  </h3>
+
+  <p class="publication-authors"><strong>Author:</strong> Wendong Huo</p>
+
+  <p class="publication-venue"><strong>Institution:</strong> Department of Engineering Mechanics, DUT</p>
+
+  <p class="publication-date"><strong>Published on:</strong> November 18, 2025</p>
+
+  <details class="publication-excerpt">
+    <summary><strong>Excerpt:</strong> (click to expand)</summary>
+    <p>
+      Research on Topology Optimization for Thin-Walled Structures with Complex Surfaces
+      Based on the Moving Morphable Components (MMC) Method and the Conformal Parameterization Technique.
+    </p>
+  </details>
+
+  <p><a href="http://wendong-huo.github.io/files/thesis-1.pdf" target="_blank" class="btn-paper">Full Thesis (PDF)</a></p>
+</div>
+
+
 <div class="publications-grid">
 {% for post in site.publications reversed %}
   <div class="publication-card">
