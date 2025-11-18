@@ -150,24 +150,24 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 
 /* --- Modern Publication Card --- */
 .publication-card {
-  background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%);
-  border-radius: 16px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background: linear-gradient(135deg, #e6f5e9 0%, #ffffff 80%);
+  border-radius: 24px;
+  padding: 1.8rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   border: 1px solid rgba(200,200,200,0.3);
 }
 
 .publication-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
 }
 
 .publication-title {
   margin: 0 0 0.4rem 0;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: #2c2c54;
+  color: #2c3e50;
 }
 
 .publication-title a {
@@ -177,8 +177,8 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 }
 
 .publication-title a:hover {
-  color: #5a5ad6;
-  text-shadow: 0 0 6px rgba(90,90,214,0.3);
+  color: #27ae60;
+  text-shadow: 0 0 6px rgba(39,174,96,0.3);
 }
 
 .publication-authors,
@@ -200,9 +200,9 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 .publication-excerpt p {
   margin-top: 0.5rem;
   padding: 0.6rem 0.9rem;
-  background: #ffffff;
-  border-radius: 10px;
-  border-left: 3px solid #6f6fd8;
+  background: #f0fdf4;
+  border-radius: 12px;
+  border-left: 3px solid #27ae60;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   font-size: 0.88rem;
   line-height: 1.4;
@@ -210,7 +210,7 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 
 /* --- PDF Button --- */
 .btn-icon {
-  background:#6f6fd8;
+  background:#27ae60;
   color:white;
   border:none;
   border-radius:8px;
@@ -226,10 +226,11 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 
 .btn-icon:hover {
   transform:scale(1.1);
-  box-shadow:0 4px 12px rgba(111,111,216,0.35);
+  box-shadow:0 4px 12px rgba(39,174,96,0.35);
 }
 
 /* --- PDF Inline Viewer --- */
 .pdf-viewer.hidden { display:none; }
 </style>
+
 
