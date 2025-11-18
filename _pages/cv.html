@@ -9,24 +9,155 @@ redirect_from:
 
 {% include base_path %}
 
-
 <h1 style="text-align:center; margin-bottom: 0.5em;">Curriculum Vitae</h1>
 
 <p style="text-align:center; font-size:1rem; color:#555; margin-bottom:2em;">
   Lateset updated: EN 2025.11.18 | CH 2025.04.18
 </p>
 
-<div style="display:flex; flex-direction: column; align-items: center; gap: 2em; margin-bottom:2em;">
-  <object data="../files/CV-Files/CV-en-Wendong_Huo.pdf" width="80%" height="1000" type="application/pdf">
-    Your browser does not support PDFs. <a href="../files/CV-Files/CV-en-Wendong_Huo.pdf">Download EN CV</a>.
-  </object>
-  
-  <object data="../files/CV-Files/CV-ch-Wendong_Huo.pdf" width="80%" height="1000" type="application/pdf">
-    Your browser does not support PDFs. <a href="../files/CV-Files/CV-ch-Wendong_Huo.pdf">Download CH CV</a>.
-  </object>
+<style>
+/* Collapse panel style */
+.cv-collapse {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 12px 18px;
+  margin: 1.5em 0;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.cv-collapse:hover {
+  background-color: #e5e5e5;
+}
+
+.cv-content {
+  display: none;
+  margin-top: 1em;
+  position: relative;
+}
+
+/* Skeleton loading */
+.skeleton {
+  width: 100%;
+  height: 780px;
+  border-radius: 8px;
+  background: linear-gradient(-90deg, #e0e0e0 0%, #f5f5f5 50%, #e0e0e0 100%);
+  background-size: 400% 400%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* PDF.js iframe container */
+.pdf-container {
+  width: 100%;
+  height: 780px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: none; /* initially hidden until loaded */
+  overflow: auto;
+  position: relative;
+}
+
+/* Scroll shadow */
+.pdf-container::before,
+.pdf-container::after {
+  content: '';
+  position: sticky;
+  left: 0;
+  right: 0;
+  height: 20px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.pdf-container::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15), transparent);
+}
+
+.pdf-container::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.15), transparent);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .cv-collapse {
+    background-color: #2e2e2e;
+    color: #eee;
+  }
+  .cv-collapse:hover {
+    background-color: #3a3a3a;
+  }
+  .pdf-container {
+    border: 1px solid #444;
+  }
+  .skeleton {
+    background: linear-gradient(-90deg, #444 0%, #555 50%, #444 100%);
+  }
+}
+</style>
+
+<script>
+function toggleCV(id) {
+  const content = document.getElementById(id);
+  content.style.display = (content.style.display === "block") ? "none" : "block";
+}
+
+// PDF skeleton loader
+function loadPDF(iframeId, skeletonId) {
+  const iframe = document.getElementById(iframeId);
+  const skeleton = document.getElementById(skeletonId);
+  iframe.onload = () => {
+    skeleton.style.display = "none";
+    iframe.style.display = "block";
+  };
+}
+</script>
+
+<!-- EN CV -->
+<div class="cv-collapse" onclick="toggleCV('cv-en')">
+  📄 English CV (click to expand / collapse)
+</div>
+<div id="cv-en" class="cv-content">
+  <div id="skeleton-en" class="skeleton"></div>
+  <iframe 
+    id="iframe-en"
+    class="pdf-container"
+    src="/pdfjs/web/viewer.html?file=/files/CV-Files/CV-en-Wendong_Huo.pdf">
+  </iframe>
+  <script>loadPDF('iframe-en', 'skeleton-en');</script>
 </div>
 
-<div style="text-align:center; margin-bottom:3em;"> 
-  <a href="../files/CV-Files/CV-en-Wendong_Huo.pdf" style="display:inline-block; padding:0.6em 1.2em; margin:0.5em; background-color:#007acc; color:white; text-decoration:none; border-radius:5px;">Download CV (EN)</a> 
-  <a href="../files/CV-Files/CV-ch-Wendong_Huo.pdf" style="display:inline-block; padding:0.6em 1.2em; margin:0.5em; background-color:#007acc; color:white; text-decoration:none; border-radius:5px;">Download CV (CH)</a> 
+<!-- CH CV -->
+<div class="cv-collapse" onclick="toggleCV('cv-ch')">
+  📄 中文简历（点击展开 / 收起）
+</div>
+<div id="cv-ch" class="cv-content">
+  <div id="skeleton-ch" class="skeleton"></div>
+  <iframe 
+    id="iframe-ch"
+    class="pdf-container"
+    src="/pdfjs/web/viewer.html?file=/files/CV-Files/CV-ch-Wendong_Huo.pdf">
+  </iframe>
+  <script>loadPDF('iframe-ch', 'skeleton-ch');</script>
+</div>
+
+<!-- Download buttons -->
+<div style="text-align:center; margin-top:2em;">
+  <a href="/files/CV-Files/CV-en-Wendong_Huo.pdf"
+     style="padding:0.6em 1.2em; margin:0.5em; background-color:#007acc; color:white; text-decoration:none; border-radius:5px;">
+     Download CV (EN)
+  </a>
+
+  <a href="/files/CV-Files/CV-ch-Wendong_Huo.pdf"
+     style="padding:0.6em 1.2em; margin:0.5em; background-color:#007acc; color:white; text-decoration:none; border-radius:5px;">
+     Download CV (CH)
+  </a>
 </div>
