@@ -9,7 +9,7 @@ Tags:
 
 The last significant concept was the digital era.
 
-Has it finished? Has there any important treasure been explored?
+Has it finished? Has any important treasure been explored?
 or technology 
 
 The answer is negative. The digitalization process hasn't been finished.
@@ -22,4 +22,4 @@ The big-data era is and should be constructed based on digital blocks.
 
 The information and intelligence in the field of mechanics lack epoch-making and revolutionary opinions and viewpoints.
 
-Á¦Ñ§ÁìÓòµÄĞÅÏ¢»¯ºÍÖÇÄÜ»¯£¬È±·¦»®Ê±´úµÄ¡¢¸ïÃüĞÔµÄ¼û½âÓë¹Ûµã¡£
+åŠ›å­¦é¢†åŸŸçš„ä¿¡æ¯åŒ–å’Œæ™ºèƒ½åŒ–ï¼Œç¼ºä¹åˆ’æ—¶ä»£çš„ã€é©å‘½æ€§çš„è§è§£ä¸è§‚ç‚¹ã€‚
