@@ -8,13 +8,23 @@ redirect_from:
   - /about.html
 ---
 
-Hi, I am a sixth-year Ph.D. candidate from the Department of Engineering Mechanics, Dalian University of Technology. I am very fortunate to be supervised by Prof. Xu Guo and Prof. Chang Liu. Previously, I received my bachelor's degree (Engineering Mechanics) from Hefei University of Technology in 2019, supervised by Prof. Bo Yu. My research interests include applied and computational mechanics, structure analysis and design, computer graphics, computer-aided geometric design, and engineering computing.
+Hi, I am a sixth-year Ph.D. candidate from the Department of Engineering Mechanics, Dalian University of Technology. 
+I am very fortunate to be supervised by Prof. Xu Guo and Prof. Chang Liu. 
+Previously, I received my bachelor's degree (Engineering Mechanics) from Hefei University of Technology in 2019, supervised by Prof. Bo Yu. 
+My research interests include applied and computational mechanics, structure analysis and design, computer graphics, computer-aided geometric design, and engineering computing.
 
-Currently, I am researching something about complex surface structures. The methodology can be analysis, simulation, design, and optimization, etc. One achieved study can be concluded as "Explicit Structure Optimization TOwards Complex Shell Structures, ESOTOCSS". Based on the explicit structure optimization method and the computational conformal mapping technique, we construct a general framework to design complex surface structures. Potential applications include the {lightweight design, stiffness enhancement, and structure manipulation} of {shells, membranes, and low-dimensional materials}.
+I am working to improve the understanding of complex surface structures. 
+The most intuitive feature, the curved and slender geometry, profoundly influences every aspect of such a structure form, e.g., displacement pattern, strain energy distribution, etc., resulting in abnormal phenomena in various scenarios. 
+How to analyze and further use these novel mechanisms forms the cornerstones of my research.
 
-Other research includes phase field modeling, intelligent engineering computing, and general structure optimization. I hope we can make some contributions to these aspects. Since I want to avoid being trapped in the computation framework, I'm also learning about measurement, experimentation, manufacturing, and applications, which will reflect in future research.
+The methodology includes analysis, simulation, design, optimization, etc. 
+One achieved study can be concluded as "Explicit Structure Optimization TOwards Complex Shell Structures, ESOTOCSS." 
+We construct a general framework to design complex surface structures based on the explicit structure optimization method and the computational conformal mapping technique. 
+Potential applications include the {lightweight design, stiffness enhancement, and structure manipulation} of {shells, membranes, and low-dimensional materials}.
 
-Please feel free to contact me if you are interested in my research and work, my Email is huowd@mail.dlut.edu.cn.
+Other research includes phase field modeling, intelligent engineering computing, and general structure optimization. 
+I'm also learning measurement, experimentation, manufacturing, and applications, which will be reflected in future research. 
+Please feel free to contact me if you are interested in my research and work. My Email is huowd@mail.dlut.edu.cn.
 
 
 <!-- In my spare time, I enjoy exploring fantastic technology world. -->
