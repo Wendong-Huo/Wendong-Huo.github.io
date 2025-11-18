@@ -79,6 +79,46 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 .ppt-modal-content .close { position:absolute; top:8px; right:12px; font-size:1.5rem; cursor:pointer; }
 </style>
 
+<style>
+/* PPT Modal 调整为与小卡片风格一致 */
+.ppt-modal-content {
+  background: linear-gradient(135deg, #e6f5e9 0%, #ffffff 80%); /* 与小卡片一致 */
+  padding: 1rem;
+  border-radius: 24px; /* 与小卡片一致 */
+  max-width: 90%;
+  max-height: 90%;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08); /* 小卡片阴影 */
+  border: 1px solid rgba(200,200,200,0.3); /* 小卡片边框 */
+}
+
+/* Close 按钮颜色可以更柔和 */
+.ppt-modal-content .close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #555; /* 比纯黑柔和 */
+}
+
+/* Modal 背景半透明保持不变 */
+.ppt-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 9999;
+}
+
+.ppt-modal.hidden { display:none; }
+</style>
+
 
 <h2>Journal Publications (pre-postdoc)</h2>
 
