@@ -9,20 +9,24 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 
 <h2>Doctoral Thesis</h2>
 
-<div class="publication-card" style="margin-bottom: 2em;">
-  <h3 class="publication-title">
-    <a href="http://wendong-huo.github.io/files/thesis-1.pdf" target="_blank">
-      基于移动可变形组件法和共形参数化技术的复杂曲面薄壁结构拓扑优化研究
-    </a>
-  </h3>
+<div class="thesis-card">
 
-  <p class="publication-authors"><strong>Author:</strong> Wendong Huo</p>
-  <p class="publication-advisors"><strong>Author:</strong> Prof. Xu Guo and Prof. Chang Liu</p>
-  <p class="publication-venue"><strong>Institution:</strong> Department of Engineering Mechanics, DUT</p>
+  <div class="thesis-header">
+    <h3 class="thesis-title">
+      <a href="http://wendong-huo.github.io/files/thesis-1.pdf" target="_blank">
+        基于移动可变形组件法和共形参数化技术的复杂曲面薄壁结构拓扑优化研究
+      </a>
+    </h3>
+  </div>
 
-  <p class="publication-date"><strong>Published on:</strong> November 18, 2025</p>
+  <div class="thesis-meta">
+    <p><strong>Author:</strong> Wendong Huo</p>
+    <p><strong>Advisors:</strong> Prof. Xu Guo and Prof. Chang Liu</p>
+    <p><strong>Institution:</strong> Department of Engineering Mechanics, DUT</p>
+    <p><strong>Finalized on:</strong> November 18, 2025</p>
+  </div>
 
-  <details class="publication-excerpt">
+  <details class="thesis-excerpt">
     <summary><strong>Excerpt:</strong> (click to expand)</summary>
     <p>
       Research on Topology Optimization for Thin-Walled Structures with Complex Surfaces
@@ -30,8 +34,13 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
     </p>
   </details>
 
-  <p><a href="http://wendong-huo.github.io/files/thesis-1.pdf" target="_blank" class="btn-paper">Full Thesis (PDF)</a></p>
+  <p>
+    <a href="http://wendong-huo.github.io/files/thesis-1.pdf" target="_blank" class="thesis-btn">
+      Full Thesis (PDF)
+    </a>
+  </p>
 </div>
+
 
 <h2>Journal Publications</h2>
 
@@ -147,6 +156,89 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 
 .btn-paper:hover {
   background-color: #005f99;
+  transform: scale(1.05);
+}
+</style>
+<style>
+/* Thesis 卡片整体容器 */
+.thesis-card {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 1.8em;
+  margin: 1.5em 0 3em;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  /* 现代渐变背景 */
+  background-image: linear-gradient(
+    135deg,
+    rgba(110, 170, 255, 0.28),
+    rgba(200, 220, 255, 0.18),
+    rgba(255, 255, 255, 0.45)
+  );
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.thesis-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* 标题部分 */
+.thesis-title {
+  margin-top: 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #1a2a6c;
+}
+
+.thesis-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.thesis-title a:hover {
+  text-decoration: underline;
+}
+
+/* 元信息排版 */
+.thesis-meta p {
+  margin: 0.35em 0;
+  font-size: 0.97rem;
+  color: #333;
+}
+
+/* 摘要展开组件 */
+.thesis-excerpt summary {
+  cursor: pointer;
+  margin-top: 0.7em;
+  font-weight: bold;
+  color: #1a2a6c;
+}
+
+.thesis-excerpt p {
+  margin-top: 0.6em;
+  color: #444;
+  line-height: 1.55;
+}
+
+/* 按钮 */
+.thesis-btn {
+  display: inline-block;
+  margin-top: 0.8em;
+  padding: 0.5em 1.1em;
+  background: #1a2a6c;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.thesis-btn:hover {
+  background: #233b94;
   transform: scale(1.05);
 }
 </style>
