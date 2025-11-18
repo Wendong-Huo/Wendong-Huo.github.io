@@ -34,15 +34,20 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
     </p>
   </details>
 
-  <p>
-    <a href="http://wendong-huo.github.io/files/thesis-1.pdf" target="_blank" class="thesis-btn">
-      Full Thesis (PDF)
-    </a>
-  </p>
+<p class="thesis-btn-group">
+  <a href="http://wendong-huo.github.io/files/thesis-1.pdf" target="_blank" class="thesis-btn">
+    Full Thesis (PDF)
+  </a>
+
+  <a href="http://wendong-huo.github.io/files/thesis-defense-slides.pdf" target="_blank" class="thesis-btn thesis-btn-secondary">
+    Defense Slides (PPT)
+  </a>
+</p>
+
 </div>
 
 
-<h2>Journal Publications</h2>
+<h2>Journal Publications (pre-postdoc)</h2>
 
 <div class="publications-grid">
 {% for post in site.publications reversed %}
@@ -241,4 +246,25 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
   background: #233b94;
   transform: scale(1.05);
 }
+
+/* 按钮组：自动横排、换行 */
+.thesis-btn-group {
+  display: flex;
+  gap: 0.7em;
+  flex-wrap: wrap;
+  margin-top: 1em;
+}
+
+/* 次级按钮（反色风格） */
+.thesis-btn-secondary {
+  background: #4b79a1;
+}
+
+.thesis-btn-secondary:hover {
+  background: #3b5f82;
+  transform: scale(1.05);
+}
+
+
+
 </style>
