@@ -1,10 +1,12 @@
 ﻿---
 title: "基于移动可变形组件法和共形参数化技术的复杂曲面薄壁结构拓扑优化研究"
-permalink: /publication/2025-11-18-thesis-number-1
+venue: 'Department of Engineering Mechanics, DUT'
 excerpt: "Research on Topology Optimization for Thin-Walled Structures with Complex Surfaces Based on the Moving Morphable Components (MMC) Method and the Conformal Parameterization Technique"
 date: 2025-11-18
 paperurl: "http://wendong-huo.github.io/files/thesis-1.pdf"
-venue: 'Department of Engineering Mechanics, DUT'
+
+collection: publications
+permalink: /publication/2025-11-18-thesis-number-1
 type: thesis
 ---
 
