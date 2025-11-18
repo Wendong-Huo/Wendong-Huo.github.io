@@ -28,9 +28,10 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 
     {% if post.doi %}
       <p class="publication-doi"><strong>DOI:</strong> 
-        <a href="{{ post.doi }}" target="_blank">{{ post.doi }}</a>
+        <a href="https://doi.org/{{ post.doi }}" target="_blank">{{ post.doi }}</a>
       </p>
     {% endif %}
+
 
     {% if post.excerpt %}
       <details class="publication-excerpt">
