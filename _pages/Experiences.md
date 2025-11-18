@@ -8,7 +8,7 @@ author_profile: true
 {% include base_path %}
 
 <style>
-/*  ±º‰÷·»›∆˜ */
+/* Êó∂Èó¥ËΩ¥Êï¥‰Ωì */
 .timeline {
   position: relative;
   max-width: 900px;
@@ -16,7 +16,7 @@ author_profile: true
   padding: 2em 0;
 }
 
-/*  ˙œﬂ */
+/* ‰∏≠Èó¥Á´ñÁ∫ø */
 .timeline::after {
   content: '';
   position: absolute;
@@ -28,26 +28,20 @@ author_profile: true
   margin-left: -2px;
 }
 
-/*  ±º‰÷·œÓ */
+/* Êó∂Èó¥ËΩ¥È°π */
 .timeline-item {
   padding: 1em 2em;
   position: relative;
   width: 50%;
 }
 
-/* ◊Û≤‡œÓ */
-.timeline-item.left {
-  left: 0;
-}
+/* Â∑¶Âè≥‰∫§Èîô */
+.timeline-item.left { left: 0; }
+.timeline-item.right { left: 50%; }
 
-/* ”“≤‡œÓ */
-.timeline-item.right {
-  left: 50%;
-}
-
-/* ‘≤µ„ */
+/* ÂúÜÁÇπ */
 .timeline-item::before {
-  content: '°Ò';
+  content: '‚óè';
   position: absolute;
   width: 20px;
   height: 20px;
@@ -59,37 +53,34 @@ author_profile: true
   top: 15px;
   font-size: 12px;
 }
+.timeline-item.left::before { right: -10px; }
+.timeline-item.right::before { left: -10px; }
 
-/* ◊Û≤‡‘≤µ„ */
-.timeline-item.left::before {
-  right: -10px;
-}
-
-/* ”“≤‡‘≤µ„ */
-.timeline-item.right::before {
-  left: -10px;
-}
-
-/* ø®∆¨—˘ Ω */
+/* Âç°ÁâáÊ†∑Âºè */
 .timeline-content {
   background-color: #f5f5f5;
   padding: 1em;
   border-radius: 8px;
   position: relative;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .timeline-content:hover {
   transform: scale(1.03);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* ◊¥Ã¨—’…´ */
+/* Áä∂ÊÄÅÈ¢úËâ≤ */
 .status-ongoing { color: #007acc; font-weight: bold; }
 .status-completed { color: #28a745; font-weight: bold; }
 .status-preparation { color: #ff9800; font-weight: bold; }
 .status-tocont { color: #9c27b0; font-weight: bold; }
 
+/* ÂõæÊ†á */
+.icon-research::before { content: "üî¨ "; }
+.icon-software::before { content: "üíª "; }
+.icon-contest::before { content: "üèÜ "; }
+
+/* ÁßªÂä®Á´ØÈÄÇÈÖç */
 @media screen and (max-width: 768px) {
   .timeline-item, .timeline-item.left, .timeline-item.right { width: 100%; left: 0; }
   .timeline-item::before { left: 50%; margin-left: -10px; }
@@ -100,8 +91,9 @@ author_profile: true
 
 <div class="timeline">
 
+<!-- Research Projects -->
 <div class="timeline-item left">
-  <div class="timeline-content">
+  <div class="timeline-content icon-research">
     <h3>Explicit design of complex surface structures <span class="status-ongoing">(Ongoing)</span></h3>
     <p><strong>Role:</strong> PhD Dissertation</p>
     <p><strong>Supervisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
@@ -111,7 +103,7 @@ author_profile: true
 </div>
 
 <div class="timeline-item right">
-  <div class="timeline-content">
+  <div class="timeline-content icon-research">
     <h3>CC_IGA_Solid_CCM <span class="status-ongoing">(Ongoing)</span></h3>
     <p><strong>Supervisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
     <p><strong>Duration:</strong> 2023.08 - present</p>
@@ -120,16 +112,30 @@ author_profile: true
 </div>
 
 <div class="timeline-item left">
-  <div class="timeline-content">
-    <h3>Solid Embedded Components for Thin-Walled Structures <span class="status-completed">(Completed)</span></h3>
-    <p><strong>Supervisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
-    <p><strong>Duration:</strong> 2022.03 - 2023.06</p>
-    <p>Developed explicit modeling methods for thin-walled structures using embedded components.</p>
+  <div class="timeline-content icon-research">
+    <h3>Rob, LDM, SC <span class="status-preparation">(In Preparation)</span></h3>
+    <p><strong>Duration:</strong> 2023.03 - present</p>
   </div>
 </div>
 
 <div class="timeline-item right">
-  <div class="timeline-content">
+  <div class="timeline-content icon-research">
+    <h3>Hit Think <span class="status-preparation">(In Preparation)</span></h3>
+    <p><strong>Supervisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
+    <p><strong>Duration:</strong> 2023.05 - present</p>
+  </div>
+</div>
+
+<div class="timeline-item left">
+  <div class="timeline-content icon-research">
+    <h3>Fracture Analysis <span class="status-ongoing">(Ongoing)</span></h3>
+    <p><strong>Supervisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
+    <p><strong>Duration:</strong> 2023.01 - present</p>
+  </div>
+</div>
+
+<div class="timeline-item right">
+  <div class="timeline-content icon-research">
     <h3>Component Innovation <span class="status-ongoing">(Ongoing)</span></h3>
     <p><strong>Collaborators:</strong> Xiaoyang Li & Yunpu Liu</p>
     <p><strong>Supervisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
@@ -138,6 +144,136 @@ author_profile: true
   </div>
 </div>
 
-<!-- ø…“‘“¿¥ŒÃÌº”∏¸∂‡ timeline-item ¿¥’π æÀ˘”–æ≠¿˙ -->
+<div class="timeline-item left">
+  <div class="timeline-content icon-research">
+    <h3>Tomo and RST <span class="status-ongoing">(Ongoing)</span></h3>
+    <p><strong>Supervisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
+    <p><strong>Duration:</strong> 2022.10 - present</p>
+  </div>
+</div>
+
+<div class="timeline-item right">
+  <div class="timeline-content icon-research">
+    <h3>SL <span class="status-ongoing">(Ongoing)</span></h3>
+    <p><strong>Collaborators:</strong> Wu Xu</p>
+    <p><strong>Supervisors:</strong> Prof. Xu Guo, Prof. Weisheng Zhang, Prof. Chang Liu</p>
+    <p><strong>Duration:</strong> 2022.06 - present</p>
+  </div>
+</div>
+
+<div class="timeline-item left">
+  <div class="timeline-content icon-research">
+    <h3>Solid Embedded Components for Thin-Walled Structures <span class="status-completed">(Completed)</span></h3>
+    <p><strong>Supervisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
+    <p><strong>Duration:</strong> 2022.03 - 2023.06</p>
+    <p>Developed explicit modeling methods for thin-walled structures using embedded components.</p>
+  </div>
+</div>
+
+<div class="timeline-item right">
+  <div class="timeline-content icon-research">
+    <h3>Explicit Layout Optimization of Complex Rib-Reinforced Thin-Walled Structures <span class="status-completed">(Completed)</span></h3>
+    <p><strong>Collaborators:</strong> Dr. Xudong Jiang</p>
+    <p><strong>Supervisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
+    <p><strong>Duration:</strong> 2022.03 - 2022.10</p>
+  </div>
+</div>
+
+<div class="timeline-item left">
+  <div class="timeline-content icon-research">
+    <h3>Explicit Topology Optimization of Shell Surfaces <span class="status-completed">(Completed)</span></h3>
+    <p><strong>Supervisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
+    <p><strong>Duration:</strong> 2021.03 - 2022.02</p>
+  </div>
+</div>
+
+<div class="timeline-item right">
+  <div class="timeline-content icon-research">
+    <h3>Substructuring Multi-Resolution Topology Optimization with Template <span class="status-completed">(Completed)</span></h3>
+    <p><strong>Collaborators:</strong> Mr. Mengcheng Huang</p>
+    <p><strong>Supervisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
+    <p><strong>Duration:</strong> 2021.01 - 2021.05</p>
+  </div>
+</div>
+
+<div class="timeline-item left">
+  <div class="timeline-content icon-research">
+    <h3>Texture-Guided Structure Optimization and Design <span class="status-tocont">(To Be Continued)</span></h3>
+    <p><strong>Supervisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
+    <p><strong>Duration:</strong> 2020.10 - 2021.03</p>
+    <p>Subproject of texture synthesis applied to computational mechanics.</p>
+  </div>
+</div>
+
+<div class="timeline-item right">
+  <div class="timeline-content icon-research">
+    <h3>Structure Design Considering EMS and EMI <span class="status-tocont">(To Be Continued)</span></h3>
+    <p><strong>Supervisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
+    <p><strong>Duration:</strong> 2020.04 - 2020.09</p>
+  </div>
+</div>
+
+<div class="timeline-item left">
+  <div class="timeline-content icon-research">
+    <h3>Constructing the Underlying Algorithm of IGBEM <span class="status-completed">(Completed)</span></h3>
+    <p><strong>Supervisors:</strong> Prof. Bo Yu</p>
+    <p><strong>Duration:</strong> 2017.10 - 2019.06</p>
+  </div>
+</div>
+
+<div class="timeline-item right">
+  <div class="timeline-content icon-research">
+    <h3>On Improvement of Piezoelectric Properties of ZnO <span class="status-completed">(Completed)</span></h3>
+    <p><strong>Collaborators:</strong> Mr. Zhenyu Zhu, Mr. Linsheng Shan, Mr. Guangming Li</p>
+    <p><strong>Supervisors:</strong> Prof. Xiaobao Li</p>
+    <p><strong>Duration:</strong> 2017.06 - 2019.03</p>
+  </div>
+</div>
+
+<!-- Software & Tools -->
+<div class="timeline-item left">
+  <div class="timeline-content icon-software">
+    <h3>Explicit Topology Optimization of Shell Structures <span class="status-completed">(Completed)</span></h3>
+    <p><strong>Duration:</strong> 2022.06 - 2023.11</p>
+  </div>
+</div>
+
+<div class="timeline-item right">
+  <div class="timeline-content icon-software">
+    <h3>Explicit Tomo for Complex Thin-Walled Structures <span class="status-ongoing">(Ongoing)</span></h3>
+    <p><strong>Duration:</strong> 2023.06 - present</p>
+  </div>
+</div>
+
+<!-- Competitions & Awards -->
+<div class="timeline-item left">
+  <div class="timeline-content icon-contest">
+    <h3>Open-Source Industrial Software Integration Contest (2023)</h3>
+    <p><strong>Collaborators:</strong> Dr. Xudong Jiang</p>
+    <p><strong>Supervisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
+  </div>
+</div>
+
+<div class="timeline-item right">
+  <div class="timeline-content icon-contest">
+    <h3>Team Game in International Engineering Mechanics Contest (2019)</h3>
+    <p><strong>Collaborators:</strong> Chaoqi Gao, Xiaoqing Zhou</p>
+  </div>
+</div>
+
+<div class="timeline-item left">
+  <div class="timeline-content icon-contest">
+    <h3>Competition of Experimental Mechanics (2017)</h3>
+    <p>Special thanks to Prof. Meiqin Wang & Prof. Zhaotao Liu</p>
+    <p><strong>Collaborators:</strong> Xubing Cheng, Zhuofan Ni, Guangming Li</p>
+  </div>
+</div>
+
+<div class="timeline-item right">
+  <div class="timeline-content icon-contest">
+    <h3>High School Physics Competition (2011)</h3>
+    <p>A tour to the 168 High School on a balmy day</p>
+  </div>
+</div>
 
 </div>
