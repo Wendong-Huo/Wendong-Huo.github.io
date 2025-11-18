@@ -1,11 +1,12 @@
 ﻿---
 title: "基于移动可变形组件法和共形参数化技术的复杂曲面薄壁结构拓扑优化研究"
-collection: thesis
+collection: publications
 permalink: /publication/2025-11-18-thesis-number-1
 excerpt: "Research on Topology Optimization for Thin-Walled Structures with Complex Surfaces Based on the Moving Morphable Components (MMC) Method and the Conformal Parameterization Technique"
 date: 2025-11-18
 paperurl: "http://wendong-huo.github.io/files/thesis-1.pdf"
-venue: ""
+venue: 'Doctoral Thesis'
+type: thesis
 ---
 
 薄壁结构凭借其轻量化、大跨度、造型灵活等优势被广泛应用于诸多重大工业装备中。对薄壁结构进行优化设计能够降低装备成本、增强服役性能、提高材料利用效率，因此长期以来一直是工业装备研发中的关键研究课题。结构优化设计主要包括尺寸优化、形状优化和拓扑优化，其中拓扑优化自由度最大、具备“无中生有”的能力，符合工程创新设计的需求，因而受到学术界广泛关注和研究。然而，薄壁结构通常具有复杂曲面几何特征，这给拓扑优化方法的应用带来了挑战。
