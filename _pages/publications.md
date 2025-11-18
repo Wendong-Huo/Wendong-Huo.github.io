@@ -9,6 +9,7 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 
 <h2>Doctoral Thesis</h2>
 <!-- Upgraded Thesis Card with Modern Styling -->
+<!-- Compact Thesis Card with Inline PDF Viewer and Modal PPT -->
 <div class="thesis-card">
   <h2 class="thesis-section-title">Doctoral Thesis</h2>
 
@@ -34,19 +35,10 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 
     <div class="thesis-buttons">
       <!-- PDF Inline Viewer Button -->
-      <button class="btn-icon pdf-btn" onclick="togglePDF('pdf-viewer-thesis')">📄</button>
       <!-- PPT Modal Trigger -->
-      <button class="btn-icon ppt-btn" onclick="openPPTModal()">🎤📊</button>
-    </div>
-
-    <!-- Inline PDF Viewer -->
-    <div id="pdf-viewer-thesis" class="pdf-viewer hidden">
-      <div id="skeleton-thesis" class="skeleton"></div>
-      <iframe
-        id="iframe-thesis"
-        class="pdf-container"
-        src="/pdfjs/web/viewer.html?file=/files/thesis-1.pdf"
-      ></iframe>
+      <button class="btn-icon ppt-btn" onclick="document.getElementById('pptModal').classList.toggle('hidden')" title="Preview Defense Slides">
+        🎤📊
+      </button>
     </div>
 
   </div>
@@ -55,46 +47,54 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 <!-- PPT Modal -->
 <div id="pptModal" class="ppt-modal hidden">
   <div class="ppt-modal-content">
-    <span class="close" onclick="closePPTModal()">&times;</span>
-    <div id="skeleton-ppt" class="skeleton"></div>
-    <iframe
-      id="iframe-ppt"
-      class="pdf-container"
-      src="/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf"
-    ></iframe>
-    <div style="text-align:center; margin-top:1em;">
-      <a href="/files/thesis-defense-slides.pdf" download="thesis-defense-slides.pdf" class="download-btn">
-        Download PPT PDF
-      </a>
-    </div>
+    <span class="close" onclick="document.getElementById('pptModal').classList.add('hidden')">&times;</span>
+    <iframe src="http://wendong-huo.github.io/files/thesis-defense-slides.pptx#toolbar=0" width="100%" height="600px" style="border:none;"></iframe>
   </div>
 </div>
 
 <style>
-/* Skeleton loader */
-.skeleton {
-  width: 100%;
-  height: 600px;
-  border-radius: 8px;
-  background: linear-gradient(-90deg, #e0e0e0 0%, #f5f5f5 50%, #e0e0e0 100%);
-  background-size: 400% 400%;
-  animation: shimmer 1.5s ease-in-out infinite;
-}
-@keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+/* Compact Card */
+.thesis-card { background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%); border-radius:16px; padding:1.5rem; margin-bottom:2rem; box-shadow:0 4px 12px rgba(0,0,0,0.08); backdrop-filter:blur(5px); border:1px solid rgba(200,200,200,0.3); }
+.thesis-section-title { font-size:1.6rem; font-weight:700; margin-bottom:1rem; background:linear-gradient(90deg,#4a4a9e,#6f6fd8); -webkit-background-clip:text; color:transparent; }
+.thesis-title a { font-size:1.25rem; font-weight:600; color:#2c2c54; text-decoration:none; transition:0.2s ease; }
+.thesis-title a:hover { color:#5a5ad6; text-shadow:0 0 6px rgba(90,90,214,0.3); }
+.thesis-info { font-size:0.9rem; margin:0.25rem 0; color:#555; }
+.thesis-excerpt summary { cursor:pointer; font-size:0.95rem; color:#333; margin-top:0.8rem; }
+.thesis-excerpt p { margin-top:0.5rem; padding:0.6rem 1rem; background:#ffffff; border-radius:10px; border-left:3px solid #6f6fd8; font-size:0.9rem; box-shadow:0 2px 6px rgba(0,0,0,0.05); }
+
+/* Buttons */
+.thesis-buttons { margin-top:1rem; display:flex; gap:0.8rem; }
+.btn-icon { background:#6f6fd8; color:white; border:none; border-radius:8px; width:40px; height:40px; font-size:1.2rem; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.25s ease; }
+.btn-icon:hover { transform:scale(1.1); box-shadow:0 4px 12px rgba(111,111,216,0.35); }
+.btn-icon.pdf-btn { background:#6f6fd8; }
+.btn-icon.ppt-btn { background:#34d399; }
+
+/* Inline PDF Viewer */
+.pdf-viewer.hidden { display:none; }
+
+/* PPT Modal 调整为与小卡片风格一致 */
+.ppt-modal-content {
+  background: linear-gradient(135deg, #e6f5e9 0%, #ffffff 80%); /* 与小卡片一致 */
+  padding: 1rem;
+  border-radius: 24px; /* 与小卡片一致 */
+  max-width: 90%;
+  max-height: 90%;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08); /* 小卡片阴影 */
+  border: 1px solid rgba(200,200,200,0.3); /* 小卡片边框 */
 }
 
-/* PDF container */
-.pdf-container {
-  width: 100%;
-  height: 600px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  display: none; /* hidden until loaded */
+/* Close 按钮颜色可以更柔和 */
+.ppt-modal-content .close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #555; /* 比纯黑柔和 */
 }
 
-/* PPT Modal */
+/* Modal 背景半透明保持不变 */
 .ppt-modal {
   display: flex;
   justify-content: center;
@@ -109,78 +109,7 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 }
 
 .ppt-modal.hidden { display:none; }
-
-.ppt-modal-content {
-  background: linear-gradient(135deg, #e6f5e9 0%, #ffffff 80%);
-  padding: 1rem;
-  border-radius: 24px;
-  max-width: 90%;
-  max-height: 90%;
-  position: relative;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  border: 1px solid rgba(200,200,200,0.3);
-}
-
-/* Close button */
-.ppt-modal-content .close {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #555;
-}
-
-/* Download button */
-.download-btn {
-  display: inline-block;
-  padding: 0.6em 1.2em;
-  margin: 0.5em;
-  background-color: #007acc;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-.download-btn:hover {
-  background-color: #005f99;
-  transform: scale(1.05);
-}
 </style>
-
-<script>
-// Toggle inline PDF viewer
-function togglePDF(id) {
-  const content = document.getElementById(id);
-  content.style.display = (content.style.display === "block") ? "none" : "block";
-
-  if(content.style.display === "block") {
-    const iframe = document.getElementById('iframe-thesis');
-    const skeleton = document.getElementById('skeleton-thesis');
-    iframe.onload = () => {
-      skeleton.style.display = "none";
-      iframe.style.display = "block";
-    };
-  }
-}
-
-// PPT modal
-function openPPTModal() {
-  const modal = document.getElementById('pptModal');
-  const iframe = document.getElementById('iframe-ppt');
-  const skeleton = document.getElementById('skeleton-ppt');
-  modal.classList.remove('hidden');
-
-  iframe.onload = () => {
-    skeleton.style.display = "none";
-    iframe.style.display = "block";
-  };
-}
-function closePPTModal() {
-  document.getElementById('pptModal').classList.add('hidden');
-}
-</script>
-
 
 
 <h2>Journal Publications (pre-postdoc)</h2>
