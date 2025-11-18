@@ -1,4 +1,4 @@
----
+﻿---
 layout: archive
 title: ""
 permalink: /experiences/
@@ -8,8 +8,8 @@ author_profile: true
 {% include base_path %}
 
 ## 📘 Doctoral Dissertation
-- **Explicit optimization and design of complex surface structures** *(almost done, 98%)*  
-  *Supervised by Prof. Xu Guo and Prof. Chang Liu, 2019.09--present*
+- **Explicit optimization and design of complex surface structures** **  
+  *Supervised by Prof. Xu Guo and Prof. Chang Liu, 2019.09--2025.11*
 
 ---
 
