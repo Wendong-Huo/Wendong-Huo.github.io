@@ -56,7 +56,7 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 <div id="pptModal" class="ppt-modal hidden">
   <div class="ppt-modal-content">
     <span class="close" onclick="document.getElementById('pptModal').classList.add('hidden')">&times;</span>
-    <iframe src="http://wendong-huo.github.io/files/thesis-defense.pdf#toolbar=0" width="100%" height="600px" style="border:none;"></iframe>
+    <iframe src="http://wendong-huo.github.io/files/thesis-defense-slides.pdf#toolbar=0" width="100%" height="600px" style="border:none;"></iframe>
   </div>
 </div>
 
