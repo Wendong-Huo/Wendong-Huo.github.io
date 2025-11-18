@@ -3,7 +3,7 @@ title: "Isogeometric dual reciprocity boundary element method for solving transi
 authors: Yu B., Cao G., Huo W., Zhou H., & Atroshchenko E.
 venue_url: 'https://www.journals.elsevier.com/journal-of-computational-and-applied-mathematics'
 venue: 'J. Comput. Appl. Math.'
-doi: 'https://doi.org/10.1016/j.cam.2020.113197'
+doi: '10.1016/j.cam.2020.113197'
 excerpt: 'Solving transient heat conduction problems with heat sources via IG-DRBEM'
 date: 2021-03-15
 paperurl: 'http://wendong-huo.github.io/files/paper-1.pdf'

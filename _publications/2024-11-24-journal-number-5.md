@@ -3,7 +3,7 @@ title: "Explicit topography design for complex shell structures based on embedde
 authors: Huo W., Liu C., Guo Y., Du Z., Zhang W., & Guo X.
 venue_url: 'https://www.sciencedirect.com/journal/journal-of-the-mechanics-and-physics-of-solids'
 venue: 'J. Mech. Phys. Solids'
-doi: 'https://doi.org/10.1016/j.jmps.2024.105974'
+doi: '10.1016/j.jmps.2024.105974'
 excerpt: 'Leveraging surface topography variations to enhance the stiffeness of complex thin-walled structures'
 date: 2024-11-24
 paperurl: 'http://wendong-huo.github.io/files/paper-5.pdf'

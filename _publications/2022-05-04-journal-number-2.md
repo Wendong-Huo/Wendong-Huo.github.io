@@ -3,7 +3,7 @@ title: "Topology optimization on complex surfaces based on the moving morphable 
 authors: Huo W., Liu C., Du Z., Jiang X., Liu Z., & Guo X.
 venue_url: 'https://asmedigitalcollection.asme.org/appliedmechanics'
 venue: 'ASME J. Appl. Mech.'
-doi: 'https://doi.org/10.1115/1.4053727'
+doi: '10.1115/1.4053727'
 excerpt: 'Explicit topology optimization for complex shell structures via the MMC method and the CCM technique'
 date: 2022-05-04
 paperurl: 'http://wendong-huo.github.io/files/paper-2.pdf'

@@ -3,7 +3,7 @@ title: "Hierarchical shape optimization for complex shell structures considering
 authors: Liu C., Ren Y., Zhao S., Cao X., Guo Y., Huo W., & Guo X.
 venue_url: 'https://link.springer.com/journal/158'
 venue: 'Struct. Multidiscip. Optim.'
-doi: 'https://doi.org/10.1007/s00158-025-04128-2'
+doi: '10.1007/s00158-025-04128-2'
 excerpt: 'Designing and optimizing the shape of complex shell structures via globla and local perturbations'
 date: 2025-08-21
 paperurl: 'http://wendong-huo.github.io/files/paper-6.pdf'

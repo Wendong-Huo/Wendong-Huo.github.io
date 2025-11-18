@@ -3,7 +3,7 @@ title: "A novel explicit design method for complex thin-walled structures based 
 authors: Huo W., Liu C., Liu Y., Du Z., Zhang W., & Guo X.
 venue_url: 'https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering'
 venue: 'Comput. Methods Appl. Mech. Eng.'
-doi: 'https://doi.org/10.1016/j.cma.2023.116431'
+doi: '10.1016/j.cma.2023.116431'
 excerpt: 'Constructing embedded solid components to address the problems of applying BCs and multiple design requirements in the shell models'
 date: 2023-09-28
 paperurl: 'http://wendong-huo.github.io/files/paper-4.pdf'
