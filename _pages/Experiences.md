@@ -7,106 +7,137 @@ author_profile: true
 
 {% include base_path %}
 
+<style>
+/* 时间轴容器 */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2em 0;
+}
+
+/* 竖线 */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #007acc;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
+
+/* 时间轴项 */
+.timeline-item {
+  padding: 1em 2em;
+  position: relative;
+  width: 50%;
+}
+
+/* 左侧项 */
+.timeline-item.left {
+  left: 0;
+}
+
+/* 右侧项 */
+.timeline-item.right {
+  left: 50%;
+}
+
+/* 圆点 */
+.timeline-item::before {
+  content: '●';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #007acc;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  top: 15px;
+  font-size: 12px;
+}
+
+/* 左侧圆点 */
+.timeline-item.left::before {
+  right: -10px;
+}
+
+/* 右侧圆点 */
+.timeline-item.right::before {
+  left: -10px;
+}
+
+/* 卡片样式 */
+.timeline-content {
+  background-color: #f5f5f5;
+  padding: 1em;
+  border-radius: 8px;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.timeline-content:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* 状态颜色 */
+.status-ongoing { color: #007acc; font-weight: bold; }
+.status-completed { color: #28a745; font-weight: bold; }
+.status-preparation { color: #ff9800; font-weight: bold; }
+.status-tocont { color: #9c27b0; font-weight: bold; }
+
+@media screen and (max-width: 768px) {
+  .timeline-item, .timeline-item.left, .timeline-item.right { width: 100%; left: 0; }
+  .timeline-item::before { left: 50%; margin-left: -10px; }
+}
+</style>
+
 # Research Experience
 
-### Explicit design of complex surface structures (Ongoing)
-- **Role:** Doctoral research (PhD Dissertation)
-- **Supervisors:** Prof. Xu Guo & Prof. Chang Liu
-- **Duration:** 2019.09 - present
-- **Description:** Conducting explicit topography and layout optimization for thin-walled structures with complex surfaces.
+<div class="timeline">
 
-### CC_IGA_Solid_CCM (Ongoing)
-- **Supervisors:** Prof. Xu Guo & Prof. Chang Liu
-- **Duration:** 2023.08 - present
-- **Description:** Advanced computational modeling for complex structural components.
+<div class="timeline-item left">
+  <div class="timeline-content">
+    <h3>Explicit design of complex surface structures <span class="status-ongoing">(Ongoing)</span></h3>
+    <p><strong>Role:</strong> PhD Dissertation</p>
+    <p><strong>Supervisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
+    <p><strong>Duration:</strong> 2019.09 - present</p>
+    <p>Conducting explicit topography and layout optimization for thin-walled structures with complex surfaces.</p>
+  </div>
+</div>
 
-### Rob, LDM, SC (In Preparation)
-- **Duration:** 2023.03 - present
+<div class="timeline-item right">
+  <div class="timeline-content">
+    <h3>CC_IGA_Solid_CCM <span class="status-ongoing">(Ongoing)</span></h3>
+    <p><strong>Supervisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
+    <p><strong>Duration:</strong> 2023.08 - present</p>
+    <p>Advanced computational modeling for complex structural components.</p>
+  </div>
+</div>
 
-### Hit Think (In Preparation)
-- **Supervisors:** Prof. Xu Guo & Prof. Chang Liu
-- **Duration:** 2023.05 - present
+<div class="timeline-item left">
+  <div class="timeline-content">
+    <h3>Solid Embedded Components for Thin-Walled Structures <span class="status-completed">(Completed)</span></h3>
+    <p><strong>Supervisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
+    <p><strong>Duration:</strong> 2022.03 - 2023.06</p>
+    <p>Developed explicit modeling methods for thin-walled structures using embedded components.</p>
+  </div>
+</div>
 
-### Fracture Analysis (Ongoing)
-- **Supervisors:** Prof. Xu Guo & Prof. Chang Liu
-- **Duration:** 2023.01 - present
+<div class="timeline-item right">
+  <div class="timeline-content">
+    <h3>Component Innovation <span class="status-ongoing">(Ongoing)</span></h3>
+    <p><strong>Collaborators:</strong> Xiaoyang Li & Yunpu Liu</p>
+    <p><strong>Supervisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
+    <p><strong>Duration:</strong> 2023.06 - present</p>
+    <p>Designing and testing new components to improve mechanical performance.</p>
+  </div>
+</div>
 
-### Component Innovation (Ongoing)
-- **Collaborators:** Xiaoyang Li & Yunpu Liu
-- **Supervisors:** Prof. Xu Guo & Prof. Chang Liu
-- **Duration:** 2023.06 - present
-- **Description:** Designing and testing new components to improve mechanical performance.
+<!-- 可以依次添加更多 timeline-item 来展示所有经历 -->
 
-### Tomo and RST (Ongoing)
-- **Supervisors:** Prof. Xu Guo & Prof. Chang Liu
-- **Duration:** 2022.10 - present
-
-### SL (Ongoing)
-- **Collaborators:** Wu Xu
-- **Supervisors:** Prof. Xu Guo, Prof. Weisheng Zhang, Prof. Chang Liu
-- **Duration:** 2022.06 - present
-
-### Solid Embedded Components for Thin-Walled Structures (Completed)
-- **Supervisors:** Prof. Xu Guo & Prof. Chang Liu
-- **Duration:** 2022.03 - 2023.06
-- **Description:** Developed explicit modeling methods for thin-walled structures using embedded components.
-
-### Explicit Layout Optimization of Complex Rib-Reinforced Thin-Walled Structures (Completed)
-- **Collaborators:** Dr. Xudong Jiang
-- **Supervisors:** Prof. Xu Guo & Prof. Chang Liu
-- **Duration:** 2022.03 - 2022.10
-
-### Explicit Topology Optimization of Shell Surfaces (Completed)
-- **Supervisors:** Prof. Xu Guo & Prof. Chang Liu
-- **Duration:** 2021.03 - 2022.02
-
-### Substructuring Multi-Resolution Topology Optimization with Template (Completed)
-- **Collaborators:** Mr. Mengcheng Huang
-- **Supervisors:** Prof. Xu Guo & Prof. Chang Liu
-- **Duration:** 2021.01 - 2021.05
-
-### Texture-Guided Structure Optimization and Design (To Be Continued)
-- **Supervisors:** Prof. Xu Guo & Prof. Chang Liu
-- **Duration:** 2020.10 - 2021.03
-- **Description:** Subproject of texture synthesis applied to computational mechanics.
-
-### Structure Design Considering EMS and EMI (To Be Continued)
-- **Supervisors:** Prof. Xu Guo & Prof. Chang Liu
-- **Duration:** 2020.04 - 2020.09
-
-### Constructing the Underlying Algorithm of IGBEM (Completed)
-- **Supervisors:** Prof. Bo Yu
-- **Duration:** 2017.10 - 2019.06
-
-### On Improvement of Piezoelectric Properties of ZnO (Completed)
-- **Collaborators:** Mr. Zhenyu Zhu, Mr. Linsheng Shan, Mr. Guangming Li
-- **Supervisors:** Prof. Xiaobao Li
-- **Duration:** 2017.06 - 2019.03
-
----
-
-# Software & Tools
-
-- **Solid Embedded Components for Complex Thin-Walled Structures** (In preparation)
-- **Explicit Tomo for Complex Thin-Walled Structures** (2023.06 - present)
-- **Explicit Layout Optimization of Complex Rib-Reinforced Thin-Walled Structures** (2023.02 - present)
-- **Explicit Topology Optimization of Shell Structures** (2022.06 - 2023.11)
-
----
-
-# Competitions & Awards
-
-- **Open-Source Industrial Software Integration Contest (2023)**
-  - Collaborators: Dr. Xudong Jiang
-  - Supervisors: Prof. Xu Guo & Prof. Chang Liu
-
-- **Team Game in International Engineering Mechanics Contest (2019)**
-  - Collaborators: Chaoqi Gao (Civil Engineering), Xiaoqing Zhou (Energy & Power Engineering)
-
-- **Competition of Experimental Mechanics (2017)**
-  - Special thanks: Prof. Meiqin Wang & Prof. Zhaotao Liu
-  - Collaborators: Xubing Cheng, Zhuofan Ni, Guangming Li
-  - Outcome: Learned valuable lessons from both success and failure
-
-- **High School Physics Competition (2011)**
-  - A tour to the 168 High School on a balmy day
+</div>
