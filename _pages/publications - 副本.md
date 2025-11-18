@@ -56,7 +56,7 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 <div id="pptModal" class="ppt-modal hidden">
   <div class="ppt-modal-content">
     <span class="close" onclick="document.getElementById('pptModal').classList.add('hidden')">&times;</span>
-    <iframe src="http://wendong-huo.github.io/files/thesis-defense.pdf#toolbar=0" width="100%" height="600px" style="border:none;"></iframe>
+    <iframe src="http://wendong-huo.github.io/files/thesis-defense-slides.pdf#toolbar=0" width="100%" height="600px" style="border:none;"></iframe>
   </div>
 </div>
 
@@ -94,7 +94,7 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 {% for post in site.publications reversed %}
   <div class="publication-card">
     <h3 class="publication-title">
-      <a href="{{ post.url }}" target="_blank">{{ post.title }}</a>
+      <a href="{{ post.paperurl }}" target="_blank">{{ post.title }}</a>
     </h3>
 
     <p class="publication-authors"><strong>Authors:</strong> {{ post.authors }}</p>
@@ -115,7 +115,6 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
       </p>
     {% endif %}
 
-
     {% if post.excerpt %}
       <details class="publication-excerpt">
         <summary>Excerpt (click to expand)</summary>
@@ -126,194 +125,112 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
     <p class="publication-date"><strong>Published on:</strong> {{ post.date | date: "%B %d, %Y" }}</p>
 
     {% if post.paperurl %}
-      <p><a href="{{ post.paperurl }}" target="_blank" class="btn-paper">Full Paper (PDF)</a></p>
+      <!-- PDF Inline Viewer Button -->
+      <button class="btn-icon pdf-btn" onclick="document.getElementById('pdfViewer-{{ forloop.index }}').classList.toggle('hidden')" title="View Paper Inline">
+        📄
+      </button>
+
+      <!-- Inline PDF Viewer -->
+      <div id="pdfViewer-{{ forloop.index }}" class="pdf-viewer hidden" style="margin-top:0.8rem; height:400px;">
+        <iframe src="{{ post.paperurl }}#toolbar=0" width="100%" height="100%" style="border:1px solid #ccc; border-radius:12px;"></iframe>
+      </div>
     {% endif %}
   </div>
 {% endfor %}
 </div>
 
 <style>
-/* Grid layout */
+/* --- Publications Grid --- */
 .publications-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 1.5em;
-  padding: 1em 0;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.2rem;
+  padding: 0.8rem 0;
 }
 
-/* Card style */
+/* --- Modern Publication Card --- */
 .publication-card {
-  background: linear-gradient(145deg, #f9f9f9, #ffffff);
-  border-radius: 12px;
-  padding: 1.5em;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(135deg, #e6f5e9 0%, #ffffff 80%);
+  border-radius: 24px;
+  padding: 1.8rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(200,200,200,0.3);
 }
 
 .publication-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
 }
 
 .publication-title {
-  margin-top: 0;
+  margin: 0 0 0.4rem 0;
   font-size: 1.2rem;
-  color: #007acc;
+  font-weight: 600;
+  color: #2c3e50;
 }
 
 .publication-title a {
   text-decoration: none;
   color: inherit;
+  transition: 0.2s ease;
+}
+
+.publication-title a:hover {
+  color: #27ae60;
+  text-shadow: 0 0 6px rgba(39,174,96,0.3);
 }
 
 .publication-authors,
 .publication-venue,
 .publication-doi,
 .publication-date {
-  margin: 0.4em 0;
-  font-size: 0.95rem;
-  color: #555;
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+  color: #444;
 }
 
 .publication-excerpt summary {
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
   color: #333;
+  margin-top: 0.5rem;
 }
 
 .publication-excerpt p {
-  margin-top: 0.5em;
-  font-size: 0.9rem;
-  line-height: 1.5;
+  margin-top: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  background: #f0fdf4;
+  border-radius: 12px;
+  border-left: 3px solid #27ae60;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  font-size: 0.88rem;
+  line-height: 1.4;
 }
 
-/* Button style */
-.btn-paper {
-  display: inline-block;
-  padding: 0.45em 1em;
-  margin-top: 0.5em;
-  background-color: #007acc;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: all 0.3s ease;
+/* --- PDF Button --- */
+.btn-icon {
+  background:#27ae60;
+  color:white;
+  border:none;
+  border-radius:8px;
+  width:36px;
+  height:36px;
+  font-size:1.1rem;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:all 0.25s ease;
 }
 
-.btn-paper:hover {
-  background-color: #005f99;
-  transform: scale(1.05);
+.btn-icon:hover {
+  transform:scale(1.1);
+  box-shadow:0 4px 12px rgba(39,174,96,0.35);
 }
+
+/* --- PDF Inline Viewer --- */
+.pdf-viewer.hidden { display:none; }
 </style>
 
-<style>
-/* --- Overall Layout --- */
-.thesis-card {
-  background: linear-gradient(135deg, #f2f3f7 0%, #ffffff 60%, #eef1ff 100%);
-  border-radius: 24px;
-  padding: 2.4rem;
-  margin-bottom: 3rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.4);
-  animation: fadeIn 0.8s ease;
-}
-
-.thesis-section-title {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 1.6rem;
-  background: linear-gradient(90deg, #4a4a9e, #6f6fd8);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-/* --- Title --- */
-.thesis-title a {
-  font-size: 1.45rem;
-  font-weight: 700;
-  line-height: 1.45;
-  color: #2c2c54;
-  text-decoration: none;
-  transition: 0.25s ease;
-}
-
-.thesis-title a:hover {
-  color: #5a5ad6;
-  text-shadow: 0 0 8px rgba(90,90,214,0.4);
-}
-
-/* --- Info Text --- */
-.thesis-info {
-  font-size: 0.95rem;
-  margin: 0.35rem 0;
-  color: #444;
-}
-
-/* --- Excerpt --- */
-.thesis-excerpt summary {
-  cursor: pointer;
-  font-size: 1rem;
-  color: #333;
-  margin-top: 1rem;
-  padding: 0.3rem 0;
-}
-
-.thesis-excerpt p {
-  margin-top: 1rem;
-  padding: 0.8rem 1rem;
-  background: #fafafa;
-  border-radius: 12px;
-  border-left: 3px solid #6f6fd8;
-  font-size: 0.95rem;
-}
-
-/* --- Buttons --- */
-.thesis-buttons {
-  margin-top: 1.8rem;
-  display: flex;
-  gap: 1rem;
-}
-
-.btn-thesis,
-.btn-ppt {
-  text-decoration: none;
-  padding: 0.75rem 1.4rem;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  display: inline-block;
-  transition: all 0.28s ease;
-  border: 1px solid transparent;
-}
-
-.btn-thesis {
-  background: #6f6fd8;
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(111,111,216,0.35);
-}
-
-.btn-thesis:hover {
-  background: #5757c2;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(111,111,216,0.45);
-}
-
-.btn-ppt {
-  background: #ffffff;
-  color: #6f6fd8;
-  border-color: #6f6fd8;
-}
-
-.btn-ppt:hover {
-  background: #f0f0ff;
-  transform: translateY(-3px);
-}
-
-/* --- Subtle Fade Animation --- */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-</style>
 
