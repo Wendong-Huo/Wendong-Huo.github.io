@@ -1,81 +1,88 @@
-﻿---
-layout: archive
-title: ""
-permalink: /publications/
-author_profile: true
----
+﻿## Journal Publications
 
-You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
+{% assign journal_posts = site.publications | where_exp: "item", "item.type != 'thesis'" | sort: "date" | reverse %}
 
-## Doctoral Thesis
+{% if journal_posts.size > 0 %}
+  <style>
+    .publication-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 1.5em 0;
+      background-color: #f9f9f9;
+      transition: box-shadow 0.2s ease;
+    }
+    .publication-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .pub-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5em;
+    }
+    .pub-meta {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.5em;
+    }
+    .pub-links a {
+      color: #007acc;
+      text-decoration: none;
+      margin-right: 1em;
+    }
+    .pub-links a:hover {
+      text-decoration: underline;
+    }
+    details {
+      margin-top: 0.5em;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 500;
+    }
+  </style>
 
-## Journal Publications
-
-{% include base_path %}
-
-<div class="publications-grid">
-{% for post in site.publications reversed %}
-  <div class="publication-card">
-    <h3 class="publication-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-
-    <p class="publication-authors"><strong>Authors:</strong> {{ post.authors }}</p>
-
-    {% if post.venue %}
-      <p class="publication-venue"><strong>Published at:</strong> 
-        {% if post.venue_url %}
-          <a href="{{ post.venue_url }}" target="_blank">{{ post.venue }}</a>
-        {% else %}
-          {{ post.venue }}
+  {% for post in journal_posts %}
+    <div class="publication-card">
+      <div class="pub-title">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </div>
+      <div class="pub-meta">
+        <strong>Authors:</strong> {{ post.authors }}<br>
+        {% if post.venue %}
+          <strong>Published at:</strong>
+          {% if post.venue_url %}
+            <a href="{{ post.venue_url }}" target="_blank">{{ post.venue }}</a>
+          {% else %}
+            {{ post.venue }}
+          {% endif %}<br>
         {% endif %}
-      </p>
-    {% endif %}
+        {% if post.doi %}
+          <strong>DOI:</strong>
+          {% if post.doi_url %}
+            <a href="{{ post.doi_url }}" target="_blank">{{ post.doi }}</a>
+          {% else %}
+            {{ post.doi }}
+          {% endif %}<br>
+        {% endif %}
+        <strong>Published on:</strong> {{ post.date | date: "%B %d, %Y" }}
+      </div>
 
-    {% if post.doi %}
-      <p class="publication-doi"><strong>DOI:</strong> <a href="{{ post.doi_url }}">{{ post.doi }}</a></p>
-    {% endif %}
+      {% if post.excerpt %}
+        <details>
+          <summary>Abstract</summary>
+          <p>{{ post.excerpt }}</p>
+        </details>
+      {% endif %}
 
-    {% if post.excerpt %}
-      <details class="publication-excerpt">
-        <summary><strong>Excerpt:</strong> (click to expand)</summary>
-        <p>{{ post.excerpt }}</p>
-      </details>
-    {% endif %}
+      <div class="pub-links">
+        {% if post.paperurl %}
+          <a href="{{ post.paperurl }}" target="_blank">Full Paper (PDF)</a>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
 
-    <p class="publication-date"><strong>Published on:</strong> {{ post.date | date: "%B %d, %Y" }}</p>
-
-    {% if post.paperurl %}
-      <p><a href="{{ post.paperurl }}" target="_blank" class="btn-paper">Full Paper (PDF)</a></p>
-    {% endif %}
-  </div>
-{% endfor %}
-</div>
-
-<style>
-.publication-item {
-  background-color: #f9f9f9; /* 浅灰色背景 */
-  border: 1px solid #ddd;    /* 边框颜色 */
-  border-radius: 8px;         /* 圆角 */
-  padding: 16px;
-  margin-bottom: 1.5em;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 轻微阴影 */
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.publication-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* 可以单独给 DOI 或期刊链接加颜色 */
-.publication-item a {
-  color: #007acc;
-  text-decoration: none;
-}
-
-.publication-item a:hover {
-  text-decoration: underline;
-}
-</style>
-
-
-
+{% else %}
+  <p>No journal publications found.</p>
+{% endif %}
