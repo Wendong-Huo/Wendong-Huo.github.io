@@ -1,6 +1,5 @@
-﻿---
+---
 title: 'The gap between the current position and the so-called big-data era'
-excerpt: "The last significant concept was the digital era..."
 date: 2023-04-10
 permalink: /posts/2023/04/daily-notes-7/
 Tags:
@@ -19,3 +18,4 @@ So, there is a gap between the current position and the so-called big-data era.
 The big-data era is and should be constructed based on digital blocks.
 
 The information and intelligence in the field of mechanics lack epoch-making and revolutionary opinions and viewpoints.
+
