@@ -35,20 +35,12 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 
     <div class="thesis-buttons">
       <!-- PDF Inline Viewer Button -->
-      <button class="btn-icon pdf-btn" onclick="document.getElementById('pdfViewer').classList.toggle('hidden')" title="View Thesis Inline">
-        📄
-      </button>
-
       <!-- PPT Modal Trigger -->
       <button class="btn-icon ppt-btn" onclick="document.getElementById('pptModal').classList.toggle('hidden')" title="Preview Defense Slides">
         🎤📊
       </button>
     </div>
 
-    <!-- Inline PDF Viewer -->
-    <div id="pdfViewer" class="pdf-viewer hidden" style="margin-top:1rem; height:500px;">
-      <iframe src="http://wendong-huo.github.io/files/thesis-1.pdf#toolbar=0" width="100%" height="100%" style="border:1px solid #ccc; border-radius:12px;"></iframe>
-    </div>
   </div>
 </div>
 
@@ -56,7 +48,7 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 <div id="pptModal" class="ppt-modal hidden">
   <div class="ppt-modal-content">
     <span class="close" onclick="document.getElementById('pptModal').classList.add('hidden')">&times;</span>
-    <iframe src="http://wendong-huo.github.io/files/thesis-defense-slides.pdf#toolbar=0" width="100%" height="600px" style="border:none;"></iframe>
+    <iframe src="http://wendong-huo.github.io/files/thesis-defense-slides.pptx#toolbar=0" width="100%" height="600px" style="border:none;"></iframe>
   </div>
 </div>
 
@@ -126,14 +118,7 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 
     {% if post.paperurl %}
       <!-- PDF Inline Viewer Button -->
-      <button class="btn-icon pdf-btn" onclick="document.getElementById('pdfViewer-{{ forloop.index }}').classList.toggle('hidden')" title="View Paper Inline">
-        📄
-      </button>
-
       <!-- Inline PDF Viewer -->
-      <div id="pdfViewer-{{ forloop.index }}" class="pdf-viewer hidden" style="margin-top:0.8rem; height:400px;">
-        <iframe src="{{ post.paperurl }}#toolbar=0" width="100%" height="100%" style="border:1px solid #ccc; border-radius:12px;"></iframe>
-      </div>
     {% endif %}
   </div>
 {% endfor %}
