@@ -35,35 +35,127 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 </div>
 
 <script>
-function toggleCV(id) {
-  const content = document.getElementById(id);
-  content.style.display = (content.style.display === "block") ? "none" : "block";
+function togglePDF(contentId, arrowId) {
+  const content = document.getElementById(contentId);
+  const arrow = document.getElementById(arrowId);
+
+  const isVisible = content.style.display === "block";
+  content.style.display = isVisible ? "none" : "block";
+  arrow.classList.toggle("open");
 }
 
-// PDF skeleton loader
-function loadPDF(iframeId, skeletonId) {
-  const iframe = document.getElementById(iframeId);
-  const skeleton = document.getElementById(skeletonId);
-  iframe.onload = () => {
-    skeleton.style.display = "none";
-    iframe.style.display = "block";
+// PDF Loader + Hide Download Button
+document.getElementById('pdf-frame').addEventListener("load", function() {
+  const iframe = this.contentDocument || this.contentWindow.document;
+
+  const hideDownload = () => {
+    const btn1 = iframe.getElementById("download");
+    const btn2 = iframe.getElementById("secondaryDownload");
+
+    [btn1, btn2].forEach(btn => {
+      if (btn) btn.style.display = "none";
+    });
   };
-}
+
+  // Remove Skeleton & Show PDF
+  document.getElementById('skeleton-pdf').style.display = "none";
+  document.getElementById('pdf-frame').style.display = "block";
+
+  // PDF.js 按钮加载较慢，所以多次尝试
+  hideDownload();
+  setTimeout(hideDownload, 500);
+  setTimeout(hideDownload, 1500);
+  setTimeout(hideDownload, 3000);
+});
 </script>
 
 <!-- Slides -->
-<div class="cv-collapse" onclick="toggleCV('cv-en')">
-  Thesis Slides (click to expand / collapse)
+<div class="pdf-card" onclick="togglePDF('thesis-pdf', 'arrow1')">
+  <div class="pdf-card-header">
+    <span>Thesis Defense Slides</span>
+    <span id="arrow1" class="arrow">▶</span>
+  </div>
+
+  <div id="thesis-pdf" class="pdf-card-content">
+    <div id="skeleton-pdf" class="skeleton"></div>
+
+    <iframe
+      id="pdf-frame"
+      class="pdf-frame"
+      src="/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf&download=false">
+    </iframe>
+  </div>
 </div>
-<div id="cv-en" class="cv-content">
-  <div id="skeleton-en" class="skeleton"></div>
-  <iframe
-    id="iframe-en"
-    class="pdf-container"
-    src="/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf&download=false">
-  </iframe>
-  <script>loadPDF('iframe-en', 'skeleton-en');</script>
-</div>
+
+<style>
+/* ---------- 卡片外壳 ---------- */
+.pdf-card {
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 1rem 1.2rem;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  margin-bottom: 1.2rem;
+  transition: 0.3s ease;
+}
+
+/* ---------- 折叠标题 ---------- */
+.pdf-card-header {
+  font-size: 1.15rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* 箭头旋转动画 */
+.arrow {
+  transition: transform 0.3s;
+}
+.arrow.open {
+  transform: rotate(90deg);
+}
+
+/* ---------- 折叠内容 ---------- */
+.pdf-card-content {
+  margin-top: 1rem;
+  display: none;
+}
+
+/* ---------- Skeleton Loader ---------- */
+.skeleton {
+  width: 100%;
+  height: 420px;
+  background: linear-gradient(90deg, #f0f0f0 0%, #e5e5e5 50%, #f0f0f0 100%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.2s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0 }
+  100% { background-position: -200% 0 }
+}
+
+/* ---------- PDF iframe ---------- */
+.pdf-frame {
+  width: 100%;
+  height: 420px;
+  border: none;
+  border-radius: 8px;
+  display: none;
+}
+
+/* ---------- Mobile 响应式 ---------- */
+@media (max-width: 768px) {
+  .pdf-frame,
+  .skeleton {
+    height: 65vh;
+  }
+}
+</style>
+
 
 <style>
 /* Compact Card */
