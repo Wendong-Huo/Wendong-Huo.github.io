@@ -256,11 +256,6 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 </style>
 
 
-<h1 style="text-align:center; margin-bottom: 0.5em;">Curriculum Vitae</h1>
-
-<p style="text-align:center; font-size:1rem; color:#555; margin-bottom:2em;">
-  Latest updated: EN 2025.11.18 | CH 2025.04.18
-</p>
 
 <style>
 /* Collapse panel style */
@@ -350,22 +345,6 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
   }
 }
 
-/* Download button style */
-.download-btn {
-  display: inline-block;
-  padding: 0.6em 1.2em;
-  margin: 0.5em;
-  background-color: #007acc;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.download-btn:hover {
-  background-color: #005f99;
-  transform: scale(1.05);
-}
 </style>
 
 <script>
@@ -387,40 +366,16 @@ function loadPDF(iframeId, skeletonId) {
 
 <!-- EN CV -->
 <div class="cv-collapse" onclick="toggleCV('cv-en')">
-  English CV (click to expand / collapse)
+  Thesis Slides (click to expand / collapse)
 </div>
 <div id="cv-en" class="cv-content">
   <div id="skeleton-en" class="skeleton"></div>
   <iframe
     id="iframe-en"
     class="pdf-container"
-    src="/pdfjs/web/viewer.html?file=/files/CV-Files/CV-en-Wendong_Huo.pdf">
+    src="/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pptx">
   </iframe>
   <script>loadPDF('iframe-en', 'skeleton-en');</script>
-</div>
-
-<!-- CH CV -->
-<div class="cv-collapse" onclick="toggleCV('cv-ch')">
-  Chinese CV (click to expand / collapse)
-</div>
-<div id="cv-ch" class="cv-content">
-  <div id="skeleton-ch" class="skeleton"></div>
-  <iframe
-    id="iframe-ch"
-    class="pdf-container"
-    src="/pdfjs/web/viewer.html?file=/files/CV-Files/CV-ch-Wendong_Huo.pdf">
-  </iframe>
-  <script>loadPDF('iframe-ch', 'skeleton-ch');</script>
-</div>
-
-<!-- Download buttons -->
-<div style="text-align:center; margin-bottom:3em;">
-  <a href="../files/CV-Files/CV-en-Wendong_Huo.pdf" download="CV-en-Wendong_Huo.pdf" class="download-btn">
-    Download CV (EN)
-  </a>
-  <a href="../files/CV-Files/CV-ch-Wendong_Huo.pdf" download="CV-ch-Wendong_Huo.pdf" class="download-btn">
-    Download CV (CH)
-  </a>
 </div>
 
 
