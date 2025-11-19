@@ -5,7 +5,7 @@ permalink: /publications/
 author_profile: true
 ---
 
-3You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
+4You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
 
 <!-- ========================= -->
 <!-- Finalized Thesis PDF Card -->
@@ -60,7 +60,7 @@ document.getElementById('pdf-frame').addEventListener("load", function() {
 
   <div id="pdf-box1" class="pdf-card-content">
     <div id="skeleton1" class="skeleton"></div>
-    <iframe id="pdf-frame1" class="pdf-frame" src="" frameborder="0"></iframe>
+    <iframe id="pdf-frame1" class="pdf-frame" src="/pdfjs/web/viewer.html?file=/files/thesis-1.pdf&download=false" frameborder="0"></iframe>
   </div>
 </div>
 
@@ -75,7 +75,7 @@ document.getElementById('pdf-frame').addEventListener("load", function() {
 
   <div id="pdf-box2" class="pdf-card-content">
     <div id="skeleton2" class="skeleton"></div>
-    <iframe id="pdf-frame2" class="pdf-frame" src="" frameborder="0"></iframe>
+    <iframe id="pdf-frame2" class="pdf-frame" src="/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf&download=false" frameborder="0"></iframe>
   </div>
 </div>
 
