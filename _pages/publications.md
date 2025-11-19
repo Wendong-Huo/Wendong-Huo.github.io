@@ -5,7 +5,59 @@ permalink: /publications/
 author_profile: true
 ---
 
-12You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
+13You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
+
+<!-- PDF Fold Card -->
+<div class="pdf-card">
+  <div class="pdf-card-header" onclick="togglePDF('pdf-box1', 'arrow1', '/files/thesis-defense-slides.pdf')">
+    <span>Thesis Defense Slides</span>
+    <span id="arrow1" class="arrow">▶</span>
+  </div>
+
+  <div id="pdf-box1" class="pdf-card-content">
+    <div id="skeleton1" class="skeleton"></div>
+    <iframe id="pdf-frame1" class="pdf-frame" src="" frameborder="0"></iframe>
+  </div>
+</div>
+
+<script>
+function togglePDF(boxId, arrowId, pdfUrl) {
+  const box = document.getElementById(boxId);
+  const arrow = document.getElementById(arrowId);
+  const iframe = box.querySelector('.pdf-frame');
+  const skeleton = box.querySelector('.skeleton');
+
+  if (box.classList.contains('open')) {
+    box.style.maxHeight = "0px";
+    box.classList.remove('open');
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    box.classList.add('open');
+    box.style.maxHeight = "90vh";
+    arrow.style.transform = "rotate(90deg)";
+
+    if (!iframe.dataset.loaded) {
+      iframe.src = "/pdfjs/web/viewer.html?file=" + pdfUrl + "&download=false";
+      iframe.dataset.loaded = "true";
+
+      iframe.addEventListener('load', () => {
+        skeleton.style.display = "none";
+        iframe.style.display = "block";
+
+        try {
+          const doc = iframe.contentDocument || iframe.contentWindow.document;
+          ["download", "secondaryDownload"].forEach(id => {
+            const btn = doc.getElementById(id);
+            if (btn) btn.style.display = "none";
+          });
+        } catch(e) {
+          console.warn("无法访问 PDF.js 下载按钮（跨域）", e);
+        }
+      });
+    }
+  }
+}
+</script>
 
 <!-- PDF Fold Card -->
 <div class="pdf-card">
