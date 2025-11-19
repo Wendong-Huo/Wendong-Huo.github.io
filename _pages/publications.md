@@ -5,7 +5,7 @@ permalink: /publications/
 author_profile: true
 ---
 
-11You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
+12You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
 
 <!-- PDF Fold Card -->
 <div class="pdf-card">
@@ -88,15 +88,82 @@ function togglePDF(boxId, arrowId, pdfUrl) {
 }
 
 .arrow { transition:0.35s;}
-.pdf-card-content { max-height:0; overflow:hidden; transition: max-height 0.45s ease; padding:0 1rem;}
-.pdf-card-content.open { padding:1rem;}
-.skeleton { width:100%; height:480px; border-radius:12px; background: linear-gradient(-90deg,#e0e0e0 0%,#f5f5f5 50%,#e0e0e0 100%); background-size:400% 400%; animation: shimmer 1.4s ease-in-out infinite;}
-@keyframes shimmer {0%{background-position:200% 0;}100%{background-position:-200% 0;}}
-.pdf-frame { width:100%; height:90vh; border-radius:12px; border:none; display:none;}
-@media (max-width:768px){ .pdf-frame {width:100%;} }
+/* PDF Card 样式（和 Thesis 卡片保持一致） */
+.pdf-card {
+  background: rgba(255, 255, 255, 0.4);      /* 半透明背景 */
+  backdrop-filter: blur(12px);               /* 毛玻璃效果 */
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  margin: 1rem 0;
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: all 0.35s ease;
+}
+
+.pdf-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+
+/* 卡片 Header（和 Thesis 按钮一致） */
+.pdf-card-header {
+  padding: 1rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%); /* Thesis 卡片按钮颜色 */
+  color: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.arrow {
+  transition: transform 0.35s ease;
+}
+
+/* 内容折叠区 */
+.pdf-card-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+  padding: 0 1rem;
+}
+
+.pdf-card-content.open {
+  padding: 1rem;
+}
+
+/* Skeleton loader */
+.skeleton {
+  width: 100%;
+  height: 480px;
+  border-radius: 12px;
+  background: linear-gradient(-90deg, #e0e0e0 0%, #f5f5f5 50%, #e0e0e0 100%);
+  background-size: 400% 400%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* PDF iframe */
+.pdf-frame {
+  width: 100%;
+  height: 90vh;
+  border-radius: 12px;
+  border: none;
+  display: none;
+}
+
+/* 手机响应 */
+@media (max-width: 768px){
+  .pdf-frame { width: 100%; }
+}
+
 </style>
-
-
 
 
 
