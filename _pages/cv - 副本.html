@@ -119,51 +119,6 @@ redirect_from:
   background-color: #005f99;
   transform: scale(1.05);
 }
-
-/* CV Download Buttons - matching Publications / Thesis style */
-.cv-download-area {
-  text-align: center;
-  margin: 2.5em 0 3.5em 0;
-  display: flex;
-  justify-content: center;
-  gap: 1.2rem;
-}
-
-.cv-download-btn {
-  display: inline-block;
-  padding: 0.75em 1.8em;
-  border-radius: 14px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: white;
-  text-decoration: none;
-
-  /* 与 thesis 卡片一致的渐变 */
-  background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
-
-  /* 毛玻璃风格边框 */
-  border: 1px solid rgba(255,255,255,0.4);
-  backdrop-filter: blur(10px);
-
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-  transition: all 0.3s ease;
-}
-
-.cv-download-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.18);
-  filter: brightness(1.08);
-}
-
-/* 手机端按钮堆叠 */
-@media (max-width: 768px){
-  .cv-download-area {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-}
-
-
 </style>
 
 <script>
@@ -212,14 +167,11 @@ function loadPDF(iframeId, skeletonId) {
 </div>
 
 <!-- Download buttons -->
-<!-- Download buttons -->
-<div class="cv-download-area">
-  <a href="../files/CV-Files/CV-en-Wendong_Huo.pdf" download="CV-en-Wendong_Huo.pdf" class="cv-download-btn">
+<div style="text-align:center; margin-bottom:3em;">
+  <a href="../files/CV-Files/CV-en-Wendong_Huo.pdf" download="CV-en-Wendong_Huo.pdf" class="download-btn">
     Download CV (EN)
   </a>
-
-  <a href="../files/CV-Files/CV-ch-Wendong_Huo.pdf" download="CV-ch-Wendong_Huo.pdf" class="cv-download-btn">
+  <a href="../files/CV-Files/CV-ch-Wendong_Huo.pdf" download="CV-ch-Wendong_Huo.pdf" class="download-btn">
     Download CV (CH)
   </a>
 </div>
-
