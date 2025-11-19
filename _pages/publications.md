@@ -5,25 +5,20 @@ permalink: /publications/
 author_profile: true
 ---
 
-1You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
+2You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
 
 <!-- ========================= -->
 <!-- Finalized Thesis PDF Card -->
 <!-- ========================= -->
 <div class="pdf-card">
-  <div class="pdf-card-header" onclick="togglePDF('pdf-box1', 'arrow1')">
+  <div class="pdf-card-header" onclick="togglePDF('pdf-box1', 'arrow1', '/files/thesis-1.pdf', 'pdf-frame1', 'skeleton1')">
     <span>Finalized Thesis</span>
     <span id="arrow1" class="arrow">▶</span>
   </div>
 
   <div id="pdf-box1" class="pdf-card-content">
     <div id="skeleton1" class="skeleton"></div>
-    <iframe
-      id="pdf-frame1"
-      class="pdf-frame"
-      src=""
-      frameborder="0">
-    </iframe>
+    <iframe id="pdf-frame1" class="pdf-frame" src="" frameborder="0"></iframe>
   </div>
 </div>
 
@@ -31,29 +26,24 @@ author_profile: true
 <!-- Thesis Defense Slides PDF Card -->
 <!-- ========================= -->
 <div class="pdf-card">
-  <div class="pdf-card-header" onclick="togglePDF('pdf-box2', 'arrow2')">
+  <div class="pdf-card-header" onclick="togglePDF('pdf-box2', 'arrow2', '/files/thesis-defense-slides.pdf', 'pdf-frame2', 'skeleton2')">
     <span>Thesis Defense Slides</span>
     <span id="arrow2" class="arrow">▶</span>
   </div>
 
   <div id="pdf-box2" class="pdf-card-content">
     <div id="skeleton2" class="skeleton"></div>
-    <iframe
-      id="pdf-frame2"
-      class="pdf-frame"
-      src=""
-      frameborder="0">
-    </iframe>
+    <iframe id="pdf-frame2" class="pdf-frame" src="" frameborder="0"></iframe>
   </div>
 </div>
 
 <script>
-// --------------------------
-// Fold Card Toggle
-// --------------------------
-function togglePDF(boxId, arrowId) {
+// Fold Card Toggle + PDF Load
+function togglePDF(boxId, arrowId, pdfUrl, iframeId, skeletonId) {
   const box = document.getElementById(boxId);
   const arrow = document.getElementById(arrowId);
+  const iframe = document.getElementById(iframeId);
+  const skeleton = document.getElementById(skeletonId);
 
   if(box.classList.contains("open")) {
     box.style.maxHeight = "0px";
@@ -61,19 +51,15 @@ function togglePDF(boxId, arrowId) {
     arrow.style.transform = "rotate(0deg)";
   } else {
     box.classList.add("open");
-    box.style.maxHeight = "80vh"; // 初始展开高度
+    box.style.maxHeight = "90vh"; // 展开高度
     arrow.style.transform = "rotate(90deg)";
-
-    // 加载 PDF
-    const iframe = box.querySelector('.pdf-frame');
-    const skeleton = box.querySelector('.skeleton');
-    const pdfUrl = (boxId === 'pdf-box1') ? '/files/thesis-1.pdf' : '/files/thesis-defense-slides.pdf';
 
     if(!iframe.src) {
       iframe.src = "/pdfjs/web/viewer.html?file=" + pdfUrl + "&download=false";
-      iframe.style.height = "80vh";
+      iframe.style.display = "none";
+      iframe.style.height = "90vh";
 
-      iframe.addEventListener('load', () => {
+      iframe.onload = () => {
         skeleton.style.display = "none";
         iframe.style.display = "block";
 
@@ -84,103 +70,21 @@ function togglePDF(boxId, arrowId) {
             if(btn) btn.style.display = "none";
           });
         } catch(e) {
-          console.warn("无法访问 PDF.js 下载按钮（可能跨域）", e);
+          console.warn("PDF.js 下载按钮无法访问（可能跨域）");
         }
-      });
+      };
     }
   }
 }
 </script>
 
 <style>
-/* ========================= */
-/* PDF Fold Card Styles */
-/* ========================= */
 .pdf-card {
   background: rgba(255,255,255,0.4);
   backdrop-filter: blur(12px);
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   margin: 1rem 0;
-  border: 1px solid rgba(255,255,255,0.4);
-  transition: all 0.35s ease;
-}
-
-.pdf-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
-}
-
-.pdf-card-header {
-  padding: 1rem 1.2rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
-  color: white;
-  border-radius: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
-
-.arrow {
-  transition: transform 0.35s ease;
-}
-
-/* Expandable content */
-.pdf-card-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.45s ease;
-  padding: 0 1rem;
-}
-
-.pdf-card-content.open {
-  padding: 1rem;
-}
-
-/* Skeleton loader */
-.skeleton {
-  width: 100%;
-  height: 480px;
-  border-radius: 12px;
-  background: linear-gradient(-90deg, #e0e0e0 0%, #f5f5f5 50%, #e0e0e0 100%);
-  background-size: 400% 400%;
-  animation: shimmer 1.4s ease-in-out infinite;
-}
-
-@keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-
-/* PDF iframe */
-.pdf-frame {
-  width: 100%;
-  height: 0; /* JS 自动设置 */
-  border-radius: 12px;
-  border: none;
-  display: none;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .pdf-frame {
-    width: 100%;
-  }
-}
-</style>
-
-
-
-<style>
-.pdf-card {
-  background: rgba(255,255,255,0.4);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  margin: 1.5rem 0;
   border: 1px solid rgba(255,255,255,0.4);
   transition: all 0.35s ease;
 }
@@ -216,13 +120,14 @@ function togglePDF(boxId, arrowId) {
 @keyframes shimmer {0%{background-position:200% 0;}100%{background-position:-200% 0;}}
 .pdf-frame {
   width:100%;
-  height:480px;
+  height:90vh;
   border-radius:12px;
   border:none;
   display:none;
 }
 @media (max-width:768px){ .pdf-frame {width:100%;} }
 </style>
+
 
 
 
