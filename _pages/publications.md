@@ -62,7 +62,7 @@ function togglePDF(boxId, arrowId, pdfUrl) {
 <!-- PDF Fold Card2 -->
 <div class="pdf-card2">
   <div class="pdf-card2-header" onclick="togglePDF2('pdf-box2', 'arrow2', '/files/thesis-1.pdf')">
-    <span>Thesis Defense Slides</span>
+    <span>Finalized Thesis</span>
     <span id="arrow2" class="arrow">▶</span>
   </div>
 
@@ -318,8 +318,6 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
   .pdf-frame { width: 100%; }
 }
 </style>
-
-
 
 
 
