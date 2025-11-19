@@ -272,7 +272,37 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
   transition: transform 0.35s ease;
 }
 
-/* 内容折叠区 */
+/* --- PDF Card 2 样式修改 --- */
+.pdf-card2 {
+  background: rgba(245, 245, 255, 0.4);  /* 类似第一个的半透明毛玻璃，但略带淡蓝色 */
+  backdrop-filter: blur(12px);           /* 毛玻璃效果 */
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  margin: 1rem 0;
+  border: 1px solid rgba(230,230,250,0.4); /* 边框颜色轻微区别 */
+  transition: all 0.35s ease;
+}
+
+.pdf-card2:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+
+/* Header 样式 */
+.pdf-card2-header {
+  padding: 1rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #7a8efb 0%, #b088e3 100%); /* 颜色略微调整，和第一个协调 */
+  color: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* 折叠内容区 */
 .pdf-card-content2 {
   max-height: 0;
   overflow: hidden;
@@ -289,14 +319,9 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
   width: 100%;
   height: 480px;
   border-radius: 12px;
-  background: linear-gradient(-90deg, #e0e0e0 0%, #f5f5f5 50%, #e0e0e0 100%);
+  background: linear-gradient(-90deg, #e0e0f0 0%, #f5f5ff 50%, #e0e0f0 100%); /* 颜色稍微偏蓝，协调 */
   background-size: 400% 400%;
   animation: shimmer 1.4s ease-in-out infinite;
-}
-
-@keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
 }
 
 /* PDF iframe */
@@ -307,6 +332,7 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
   border: none;
   display: none;
 }
+
 
 /* 手机响应 */
 @media (max-width: 768px){
