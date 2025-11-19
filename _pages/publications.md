@@ -361,7 +361,12 @@ function togglePDF(boxId, arrowId) {
   text-shadow: 0 0 6px rgba(39,174,96,0.3);
 }
 
-.publication-authors,
+.publication-authors {
+  font-size: 0.8rem; /* 原来可能是 0.9rem，调小一点 */
+  margin: 0.25rem 0;  /* 可根据需要调整上下间距 */
+  color: #444;
+}
+
 .publication-venue,
 .publication-doi,
 .publication-date {
