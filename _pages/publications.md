@@ -16,9 +16,13 @@ author_profile: true
     </a>
   </h3>
 
-  <div class="thesis-info-grid">
+  <!-- 两行信息 -->
+  <div class="thesis-info-row">
     <p><strong>Author:</strong> Wendong Huo</p>
     <p><strong>Advisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
+  </div>
+
+  <div class="thesis-info-row">
     <p><strong>Institution:</strong> Dept. of Engineering Mechanics, DUT</p>
     <p><strong>Finalized:</strong> Nov 18, 2025</p>
   </div>
@@ -31,7 +35,6 @@ author_profile: true
     </p>
   </details>
 
-  <a class="pdf-button" href="http://wendong-huo.github.io/files/thesis-1.pdf" target="_blank">View Finalized Thesis (PDF)</a>
 </div>
 
 <style>
@@ -65,9 +68,9 @@ author_profile: true
   color: #2c2c54;
   text-decoration: none;
   transition: color 0.2s ease;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.8rem;
   display:block;
-  word-break: keep-all; /* 防止换行 */
+  word-break: keep-all;
 }
 
 .thesis-title a:hover {
@@ -75,18 +78,19 @@ author_profile: true
   text-shadow: 0 0 6px rgba(90,90,214,0.3);
 }
 
-.thesis-info-grid {
+/* 两行信息 */
+.thesis-info-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem 2rem; /* 横向间距大，纵向间距小 */
+  gap: 2rem; /* 两项之间的横向间距 */
   font-size: 0.9rem;
   color: #444;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
 }
 
-.thesis-info-grid p {
+.thesis-info-row p {
   margin: 0;
-  white-space: nowrap; /* 不换行 */
+  white-space: nowrap; /* 防止换行 */
 }
 
 .thesis-excerpt summary {
@@ -106,39 +110,9 @@ author_profile: true
   font-size: 0.88rem;
   line-height: 1.4;
 }
-
-.pdf-button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%);
-  border: 1px solid rgba(200,200,200,0.3);
-  border-radius: 12px;
-  font-weight: 600;
-  color: #2c2c54;
-  text-decoration: none;
-  transition: all 0.25s ease;
-}
-
-.pdf-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-}
 </style>
 
 
-<script>
-function togglePDFInline(id, url) {
-  const container = document.getElementById(id);
-  const iframe = container.querySelector('iframe');
-  if(container.style.display === 'none'){
-    container.style.display = 'block';
-    if(!iframe.src) iframe.src = "/pdfjs/web/viewer.html?file=" + url + "&download=false";
-  } else {
-    container.style.display = 'none';
-  }
-}
-</script>
 
 
 <!-- PDF Fold Cards -->
