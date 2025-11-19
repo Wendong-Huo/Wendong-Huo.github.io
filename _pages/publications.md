@@ -34,17 +34,38 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
   </div>
 </div>
 
-<style>
-.pdf-container { width:100%; height:600px; border:1px solid #ccc; border-radius:8px; display:none; }
-.skeleton { width:100%; height:600px; border-radius:8px; background:linear-gradient(-90deg,#e0e0e0 0%,#f5f5f5 50%,#e0e0e0 100%); background-size:400% 400%; animation:shimmer 1.5s ease-in-out infinite; }
-@keyframes shimmer { 0%{background-position:200% 0;} 100%{background-position:-200% 0;} }
-.ppt-modal { display:flex; justify-content:center; align-items:center; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index:9999; }
-.ppt-modal.hidden { display:none; }
-.ppt-modal-content { background:linear-gradient(135deg,#e6f5e9 0%,#ffffff 80%); padding:1rem; border-radius:24px; max-width:90%; max-height:90%; position:relative; box-shadow:0 6px 20px rgba(0,0,0,0.08); border:1px solid rgba(200,200,200,0.3);}
-.ppt-modal-content .close { position:absolute; top:8px; right:12px; font-size:1.5rem; cursor:pointer; color:#555; }
-.download-btn { display:inline-block; padding:0.6em 1.2em; margin:0.5em; background-color:#007acc; color:white; text-decoration:none; border-radius:5px; transition:all 0.3s ease; }
-.download-btn:hover { background-color:#005f99; transform:scale(1.05); }
+<script>
+function toggleCV(id) {
+  const content = document.getElementById(id);
+  content.style.display = (content.style.display === "block") ? "none" : "block";
+}
 
+// PDF skeleton loader
+function loadPDF(iframeId, skeletonId) {
+  const iframe = document.getElementById(iframeId);
+  const skeleton = document.getElementById(skeletonId);
+  iframe.onload = () => {
+    skeleton.style.display = "none";
+    iframe.style.display = "block";
+  };
+}
+</script>
+
+<!-- Slides -->
+<div class="cv-collapse" onclick="toggleCV('cv-en')">
+  Thesis Slides (click to expand / collapse)
+</div>
+<div id="cv-en" class="cv-content">
+  <div id="skeleton-en" class="skeleton"></div>
+  <iframe
+    id="iframe-en"
+    class="pdf-container"
+    src="/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf&download=false">
+  </iframe>
+  <script>loadPDF('iframe-en', 'skeleton-en');</script>
+</div>
+
+<style>
 /* Compact Card */
 .thesis-card { background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%); border-radius:16px; padding:1.5rem; margin-bottom:2rem; box-shadow:0 4px 12px rgba(0,0,0,0.08); backdrop-filter:blur(5px); border:1px solid rgba(200,200,200,0.3); }
 .thesis-section-title { font-size:1.6rem; font-weight:700; margin-bottom:1rem; background:linear-gradient(90deg,#4a4a9e,#6f6fd8); -webkit-background-clip:text; color:transparent; }
@@ -84,13 +105,7 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
   cursor: pointer;
   color: #555;
 }
-
-
 </style>
-
-
-
-
 
 <h2>Journal Publications (pre-postdoc)</h2>
 
@@ -322,35 +337,6 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 
 </style>
 
-<script>
-function toggleCV(id) {
-  const content = document.getElementById(id);
-  content.style.display = (content.style.display === "block") ? "none" : "block";
-}
 
-// PDF skeleton loader
-function loadPDF(iframeId, skeletonId) {
-  const iframe = document.getElementById(iframeId);
-  const skeleton = document.getElementById(skeletonId);
-  iframe.onload = () => {
-    skeleton.style.display = "none";
-    iframe.style.display = "block";
-  };
-}
-</script>
-
-<!-- Slides -->
-<div class="cv-collapse" onclick="toggleCV('cv-en')">
-  Thesis Slides (click to expand / collapse)
-</div>
-<div id="cv-en" class="cv-content">
-  <div id="skeleton-en" class="skeleton"></div>
-  <iframe
-    id="iframe-en"
-    class="pdf-container"
-    src="/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf">
-  </iframe>
-  <script>loadPDF('iframe-en', 'skeleton-en');</script>
-</div>
 
 
