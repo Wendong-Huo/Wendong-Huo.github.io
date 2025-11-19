@@ -1,4 +1,4 @@
----
+﻿---
 layout: archive
 title: ""
 permalink: /experiences/
@@ -266,13 +266,6 @@ author_profile: true
     <h3>Competition of Experimental Mechanics (2017)</h3>
     <p>Special thanks to Prof. Meiqin Wang & Prof. Zhaotao Liu</p>
     <p><strong>Collaborators:</strong> Xubing Cheng, Zhuofan Ni, Guangming Li</p>
-  </div>
-</div>
-
-<div class="timeline-item right">
-  <div class="timeline-content icon-contest">
-    <h3>High School Physics Competition (2011)</h3>
-    <p>A tour to the 168 High School on a balmy day</p>
   </div>
 </div>
 
