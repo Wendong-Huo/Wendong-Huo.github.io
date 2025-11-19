@@ -180,29 +180,9 @@ redirect_from:
 </style>
 
 <!-- ====================================================================== -->
-<!--                            JAVASCRIPT                                  -->
-<!-- ====================================================================== -->
-<script>
-function toggleCV(id) {
-  const content = document.getElementById(id);
-  content.style.display = (content.style.display === "block") ? "none" : "block";
-}
-
-// Skeleton → PDF loader
-function loadPDF(iframeId, skeletonId) {
-  const iframe = document.getElementById(iframeId);
-  const skeleton = document.getElementById(skeletonId);
-  iframe.onload = () => {
-    skeleton.style.display = "none";
-    iframe.style.display = "block";
-  };
-}
-</script>
-
-<!-- ====================================================================== -->
 <!--                          ENGLISH CV SECTION                             -->
 <!-- ====================================================================== -->
-<div class="cv-card" onclick="toggleCV('cv-en')">
+<div class="cv-card" data-target="cv-en">
   <div class="cv-card-title">English CV</div>
   <div class="cv-card-sub">Click to expand / collapse</div>
 </div>
@@ -212,15 +192,16 @@ function loadPDF(iframeId, skeletonId) {
   <iframe
     id="iframe-en"
     class="pdf-container"
-    src="/pdfjs/web/viewer.html?file=/files/CV-Files/CV-en-Wendong_Huo.pdf">
-  </iframe>
-  <script>loadPDF('iframe-en', 'skeleton-en');</script>
+    src="/pdfjs/web/viewer.html?file=/files/CV-Files/CV-en-Wendong_Huo.pdf"></iframe>
 </div>
+
+<script>loadPDF("iframe-en", "skeleton-en");</script>
+
 
 <!-- ====================================================================== -->
 <!--                           CHINESE CV SECTION                            -->
 <!-- ====================================================================== -->
-<div class="cv-card" onclick="toggleCV('cv-ch')">
+<div class="cv-card" data-target="cv-ch">
   <div class="cv-card-title">Chinese CV</div>
   <div class="cv-card-sub">Click to expand / collapse</div>
 </div>
@@ -230,10 +211,11 @@ function loadPDF(iframeId, skeletonId) {
   <iframe
     id="iframe-ch"
     class="pdf-container"
-    src="/pdfjs/web/viewer.html?file=/files/CV-Files/CV-ch-Wendong_Huo.pdf">
-  </iframe>
-  <script>loadPDF('iframe-ch', 'skeleton-ch');</script>
+    src="/pdfjs/web/viewer.html?file=/files/CV-Files/CV-ch-Wendong_Huo.pdf"></iframe>
 </div>
+
+<script>loadPDF("iframe-ch", "skeleton-ch");</script>
+
 
 <!-- ====================================================================== -->
 <!--                          DOWNLOAD BUTTONS                               -->
@@ -246,3 +228,30 @@ function loadPDF(iframeId, skeletonId) {
     Download CV (CH)
   </a>
 </div>
+
+<script>
+// ---- Collapse toggle ----
+document.querySelectorAll(".cv-card").forEach(card => {
+  card.addEventListener("click", () => {
+    const targetId = card.getAttribute("data-target");
+    const content = document.getElementById(targetId);
+
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+});
+
+// ---- PDF skeleton loader ----
+function loadPDF(iframeId, skeletonId) {
+  const iframe = document.getElementById(iframeId);
+  const skeleton = document.getElementById(skeletonId);
+
+  iframe.addEventListener("load", () => {
+    skeleton.style.display = "none";
+    iframe.style.display = "block";
+  });
+}
+</script>
