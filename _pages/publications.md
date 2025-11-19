@@ -4,9 +4,6 @@ title: ""
 permalink: /publications/
 author_profile: true
 ---
-
-
-<h2>9Doctoral Thesis</h2>
 <div class="thesis-card">
   <h3 class="thesis-section-title">Doctoral Thesis</h3>
 
