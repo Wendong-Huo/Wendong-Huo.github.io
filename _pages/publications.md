@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 
-<h2>8Doctoral Thesis</h2>
+<h2>9Doctoral Thesis</h2>
 <div class="thesis-card">
   <h3 class="thesis-section-title">Doctoral Thesis</h3>
 
@@ -19,8 +19,8 @@ author_profile: true
   <div class="thesis-info-grid">
     <p><strong>Author:</strong> Wendong Huo</p>
     <p><strong>Advisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
-    <p><strong>Institution:</strong> Department of Engineering Mechanics, DUT</p>
-    <p><strong>Finalized on:</strong> November 18, 2025</p>
+    <p><strong>Institution:</strong> Dept. of Engineering Mechanics, DUT</p>
+    <p><strong>Finalized:</strong> Nov 18, 2025</p>
   </div>
 
   <details class="thesis-excerpt">
@@ -31,18 +31,7 @@ author_profile: true
     </p>
   </details>
 
-  <!-- PDF Buttons -->
-  <div class="pdf-card-inline">
-    <button onclick="togglePDFInline('pdf-defense', '/files/thesis-defense-slides.pdf')">Thesis Defense Slides</button>
-    <button onclick="togglePDFInline('pdf-final', '/files/thesis-1.pdf')">Finalized Thesis</button>
-  </div>
-
-  <div id="pdf-defense" class="pdf-frame-container" style="display:none;">
-    <iframe src="" frameborder="0"></iframe>
-  </div>
-  <div id="pdf-final" class="pdf-frame-container" style="display:none;">
-    <iframe src="" frameborder="0"></iframe>
-  </div>
+  <a class="pdf-button" href="http://wendong-huo.github.io/files/thesis-1.pdf" target="_blank">View Finalized Thesis (PDF)</a>
 </div>
 
 <style>
@@ -57,14 +46,14 @@ author_profile: true
 }
 
 .thesis-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 14px rgba(0,0,0,0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 14px rgba(0,0,0,0.12);
 }
 
 .thesis-section-title {
   font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
   background: linear-gradient(90deg,#4a4a9e,#6f6fd8);
   -webkit-background-clip: text;
   color: transparent;
@@ -78,6 +67,7 @@ author_profile: true
   transition: color 0.2s ease;
   margin-bottom: 0.6rem;
   display:block;
+  word-break: keep-all; /* 防止换行 */
 }
 
 .thesis-title a:hover {
@@ -86,12 +76,17 @@ author_profile: true
 }
 
 .thesis-info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0.5rem 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem; /* 横向间距大，纵向间距小 */
   font-size: 0.9rem;
   color: #444;
   margin-bottom: 0.8rem;
+}
+
+.thesis-info-grid p {
+  margin: 0;
+  white-space: nowrap; /* 不换行 */
 }
 
 .thesis-excerpt summary {
@@ -112,36 +107,25 @@ author_profile: true
   line-height: 1.4;
 }
 
-.pdf-card-inline {
+.pdf-button {
+  display: inline-block;
   margin-top: 1rem;
-  display: flex;
-  gap: 1rem;
-}
-
-.pdf-card-inline button {
+  padding: 0.6rem 1.2rem;
   background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%);
   border: 1px solid rgba(200,200,200,0.3);
-  padding: 0.6rem 1rem;
   border-radius: 12px;
-  cursor: pointer;
   font-weight: 600;
+  color: #2c2c54;
+  text-decoration: none;
   transition: all 0.25s ease;
 }
 
-.pdf-card-inline button:hover {
+.pdf-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
-
-.pdf-frame-container iframe {
-  width: 100%;
-  height: 600px;
-  border-radius: 12px;
-  margin-top: 0.8rem;
-  display: block;
-}
-
 </style>
+
 
 <script>
 function togglePDFInline(id, url) {
