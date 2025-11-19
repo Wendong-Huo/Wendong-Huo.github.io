@@ -60,9 +60,33 @@ function togglePDF(boxId, arrowId, pdfUrl) {
 </script>
 
 <style>
-.pdf-card { background: rgba(255,255,255,0.4); backdrop-filter: blur(12px); border-radius:20px; margin:1rem 0; border:1px solid rgba(255,255,255,0.4); transition:0.35s; }
-.pdf-card:hover { transform: translateY(-3px); box-shadow:0 10px 26px rgba(0,0,0,0.12);}
-.pdf-card-header { padding:1rem 1.2rem; font-size:1.1rem; font-weight:600; background: linear-gradient(135deg,#6e8efb 0%,#a777e3 100%); color:white; border-radius:20px; display:flex; justify-content:space-between; align-items:center; cursor:pointer;}
+.pdf-card {
+  background: #ffffff; /* 或者使用弹出框同样的渐变，例如 linear-gradient(...) */
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  margin: 1rem 0;
+  border: 1px solid rgba(200,200,200,0.3);
+  transition: all 0.35s ease;
+}
+
+.pdf-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+
+.pdf-card-header {
+  padding: 1rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: #f0f0f0; /* 与弹出框顶部背景一致 */
+  color: #333;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
 .arrow { transition:0.35s;}
 .pdf-card-content { max-height:0; overflow:hidden; transition: max-height 0.45s ease; padding:0 1rem;}
 .pdf-card-content.open { padding:1rem;}
