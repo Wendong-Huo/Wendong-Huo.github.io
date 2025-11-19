@@ -86,7 +86,7 @@ function togglePDF(boxId, arrowId, pdfUrl) {
 
 <h2>Journal Publications (pre-postdoc)</h2>
 <div class="publications-grid">
-{% for post in site.publications reversed %}
+{% for post in site.publications reversed offset:1 %}
   <div class="publication-card">
     <h3 class="publication-title">
       <a href="{{ post.paperurl }}" target="_blank">{{ post.title }}</a>
@@ -126,8 +126,6 @@ function togglePDF(boxId, arrowId, pdfUrl) {
   </div>
 {% endfor %}
 </div>
-
-<p>You can also find my articles on <a href="https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>.</p>
 
 <style>
 /* 保留原卡片样式，淡化背景 */
@@ -404,3 +402,5 @@ function togglePDF(boxId, arrowId, pdfUrl) {
   line-height: 1.4;
 }
 </style>
+
+<p>You can also find my articles on <a href="https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>.</p>
