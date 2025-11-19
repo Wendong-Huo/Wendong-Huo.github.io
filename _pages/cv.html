@@ -16,248 +16,94 @@ redirect_from:
   Latest updated: EN 2025.11.18 | CH 2025.04.18
 </p>
 
-<style>
-/* ====================================================================== */
-/*                          GLOBAL CV PAGE STYLE                          */
-/* ====================================================================== */
-
-/* Collapse panel style (old version) – kept for compatibility */
-.cv-collapse {
-  background-color: #f5f5f5;
-  border-radius: 8px;
-  padding: 12px 18px;
-  margin: 1.5em 0;
-  cursor: pointer;
-  font-size: 1.2rem;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
-}
-.cv-collapse:hover { background-color: #e5e5e5; }
-
-.cv-content {
-  display: none;
-  margin-top: 1em;
-  position: relative;
-}
-
-/* ====================================================================== */
-/*                              Skeleton Loader                           */
-/* ====================================================================== */
-.skeleton {
-  width: 100%;
-  height: 780px;
-  border-radius: 8px;
-  background: linear-gradient(-90deg, #e0e0e0 0%, #f5f5f5 50%, #e0e0e0 100%);
-  background-size: 400% 400%;
-  animation: shimmer 1.5s ease-in-out infinite;
-}
-@keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-
-/* ====================================================================== */
-/*                             PDF Container                               */
-/* ====================================================================== */
-.pdf-container {
-  width: 100%;
-  height: 780px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  display: none; /* hidden until loaded */
-  overflow: auto;
-  position: relative;
-}
-
-/* Scroll shadow */
-.pdf-container::before,
-.pdf-container::after {
-  content: '';
-  position: sticky;
-  left: 0;
-  right: 0;
-  height: 20px;
-  pointer-events: none;
-  z-index: 10;
-}
-.pdf-container::before {
-  top: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.15), transparent);
-}
-.pdf-container::after {
-  bottom: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.15), transparent);
-}
-
-/* ====================================================================== */
-/*                           DARK MODE SUPPORT                             */
-/* ====================================================================== */
-@media (prefers-color-scheme: dark) {
-  .cv-collapse {
-    background-color: #2e2e2e;
-    color: #eee;
-  }
-  .cv-collapse:hover { background-color: #3a3a3a; }
-  .pdf-container { border: 1px solid #444; }
-  .skeleton { background: linear-gradient(-90deg, #444 0%, #555 50%, #444 100%); }
-}
-
-/* ====================================================================== */
-/*                           DOWNLOAD BUTTONS                              */
-/* ====================================================================== */
-.cv-download-area {
-  text-align: center;
-  margin: 2.5em 0 3.5em 0;
-  display: flex;
-  justify-content: center;
-  gap: 1.2rem;
-}
-
-.cv-download-btn {
-  display: inline-block;
-  padding: 0.75em 1.8em;
-  border-radius: 14px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: white;
-  text-decoration: none;
-
-  /* 与 Thesis 卡片一致的渐变 */
-  background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
-
-  /* 毛玻璃感 */
-  border: 1px solid rgba(255,255,255,0.4);
-  backdrop-filter: blur(10px);
-
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-  transition: all 0.3s ease;
-}
-
-.cv-download-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.18);
-  filter: brightness(1.08);
-}
-
-/* 手机端按钮堆叠 */
-@media (max-width: 768px){
-  .cv-download-area {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-}
-
-/* ====================================================================== */
-/*                          CARD STYLE FOR COLLAPSE                        */
-/* ====================================================================== */
-.cv-card {
-  background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
-  border-radius: 20px;
-  padding: 1.4rem 1.8rem;
-  margin: 1.5rem 0;
-  cursor: pointer;
-  color: white;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.4);
-  transition: all 0.3s ease;
-}
-.cv-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.22);
-  filter: brightness(1.06);
-}
-
-.cv-card-title {
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin-bottom: 0.2rem;
-}
-.cv-card-sub {
-  font-size: 0.95rem;
-  opacity: 0.9;
-}
-</style>
-
-<!-- ====================================================================== -->
-<!--                          ENGLISH CV SECTION                             -->
-<!-- ====================================================================== -->
-<div class="cv-card" data-target="cv-en">
-  <div class="cv-card-title">English CV</div>
-  <div class="cv-card-sub">Click to expand / collapse</div>
+<!-- PDF Fold Cards -->
+<div class="pdf-card">
+  <div class="pdf-card-header" onclick="togglePDF('pdf-box1', 'arrow1', '/files/thesis-defense-slides.pdf')">
+    <span>Thesis Defense Slides</span>
+    <span id="arrow1" class="arrow">▶</span>
+  </div>
+  <div id="pdf-box1" class="pdf-card-content">
+    <div class="skeleton"></div>
+    <iframe class="pdf-frame" src="" frameborder="0"></iframe>
+  </div>
 </div>
 
-<div id="cv-en" class="cv-content">
-  <div id="skeleton-en" class="skeleton"></div>
-  <iframe
-    id="iframe-en"
-    class="pdf-container"
-    src="/pdfjs/web/viewer.html?file=/files/CV-Files/CV-en-Wendong_Huo.pdf"></iframe>
-</div>
-
-<script>loadPDF("iframe-en", "skeleton-en");</script>
-
-
-<!-- ====================================================================== -->
-<!--                           CHINESE CV SECTION                            -->
-<!-- ====================================================================== -->
-<div class="cv-card" data-target="cv-ch">
-  <div class="cv-card-title">Chinese CV</div>
-  <div class="cv-card-sub">Click to expand / collapse</div>
-</div>
-
-<div id="cv-ch" class="cv-content">
-  <div id="skeleton-ch" class="skeleton"></div>
-  <iframe
-    id="iframe-ch"
-    class="pdf-container"
-    src="/pdfjs/web/viewer.html?file=/files/CV-Files/CV-ch-Wendong_Huo.pdf"></iframe>
-</div>
-
-<script>loadPDF("iframe-ch", "skeleton-ch");</script>
-
-
-<!-- ====================================================================== -->
-<!--                          DOWNLOAD BUTTONS                               -->
-<!-- ====================================================================== -->
-<div class="cv-download-area">
-  <a href="../files/CV-Files/CV-en-Wendong_Huo.pdf" download="CV-en-Wendong_Huo.pdf" class="cv-download-btn">
-    Download CV (EN)
-  </a>
-  <a href="../files/CV-Files/CV-ch-Wendong_Huo.pdf" download="CV-ch-Wendong_Huo.pdf" class="cv-download-btn">
-    Download CV (CH)
-  </a>
+<div class="pdf-card2">
+  <div class="pdf-card-header2" onclick="togglePDF('pdf-box2', 'arrow2', '/files/thesis-1.pdf')">
+    <span>Finalized Thesis</span>
+    <span id="arrow2" class="arrow2">▶</span>
+  </div>
+  <div id="pdf-box2" class="pdf-card-content2">
+    <div class="skeleton2"></div>
+    <iframe class="pdf-frame2" src="" frameborder="0"></iframe>
+  </div>
 </div>
 
 <script>
-// ---- Collapse toggle ----
-document.querySelectorAll(".cv-card").forEach(card => {
-  card.addEventListener("click", () => {
-    const targetId = card.getAttribute("data-target");
-    const content = document.getElementById(targetId);
+function togglePDF(boxId, arrowId, pdfUrl) {
+  const box = document.getElementById(boxId);
+  const arrow = document.getElementById(arrowId);
+  const iframe = box.querySelector('iframe');
+  const skeleton = box.querySelector('.skeleton, .skeleton2');
 
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
+  if (box.classList.contains('open')) {
+    box.style.maxHeight = "0px";
+    box.classList.remove('open');
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    box.classList.add('open');
+    box.style.maxHeight = "1200px";
+    arrow.style.transform = "rotate(90deg)";
+
+    if (!iframe.dataset.loaded) {
+      iframe.src = "/pdfjs/web/viewer.html?file=" + pdfUrl + "&download=false";
+      iframe.dataset.loaded = "true";
+
+      iframe.addEventListener('load', () => {
+        skeleton.style.display = "none";
+        iframe.style.display = "block";
+      });
     }
-  });
-});
-
-</script>
-<script>
-function loadPDF(iframeId, skeletonId) {
-  const iframe = document.getElementById(iframeId);
-  const skeleton = document.getElementById(skeletonId);
-
-  function handleLoad() {
-    skeleton.style.display = "none";
-    iframe.style.display = "block";
-
-    // 关键：移除事件监听器，只让 load 执行一次
-    iframe.removeEventListener("load", handleLoad);
   }
-
-  iframe.addEventListener("load", handleLoad);
 }
 </script>
+
+
+
+<style>
+/* 保留原卡片样式，淡化背景 */
+.pdf-card, .pdf-card2 {
+  background: rgba(245,245,255,0.25); border-radius:20px; margin:1rem 0; border:1px solid rgba(230,230,250,0.3);
+  box-shadow:0 6px 6px rgba(0,0,0,0.08); transition: all 0.35s ease;;
+}
+.pdf-card:hover, .pdf-card2:hover { transform: translateY(-3px); box-shadow:0 10px 16px rgba(0,0,0,0.12); }
+
+/* PDF Card Header - 浅色风格，与 Thesis 卡片统一 */
+.pdf-card-header, .pdf-card-header2 {
+  padding: 1rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c2c54; /* 深色文字，更好区分浅背景 */
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%); /* 与 Thesis 卡片一致的浅蓝渐变 */
+  border: 1px solid rgba(200,200,200,0.3); /* 可选，增加边框层次 */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+
+
+.pdf-card-content, .pdf-card-content2 { max-height:0; overflow:hidden; transition:max-height 0.45s ease; padding:0 1rem; }
+.pdf-card-content.open, .pdf-card-content2.open { padding:1rem; }
+.skeleton, .skeleton2 { width:100%; height:570px; border-radius:12px; background:linear-gradient(-90deg,#f0f0f0 0%,#fafafa 50%,#f0f0f0 100%); background-size:400% 400%; animation:shimmer 1.4s ease-in-out infinite; }
+.pdf-frame, .pdf-frame2 { width:100%; height:570px; border:none; display:none; border-radius:12px; }
+
+@keyframes shimmer { 0%{background-position:200% 0;} 100%{background-position:-200% 0;} }
+
+/* Mobile */
+@media(max-width:768px){ .pdf-frame, .pdf-frame2 { width:100%; } }
+</style>
