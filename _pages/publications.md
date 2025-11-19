@@ -31,31 +31,6 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
       </p>
     </details>
 
-    <div class="thesis-buttons">
-      <!-- PPT Modal Trigger -->
-      <button class="btn-icon ppt-btn" onclick="openPPTModal()" title="Preview Defense Slides">🎤
-
-      </button>
-    </div>
-
-  </div>
-</div>
-
-<!-- PPT Modal -->
-<div id="pptModal" class="ppt-modal hidden">
-  <div class="ppt-modal-content">
-    <span class="close" onclick="closePPTModal()">&times;</span>
-    <div id="skeleton-ppt" class="skeleton"></div>
-    <iframe
-      id="iframe-ppt"
-      class="pdf-container"
-      src=""
-    ></iframe>
-    <div style="text-align:center; margin-top:1em;">
-      <a href="/files/thesis-defense-slides.pdf" download="thesis-defense-slides.pdf" class="download-btn">
-        Download PPT PDF
-      </a>
-    </div>
   </div>
 </div>
 
