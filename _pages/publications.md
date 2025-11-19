@@ -7,61 +7,48 @@ author_profile: true
 
 7You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
 
-<div class="pdf-card">
-  <div class="pdf-card-header" onclick="togglePDF('thesis-pdf', 'arrow1')">
-    <span>Finalized Thesis</span>
+<!-- Slides -->
+<div class="pdf-card" onclick="togglePDF('thesis-pdf', 'arrow1')">
+  <div class="pdf-card-header">
+    <span>Thesis Defense Slides</span>
     <span id="arrow1" class="arrow">▶</span>
   </div>
 
   <div id="thesis-pdf" class="pdf-card-content">
     <div id="skeleton-pdf" class="skeleton"></div>
+
     <iframe
       id="pdf-frame"
       class="pdf-frame"
-      src=""
-      frameborder="0">
+      src="/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf&download=false">
     </iframe>
   </div>
 </div>
 
 <script>
-function togglePDF(boxId, arrowId){
-  const box = document.getElementById(boxId);
-  const arrow = document.getElementById(arrowId);
-  const iframe = box.querySelector('iframe');
-  const skeleton = box.querySelector('.skeleton');
+// PDF Loader + Hide Download Button
+document.getElementById('pdf-frame').addEventListener("load", function() {
+  const iframeDoc = this.contentDocument || this.contentWindow.document;
 
-  if(box.classList.contains('open')){
-    box.style.maxHeight = "0";
-    box.classList.remove('open');
-    arrow.style.transform = "rotate(0deg)";
-  } else {
-    box.classList.add('open');
-    box.style.maxHeight = "90vh";
-    arrow.style.transform = "rotate(90deg)";
+  const hideDownload = () => {
+    const btn1 = iframeDoc.getElementById("download");
+    const btn2 = iframeDoc.getElementById("secondaryDownload");
+    [btn1, btn2].forEach(btn => {
+      if (btn) btn.style.display = "none";
+    });
+  };
 
-    // 如果 iframe 还没加载
-    if(!iframe.src){
-      iframe.src = "/pdfjs/web/viewer.html?file=/files/thesis-1.pdf&download=false";
-      iframe.style.display = "none";
+  // Remove Skeleton & Show PDF
+  document.getElementById('skeleton-pdf').style.display = "none";
+  this.style.display = "block";
 
-      iframe.onload = () => {
-        skeleton.style.display = "none";
-        iframe.style.display = "block";
-
-        try {
-          const doc = iframe.contentDocument || iframe.contentWindow.document;
-          ["download","secondaryDownload"].forEach(id=>{
-            const btn = doc.getElementById(id);
-            if(btn) btn.style.display="none";
-          });
-        } catch(e){ console.warn("跨域无法隐藏下载按钮"); }
-      }
-    }
-  }
-}
+  // 多次尝试隐藏按钮
+  hideDownload();
+  setTimeout(hideDownload, 500);
+  setTimeout(hideDownload, 1500);
+  setTimeout(hideDownload, 3000);
+});
 </script>
-
 
 <style>
 .pdf-card {
