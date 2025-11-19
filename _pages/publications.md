@@ -310,3 +310,97 @@ function togglePDF(boxId, arrowId, pdfUrl) {
 }
 
 </style>
+
+
+<!-- Red Gradient Highlight Card -->
+<div class="highlight-card">
+  <h3 class="highlight-title">
+    <a href="http://wendong-huo.github.io/files/paper-1.pdf" target="_blank">
+      Isogeometric dual reciprocity boundary element method for solving transient heat conduction problems with heat sources
+    </a>
+  </h3>
+
+  <p class="highlight-authors"><strong>Authors:</strong> Yu B., Cao G., Huo W., Zhou H., & Atroshchenko E.</p>
+  
+  <p class="highlight-venue"><strong>Published at:</strong> 
+    <a href="https://www.journals.elsevier.com/journal-of-computational-and-applied-mathematics" target="_blank">
+      J. Comput. Appl. Math.
+    </a>
+  </p>
+
+  <p class="highlight-doi"><strong>DOI:</strong> 
+    <a href="https://doi.org/10.1016/j.cam.2020.113197" target="_blank">10.1016/j.cam.2020.113197</a>
+  </p>
+
+  <details class="highlight-excerpt">
+    <summary>Excerpt (click to expand)</summary>
+    <p>
+      Solving transient heat conduction problems with heat sources via IG-DRBEM. Up to now, the isogeometric boundary element method (IGBEM) has been widely applied in different fields, and the solved problems are basically independent of time. But an excellent numerical method is more than that, so it is necessary to explore a new IGBEM which can solve time-domain problems. Based on this, the isogeometric dual reciprocity boundary element method (IG-DRBEM) is proposed to solve transient heat transfer problems with heat sources. The introduction of the dual reciprocal method enables the IGBEM to solve the transient heat transfer problem conveniently. At the same time, it does not need to divide elements within the domain, which maintains the advantage of the IGBEM. First, the boundary domain integral equation is established by the weighted residual method and the field variables are discretized by NURBS basis functions. Then, the domain integral in the integral equation is transformed into the boundary by the classical dual reciprocity method. Finally, the standard first-order ordinary differential equations are formed. In order to examine the accuracy of the proposed method, several typical numerical examples are discussed carefully. The presented method can provide a new idea for solving time-dependent problems by IGBEM.
+    </p>
+  </details>
+
+  <p class="highlight-date"><strong>Published on:</strong> March 15, 2021</p>
+</div>
+
+<style>
+/* --- Highlight Red Card --- */
+.highlight-card {
+  background: linear-gradient(135deg, #ffd6d6 0%, #fff0f0 85%);
+  border-radius: 24px;
+  padding: 1.8rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(255,180,180,0.3);
+}
+
+.highlight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+.highlight-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem 0;
+  color: #b71c1c;
+}
+
+.highlight-title a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.2s ease;
+}
+
+.highlight-title a:hover {
+  color: #f44336;
+  text-shadow: 0 0 6px rgba(244,67,54,0.3);
+}
+
+.highlight-authors,
+.highlight-venue,
+.highlight-doi,
+.highlight-date {
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+  color: #444;
+}
+
+.highlight-excerpt summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #b71c1c;
+  margin-top: 0.5rem;
+}
+
+.highlight-excerpt p {
+  margin-top: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  background: #fff5f5;
+  border-radius: 12px;
+  border-left: 3px solid #f44336;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+</style>
