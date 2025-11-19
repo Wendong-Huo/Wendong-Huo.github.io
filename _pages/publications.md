@@ -6,31 +6,94 @@ author_profile: true
 ---
 
 
-<h2>6Doctoral Thesis</h2>
+<h2>7Doctoral Thesis</h2>
+<h2>Doctoral Thesis</h2>
 
 <div class="thesis-card">
-  <h2 class="thesis-section-title">Doctoral Thesis</h2>
-  <div class="thesis-content">
-    <h3 class="thesis-title">
-      <a href="http://wendong-huo.github.io/files/thesis-1.pdf" target="_blank">
-        基于移动可变形组件法和共形参数化技术的复杂曲面薄壁结构拓扑优化研究
-      </a>
-    </h3>
+  <h3 class="thesis-title">
+    <a href="http://wendong-huo.github.io/files/thesis-1.pdf" target="_blank">
+      基于移动可变形组件法和共形参数化技术的复杂曲面薄壁结构拓扑优化研究
+    </a>
+  </h3>
+
+  <div class="thesis-info-grid">
     <p><strong>Author:</strong> Wendong Huo</p>
-    <p><strong>Advisors:</strong> Prof. Xu Guo and Prof. Chang Liu</p>
+    <p><strong>Advisors:</strong> Prof. Xu Guo & Prof. Chang Liu</p>
     <p><strong>Institution:</strong> Department of Engineering Mechanics, DUT</p>
     <p><strong>Finalized on:</strong> November 18, 2025</p>
-
-    <details class="thesis-excerpt">
-      <summary><strong>Excerpt:</strong> (click to expand)</summary>
-      <p>
-        Research on Topology Optimization for Thin-Walled Structures with Complex Surfaces
-        Based on the Moving Morphable Components (MMC) Method and the Conformal Parameterization Technique.
-      </p>
-    </details>
-
   </div>
+
+  <details class="thesis-excerpt">
+    <summary>Excerpt (click to expand)</summary>
+    <p>
+      Research on Topology Optimization for Thin-Walled Structures with Complex Surfaces
+      Based on the Moving Morphable Components (MMC) Method and the Conformal Parameterization Technique.
+    </p>
+  </details>
 </div>
+
+<style>
+/* --- Thesis Card --- */
+.thesis-card {
+  background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%);
+  border-radius: 16px;
+  padding: 1.8rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+  border: 1px solid rgba(200,200,200,0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.thesis-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 14px rgba(0,0,0,0.12);
+}
+
+.thesis-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c2c54;
+  margin-bottom: 0.8rem;
+}
+
+.thesis-title a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.thesis-title a:hover {
+  color: #5a5ad6;
+  text-shadow: 0 0 6px rgba(90,90,214,0.3);
+}
+
+.thesis-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.6rem 1.2rem; /* 行距、列距 */
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 0.8rem;
+}
+
+.thesis-excerpt summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #333;
+  margin-top: 0.5rem;
+}
+
+.thesis-excerpt p {
+  margin-top: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border-left: 3px solid #6f6fd8;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+</style>
 
 <!-- PDF Fold Cards -->
 <div class="pdf-card">
@@ -164,73 +227,6 @@ function togglePDF(boxId, arrowId, pdfUrl) {
 /* Mobile */
 @media(max-width:768px){ .pdf-frame, .pdf-frame2 { width:100%; } }
 </style>
-
-<style>
-/* --- Thesis Card --- */
-.thesis-card {
-  background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%);
-  border-radius: 16px;
-  padding: 1.8rem; /* 调整与 publication-card 一致 */
-  margin-bottom: 0.4rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(200,200,200,0.3);
-}
-
-.thesis-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 14px rgba(0,0,0,0.12);
-}
-
-.thesis-section-title {
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin: 0 0 0.5rem 0; /* 调整底部间距与 publication-card 对齐 */
-  background: linear-gradient(90deg,#4a4a9e,#6f6fd8);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.thesis-title a {
-  font-size: 1.2rem; /* 与 publication-title 一致 */
-  font-weight: 600;
-  color: #2c2c54;
-  text-decoration: none;
-  transition: 0.2s ease;
-  margin-bottom: 0.4rem; /* 与 publication-card 对齐 */
-}
-
-.thesis-title a:hover {
-  color: #5a5ad6;
-  text-shadow: 0 0 6px rgba(90,90,214,0.3);
-}
-
-.thesis-info {
-  font-size: 0.9rem; /* 与 publication-card info 对齐 */
-  margin: 0 0; /* 与 publication-card info 对齐 */
-  color: #444; /* 调整为与 publication-card info 一致的颜色 */
-}
-
-.thesis-excerpt summary {
-  cursor: pointer;
-  font-weight: 600; /* 与 publication-excerpt summary 对齐 */
-  color: #333;
-  margin-top: 0.5rem; /* 与 publication-excerpt summary 对齐 */
-}
-
-.thesis-excerpt p {
-  margin-top: 0.5rem;
-  padding: 0.6rem 0.9rem; /* 与 publication-excerpt p 对齐 */
-  background: #ffffff;
-  border-radius: 12px; /* 与 publication-excerpt p 对齐 */
-  border-left: 3px solid #6f6fd8;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  font-size: 0.88rem; /* 与 publication-excerpt p 对齐 */
-  line-height: 1.4;   /* 与 publication-excerpt p 对齐 */
-}
-</style>
-
 
 
 <style>
