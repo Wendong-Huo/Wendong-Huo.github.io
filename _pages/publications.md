@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 
-<h2>4Doctoral Thesis</h2>
+<h2>6Doctoral Thesis</h2>
 
 <div class="thesis-card">
   <h2 class="thesis-section-title">Doctoral Thesis</h2>
@@ -210,7 +210,7 @@ function togglePDF(boxId, arrowId, pdfUrl) {
 
 .thesis-info {
   font-size: 0.9rem; /* 与 publication-card info 对齐 */
-  margin: 0.25rem 0; /* 与 publication-card info 对齐 */
+  margin: 0 0; /* 与 publication-card info 对齐 */
   color: #444; /* 调整为与 publication-card info 一致的颜色 */
 }
 
@@ -311,7 +311,7 @@ function togglePDF(boxId, arrowId, pdfUrl) {
 
 </style>
 
-
+<h2>During undergraduate</h2>
 <!-- Red Gradient Highlight Card -->
 <div class="highlight-card">
   <h3 class="highlight-title">
