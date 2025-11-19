@@ -34,6 +34,24 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
   </div>
 </div>
 
+<!-- Slides -->
+<div class="pdf-card" onclick="togglePDF('thesis-pdf', 'arrow1')">
+  <div class="pdf-card-header">
+    <span>Thesis Defense Slides</span>
+    <span id="arrow1" class="arrow">▶</span>
+  </div>
+
+  <div id="thesis-pdf" class="pdf-card-content">
+    <div id="skeleton-pdf" class="skeleton"></div>
+
+    <iframe
+      id="pdf-frame"
+      class="pdf-frame"
+      src="/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf&download=false">
+    </iframe>
+  </div>
+</div>
+
 <script>
 function togglePDF(contentId, arrowId) {
   const content = document.getElementById(contentId);
@@ -68,24 +86,6 @@ document.getElementById('pdf-frame').addEventListener("load", function() {
   setTimeout(hideDownload, 3000);
 });
 </script>
-
-<!-- Slides -->
-<div class="pdf-card" onclick="togglePDF('thesis-pdf', 'arrow1')">
-  <div class="pdf-card-header">
-    <span>Thesis Defense Slides</span>
-    <span id="arrow1" class="arrow">▶</span>
-  </div>
-
-  <div id="thesis-pdf" class="pdf-card-content">
-    <div id="skeleton-pdf" class="skeleton"></div>
-
-    <iframe
-      id="pdf-frame"
-      class="pdf-frame"
-      src="/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf&download=false">
-    </iframe>
-  </div>
-</div>
 
 <style>
 /* ---------- 卡片外壳 ---------- */
