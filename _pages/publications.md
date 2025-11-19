@@ -5,7 +5,7 @@ permalink: /publications/
 author_profile: true
 ---
 
-7You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
+8You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
 
 <!-- Slides -->
 <div class="pdf-card" onclick="togglePDF('thesis-pdf', 'arrow1')">
@@ -187,7 +187,7 @@ document.getElementById('pdf-frame').addEventListener("load", function() {
 
 <style>
 /* Compact Card */
-.thesis-card { background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%); border-radius:16px; padding:1.5rem; margin-bottom:2rem; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition: transform 0.25s ease, box-shadow 0.25s ease;backdrop-filter:blur(5px); border:1px solid rgba(200,200,200,0.3); }
+.thesis-card { background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%); border-radius:16px; padding:1.5rem; margin-bottom:0.4rem; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition: transform 0.25s ease, box-shadow 0.25s ease;backdrop-filter:blur(5px); border:1px solid rgba(200,200,200,0.3); }
 .thesis-card:hover {transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,0.12);}
 .thesis-section-title { font-size:1.6rem; font-weight:700; margin: 0 0 0.4rem 0; background:linear-gradient(90deg,#4a4a9e,#6f6fd8); -webkit-background-clip:text; color:transparent; }
 .thesis-title a { font-size:1.25rem; font-weight:600; color:#2c2c54; text-decoration:none; transition:0.2s ease; }
