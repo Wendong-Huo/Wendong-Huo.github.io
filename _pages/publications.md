@@ -38,28 +38,29 @@ author_profile: true
 </div>
 
 <style>
+
 .thesis-card {
   background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%);
   border-radius: 16px;
   padding: 1.8rem;
-  margin-bottom: 1.2rem;
+  margin: 0.6rem 0 1.2rem 0; /* 上下 margin 调整，上方空白缩小 */
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   border: 1px solid rgba(200,200,200,0.3);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.thesis-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 14px rgba(0,0,0,0.12);
-}
-
 .thesis-section-title {
   font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem 0; /* 保持标题下方间距 */
   background: linear-gradient(90deg,#4a4a9e,#6f6fd8);
   -webkit-background-clip: text;
   color: transparent;
+}
+
+.thesis-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 14px rgba(0,0,0,0.12);
 }
 
 .thesis-title a {
