@@ -33,7 +33,7 @@ function togglePDF(boxId, arrowId, pdfUrl) {
     arrow.style.transform = "rotate(0deg)";
   } else {
     box.classList.add('open');
-    box.style.maxHeight = "480px";
+    box.style.maxHeight = "550px";
     arrow.style.transform = "rotate(90deg)";
 
     if (!iframe.dataset.loaded) {
@@ -85,7 +85,7 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
     arrow.style.transform = "rotate(0deg)";
   } else {
     box.classList.add('open');
-    box.style.maxHeight = "480px";
+    box.style.maxHeight = "1200px";
     arrow.style.transform = "rotate(90deg)";
 
     if (!iframe.dataset.loaded) {
@@ -189,7 +189,7 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
 /* Skeleton loader */
 .skeleton {
   width: 100%;
-  height: 480px;
+  height: 550px;
   border-radius: 12px;
   background: linear-gradient(-90deg, #e0e0e0 0%, #f5f5f5 50%, #e0e0e0 100%);
   background-size: 400% 400%;
@@ -204,7 +204,7 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
 /* PDF iframe */
 .pdf-frame {
   width: 100%;
-  height: 480px;
+  height: 550px;
   border-radius: 12px;
   border: none;
   display: none;
@@ -286,7 +286,7 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
 /* Skeleton loader */
 .skeleton2 {
   width: 100%;
-  height: 480px;
+  height: 1200px;
   border-radius: 12px;
   background: linear-gradient(-90deg, #e0e0f0 0%, #f5f5ff 50%, #e0e0f0 100%); /* 颜色稍微偏蓝，协调 */
   background-size: 400% 400%;
@@ -296,7 +296,7 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
 /* PDF iframe */
 .pdf-frame2 {
   width: 100%;
-  height: 90vh;
+  height: 1200px;
   border-radius: 12px;
   border: none;
   display: none;
