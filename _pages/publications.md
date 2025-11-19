@@ -133,9 +133,9 @@ function togglePDF(boxId, arrowId, pdfUrl) {
 /* 保留原卡片样式，淡化背景 */
 .pdf-card, .pdf-card2 {
   background: rgba(245,245,255,0.25); border-radius:20px; margin:1rem 0; border:1px solid rgba(230,230,250,0.3);
-  box-shadow:0 6px 20px rgba(0,0,0,0.08); transition: all 0.35s ease;;
+  box-shadow:0 6px 6px rgba(0,0,0,0.08); transition: all 0.35s ease;;
 }
-.pdf-card:hover, .pdf-card2:hover { transform: translateY(-3px); box-shadow:0 10px 26px rgba(0,0,0,0.12); }
+.pdf-card:hover, .pdf-card2:hover { transform: translateY(-3px); box-shadow:0 10px 16px rgba(0,0,0,0.12); }
 
 /* PDF Card Header - 浅色风格，与 Thesis 卡片统一 */
 .pdf-card-header, .pdf-card-header2 {
@@ -150,7 +150,7 @@ function togglePDF(boxId, arrowId, pdfUrl) {
   cursor: pointer;
   background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%); /* 与 Thesis 卡片一致的浅蓝渐变 */
   border: 1px solid rgba(200,200,200,0.3); /* 可选，增加边框层次 */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
 }
 
@@ -174,7 +174,7 @@ function togglePDF(boxId, arrowId, pdfUrl) {
   border-radius: 16px;
   padding: 1.8rem; /* 调整与 publication-card 一致 */
   margin-bottom: 0.4rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   backdrop-filter: blur(5px);
   border: 1px solid rgba(200,200,200,0.3);
@@ -182,7 +182,7 @@ function togglePDF(boxId, arrowId, pdfUrl) {
 
 .thesis-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 14px rgba(0,0,0,0.12);
 }
 
 .thesis-section-title {
