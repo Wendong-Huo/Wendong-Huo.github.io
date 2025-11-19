@@ -7,21 +7,29 @@ author_profile: true
 
 
 <h2>4Doctoral Thesis</h2>
-<div class="thesis-card">
-  <h3 class="thesis-title">
-    <a href="http://wendong-huo.github.io/files/thesis-1.pdf" target="_blank">
-      基于移动可变形组件法和共形参数化技术的复杂曲面薄壁结构拓扑优化研究
-    </a>
-  </h3>
-  <p><strong>Author:</strong> Wendong Huo</p>
-  <p><strong>Advisors:</strong> Prof. Xu Guo and Prof. Chang Liu</p>
-  <p><strong>Institution:</strong> Department of Engineering Mechanics, DUT</p>
-  <p><strong>Finalized on:</strong> November 18, 2025</p>
 
-  <details>
-    <summary>Excerpt (click to expand)</summary>
-    <p>Research on Topology Optimization for Thin-Walled Structures with Complex Surfaces Based on the MMC Method and Conformal Parameterization.</p>
-  </details>
+<div class="thesis-card">
+  <h2 class="thesis-section-title">Doctoral Thesis</h2>
+  <div class="thesis-content">
+    <h3 class="thesis-title">
+      <a href="http://wendong-huo.github.io/files/thesis-1.pdf" target="_blank">
+        基于移动可变形组件法和共形参数化技术的复杂曲面薄壁结构拓扑优化研究
+      </a>
+    </h3>
+    <p><strong>Author:</strong> Wendong Huo</p>
+    <p><strong>Advisors:</strong> Prof. Xu Guo and Prof. Chang Liu</p>
+    <p><strong>Institution:</strong> Department of Engineering Mechanics, DUT</p>
+    <p><strong>Finalized on:</strong> November 18, 2025</p>
+
+    <details class="thesis-excerpt">
+      <summary><strong>Excerpt:</strong> (click to expand)</summary>
+      <p>
+        Research on Topology Optimization for Thin-Walled Structures with Complex Surfaces
+        Based on the Moving Morphable Components (MMC) Method and the Conformal Parameterization Technique.
+      </p>
+    </details>
+
+  </div>
 </div>
 
 <!-- PDF Fold Cards -->
@@ -83,9 +91,11 @@ function togglePDF(boxId, arrowId, pdfUrl) {
     <h3 class="publication-title">
       <a href="{{ post.paperurl }}" target="_blank">{{ post.title }}</a>
     </h3>
-    <p><strong>Authors:</strong> {{ post.authors }}</p>
+
+    <p class="publication-authors"><strong>Authors:</strong> {{ post.authors }}</p>
+
     {% if post.venue %}
-      <p><strong>Published at:</strong> 
+      <p class="publication-venue"><strong>Published at:</strong> 
         {% if post.venue_url %}
           <a href="{{ post.venue_url }}" target="_blank">{{ post.venue }}</a>
         {% else %}
@@ -93,13 +103,26 @@ function togglePDF(boxId, arrowId, pdfUrl) {
         {% endif %}
       </p>
     {% endif %}
+
     {% if post.doi %}
-      <p><strong>DOI:</strong> <a href="https://doi.org/{{ post.doi }}" target="_blank">{{ post.doi }}</a></p>
+      <p class="publication-doi"><strong>DOI:</strong> 
+        <a href="https://doi.org/{{ post.doi }}" target="_blank">{{ post.doi }}</a>
+      </p>
     {% endif %}
+
     {% if post.excerpt %}
-      <details><summary>Excerpt</summary><p>{{ post.excerpt }}</p></details>
+      <details class="publication-excerpt">
+        <summary>Excerpt (click to expand)</summary>
+        <p>{{ post.excerpt }}</p>
+      </details>
     {% endif %}
-    <p><strong>Published on:</strong> {{ post.date | date: "%B %d, %Y" }}</p>
+
+    <p class="publication-date"><strong>Published on:</strong> {{ post.date | date: "%B %d, %Y" }}</p>
+
+    {% if post.paperurl %}
+      <!-- PDF Inline Viewer Button -->
+      <!-- Inline PDF Viewer -->
+    {% endif %}
   </div>
 {% endfor %}
 </div>
@@ -128,6 +151,7 @@ function togglePDF(boxId, arrowId, pdfUrl) {
 /* Mobile */
 @media(max-width:768px){ .pdf-frame, .pdf-frame2 { width:100%; } }
 </style>
+
 <style>
 /* Compact Card */
 .thesis-card { background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%); border-radius:16px; padding:1.5rem; margin-bottom:0.4rem; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition: transform 0.25s ease, box-shadow 0.25s ease;backdrop-filter:blur(5px); border:1px solid rgba(200,200,200,0.3); }
