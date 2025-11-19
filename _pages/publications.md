@@ -5,53 +5,62 @@ permalink: /publications/
 author_profile: true
 ---
 
-5.5You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
+6You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
 
-<!-- ========================= -->
-<!-- Finalized Thesis PDF Card -->
-<!-- ========================= -->
-<div class="pdf-card" onclick="togglePDF('thesis-pdf', 'arrow1')">
-  <div class="pdf-card-header">
+<div class="pdf-card">
+  <div class="pdf-card-header" onclick="togglePDF('thesis-pdf', 'arrow1')">
     <span>Finalized Thesis</span>
     <span id="arrow1" class="arrow">▶</span>
   </div>
 
   <div id="thesis-pdf" class="pdf-card-content">
     <div id="skeleton-pdf" class="skeleton"></div>
-
     <iframe
       id="pdf-frame"
       class="pdf-frame"
-      src="/pdfjs/web/viewer.html?file=/files/thesis-1.pdf&download=false">
+      src=""
+      frameborder="0">
     </iframe>
   </div>
 </div>
 
 <script>
-// PDF Loader + Hide Download Button
-document.getElementById('pdf-frame').addEventListener("load", function() {
-  const iframeDoc = this.contentDocument || this.contentWindow.document;
+function togglePDF(boxId, arrowId){
+  const box = document.getElementById(boxId);
+  const arrow = document.getElementById(arrowId);
+  const iframe = box.querySelector('iframe');
+  const skeleton = box.querySelector('.skeleton');
 
-  const hideDownload = () => {
-    const btn1 = iframeDoc.getElementById("download");
-    const btn2 = iframeDoc.getElementById("secondaryDownload");
-    [btn1, btn2].forEach(btn => {
-      if (btn) btn.style.display = "none";
-    });
-  };
+  if(box.classList.contains('open')){
+    box.style.maxHeight = "0";
+    box.classList.remove('open');
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    box.classList.add('open');
+    box.style.maxHeight = "90vh";
+    arrow.style.transform = "rotate(90deg)";
 
-  // Remove Skeleton & Show PDF
-  document.getElementById('skeleton-pdf').style.display = "none";
-  this.style.display = "block";
+    // 如果 iframe 还没加载
+    if(!iframe.src){
+      iframe.src = "/pdfjs/web/viewer.html?file=/files/thesis-1.pdf&download=false";
+      iframe.style.display = "none";
 
-  // 多次尝试隐藏按钮
-  hideDownload();
-  setTimeout(hideDownload, 500);
-  setTimeout(hideDownload, 1500);
-  setTimeout(hideDownload, 3000);
-});
+      iframe.onload = () => {
+        skeleton.style.display = "none";
+        iframe.style.display = "block";
+
+        try {
+          const doc = iframe.contentDocument || iframe.contentWindow.document;
+          ["download","secondaryDownload"].forEach(id=>{
+            const btn = doc.getElementById(id);
+            if(btn) btn.style.display="none";
+          });
+        } catch(e){ console.warn("跨域无法隐藏下载按钮"); }
+      }
+    }
+  }
+}
 </script>
-
 
 
 <style>
@@ -191,8 +200,8 @@ document.getElementById('pdf-frame').addEventListener("load", function() {
 
 <style>
 /* Compact Card */
-.thesis-card { background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%); border-radius:16px; padding:1.5rem; margin-bottom:2rem; box-shadow:0 4px 12px rgba(0,0,0,0.08); backdrop-filter:blur(5px); border:1px solid rgba(200,200,200,0.3); }
-.thesis-section-title { font-size:1.6rem; font-weight:700; margin-bottom:1rem; background:linear-gradient(90deg,#4a4a9e,#6f6fd8); -webkit-background-clip:text; color:transparent; }
+.thesis-card { background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%); border-radius:16px; padding:1.5rem; margin-bottom:2rem; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition: transform 0.25s ease, box-shadow 0.25s ease;backdrop-filter:blur(5px); border:1px solid rgba(200,200,200,0.3); }
+.thesis-section-title { font-size:1.6rem; font-weight:700; margin: 0 0 0.4rem 0; background:linear-gradient(90deg,#4a4a9e,#6f6fd8); -webkit-background-clip:text; color:transparent; }
 .thesis-title a { font-size:1.25rem; font-weight:600; color:#2c2c54; text-decoration:none; transition:0.2s ease; }
 .thesis-title a:hover { color:#5a5ad6; text-shadow:0 0 6px rgba(90,90,214,0.3); }
 .thesis-info { font-size:0.9rem; margin:0.25rem 0; color:#555; }
@@ -214,7 +223,7 @@ document.getElementById('pdf-frame').addEventListener("load", function() {
   background: linear-gradient(135deg, #e6f5e9 0%, #ffffff 80%);
   border-radius: 24px;
   padding: 1.8rem;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   border: 1px solid rgba(200,200,200,0.3);
 }
