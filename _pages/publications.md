@@ -339,7 +339,7 @@ function loadPDF(iframeId, skeletonId) {
 }
 </script>
 
-<!-- EN CV -->
+<!-- Slides -->
 <div class="cv-collapse" onclick="toggleCV('cv-en')">
   Thesis Slides (click to expand / collapse)
 </div>
@@ -348,7 +348,7 @@ function loadPDF(iframeId, skeletonId) {
   <iframe
     id="iframe-en"
     class="pdf-container"
-    src="/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pptx">
+    src="/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf">
   </iframe>
   <script>loadPDF('iframe-en', 'skeleton-en');</script>
 </div>
