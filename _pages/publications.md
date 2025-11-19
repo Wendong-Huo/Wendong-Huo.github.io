@@ -6,10 +6,10 @@ author_profile: true
 ---
 
 
-<h2>7Doctoral Thesis</h2>
-<h2>Doctoral Thesis</h2>
-
+<h2>8Doctoral Thesis</h2>
 <div class="thesis-card">
+  <h3 class="thesis-section-title">Doctoral Thesis</h3>
+
   <h3 class="thesis-title">
     <a href="http://wendong-huo.github.io/files/thesis-1.pdf" target="_blank">
       基于移动可变形组件法和共形参数化技术的复杂曲面薄壁结构拓扑优化研究
@@ -30,16 +30,28 @@ author_profile: true
       Based on the Moving Morphable Components (MMC) Method and the Conformal Parameterization Technique.
     </p>
   </details>
+
+  <!-- PDF Buttons -->
+  <div class="pdf-card-inline">
+    <button onclick="togglePDFInline('pdf-defense', '/files/thesis-defense-slides.pdf')">Thesis Defense Slides</button>
+    <button onclick="togglePDFInline('pdf-final', '/files/thesis-1.pdf')">Finalized Thesis</button>
+  </div>
+
+  <div id="pdf-defense" class="pdf-frame-container" style="display:none;">
+    <iframe src="" frameborder="0"></iframe>
+  </div>
+  <div id="pdf-final" class="pdf-frame-container" style="display:none;">
+    <iframe src="" frameborder="0"></iframe>
+  </div>
 </div>
 
 <style>
-/* --- Thesis Card --- */
 .thesis-card {
   background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%);
   border-radius: 16px;
   padding: 1.8rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   border: 1px solid rgba(200,200,200,0.3);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -49,17 +61,23 @@ author_profile: true
   box-shadow: 0 10px 14px rgba(0,0,0,0.12);
 }
 
-.thesis-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #2c2c54;
-  margin-bottom: 0.8rem;
+.thesis-section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  background: linear-gradient(90deg,#4a4a9e,#6f6fd8);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .thesis-title a {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c2c54;
   text-decoration: none;
-  color: inherit;
   transition: color 0.2s ease;
+  margin-bottom: 0.6rem;
+  display:block;
 }
 
 .thesis-title a:hover {
@@ -70,7 +88,7 @@ author_profile: true
 .thesis-info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0.6rem 1.2rem; /* 行距、列距 */
+  gap: 0.5rem 1.2rem;
   font-size: 0.9rem;
   color: #444;
   margin-bottom: 0.8rem;
@@ -93,7 +111,51 @@ author_profile: true
   font-size: 0.88rem;
   line-height: 1.4;
 }
+
+.pdf-card-inline {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.pdf-card-inline button {
+  background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%);
+  border: 1px solid rgba(200,200,200,0.3);
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.pdf-card-inline button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.pdf-frame-container iframe {
+  width: 100%;
+  height: 600px;
+  border-radius: 12px;
+  margin-top: 0.8rem;
+  display: block;
+}
+
 </style>
+
+<script>
+function togglePDFInline(id, url) {
+  const container = document.getElementById(id);
+  const iframe = container.querySelector('iframe');
+  if(container.style.display === 'none'){
+    container.style.display = 'block';
+    if(!iframe.src) iframe.src = "/pdfjs/web/viewer.html?file=" + url + "&download=false";
+  } else {
+    container.style.display = 'none';
+  }
+}
+</script>
+
 
 <!-- PDF Fold Cards -->
 <div class="pdf-card">
