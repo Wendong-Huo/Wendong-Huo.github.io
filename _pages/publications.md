@@ -168,17 +168,72 @@ function togglePDF(boxId, arrowId, pdfUrl) {
 </style>
 
 <style>
-/* Compact Card */
-.thesis-card { background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%); border-radius:16px; padding:1.5rem; margin-bottom:0.4rem; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition: transform 0.25s ease, box-shadow 0.25s ease;backdrop-filter:blur(5px); border:1px solid rgba(200,200,200,0.3); }
-.thesis-card:hover {transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,0.12);}
-.thesis-section-title { font-size:1.6rem; font-weight:700; margin: 0 0 0.4rem 0; background:linear-gradient(90deg,#4a4a9e,#6f6fd8); -webkit-background-clip:text; color:transparent; }
-.thesis-title a { font-size:1.25rem; font-weight:600; color:#2c2c54; text-decoration:none; transition:0.2s ease;margin-bottom:0.8rem; }
-.thesis-title a:hover { color:#5a5ad6; text-shadow:0 0 6px rgba(90,90,214,0.3); }
+/* --- Thesis Card --- */
+.thesis-card {
+  background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%);
+  border-radius: 16px;
+  padding: 1.8rem; /* 调整与 publication-card 一致 */
+  margin-bottom: 0.4rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(200,200,200,0.3);
+}
 
-.thesis-info { font-size:0.9rem; margin:0.25rem 0; color:#555; }
-.thesis-excerpt summary { cursor:pointer; font-size:0.95rem; color:#333; margin-top:0.8rem; }
-.thesis-excerpt p { margin-top:0.5rem; padding:0.6rem 1rem; background:#ffffff; border-radius:10px; border-left:3px solid #6f6fd8; font-size:0.9rem; box-shadow:0 2px 6px rgba(0,0,0,0.05); }
+.thesis-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+.thesis-section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0; /* 调整底部间距与 publication-card 对齐 */
+  background: linear-gradient(90deg,#4a4a9e,#6f6fd8);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.thesis-title a {
+  font-size: 1.2rem; /* 与 publication-title 一致 */
+  font-weight: 600;
+  color: #2c2c54;
+  text-decoration: none;
+  transition: 0.2s ease;
+  margin-bottom: 0.4rem; /* 与 publication-card 对齐 */
+}
+
+.thesis-title a:hover {
+  color: #5a5ad6;
+  text-shadow: 0 0 6px rgba(90,90,214,0.3);
+}
+
+.thesis-info {
+  font-size: 0.9rem; /* 与 publication-card info 对齐 */
+  margin: 0.25rem 0; /* 与 publication-card info 对齐 */
+  color: #444; /* 调整为与 publication-card info 一致的颜色 */
+}
+
+.thesis-excerpt summary {
+  cursor: pointer;
+  font-weight: 600; /* 与 publication-excerpt summary 对齐 */
+  color: #333;
+  margin-top: 0.5rem; /* 与 publication-excerpt summary 对齐 */
+}
+
+.thesis-excerpt p {
+  margin-top: 0.5rem;
+  padding: 0.6rem 0.9rem; /* 与 publication-excerpt p 对齐 */
+  background: #ffffff;
+  border-radius: 12px; /* 与 publication-excerpt p 对齐 */
+  border-left: 3px solid #6f6fd8;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  font-size: 0.88rem; /* 与 publication-excerpt p 对齐 */
+  line-height: 1.4;   /* 与 publication-excerpt p 对齐 */
+}
 </style>
+
+
 
 <style>
 /* --- Publications Grid --- */
