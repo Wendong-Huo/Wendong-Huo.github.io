@@ -304,9 +304,9 @@ document.getElementById('pdf-frame').addEventListener("load", function() {
 .publication-excerpt p {
   margin-top: 0.5rem;
   padding: 0.6rem 0.9rem;
-  background: #f0fdf4;
+  background: #ffffff;
   border-radius: 12px;
-  border-left: 3px solid #27ae60;
+  border-left: 3px solid #6f6fd8;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   font-size: 0.88rem;
   line-height: 1.4;
