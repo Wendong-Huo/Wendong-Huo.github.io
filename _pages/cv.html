@@ -244,14 +244,20 @@ document.querySelectorAll(".cv-card").forEach(card => {
   });
 });
 
-// ---- PDF skeleton loader ----
+</script>
+<script>
 function loadPDF(iframeId, skeletonId) {
   const iframe = document.getElementById(iframeId);
   const skeleton = document.getElementById(skeletonId);
 
-  iframe.addEventListener("load", () => {
+  function handleLoad() {
     skeleton.style.display = "none";
     iframe.style.display = "block";
-  });
+
+    // 关键：移除事件监听器，只让 load 执行一次
+    iframe.removeEventListener("load", handleLoad);
+  }
+
+  iframe.addEventListener("load", handleLoad);
 }
 </script>
