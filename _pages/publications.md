@@ -7,191 +7,126 @@ author_profile: true
 
 You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
 
-<!-- Slides -->
-<!-- PDF Fold Card -->
-<div class="pdf-card" onclick="togglePDF('pdf-box', 'arrow1')">
+<!-- PDF Fold Card Template -->
+<div class="pdf-card" data-pdf="/files/thesis-1.pdf">
   <div class="pdf-card-header">
     <span>Finalized Thesis</span>
-    <span id="arrow1" class="arrow">▶</span>
+    <span class="arrow">▶</span>
   </div>
-
-  <div id="pdf-box" class="pdf-card-content">
-    <div id="skeleton-pdf" class="skeleton"></div>
-
-    <iframe
-      id="pdf-frame"
-      class="pdf-frame"
-      src="/pdfjs/web/viewer.html?file=/files/thesis-1.pdf&download=false">
-    </iframe>
+  <div class="pdf-card-content">
+    <div class="skeleton"></div>
+    <iframe class="pdf-frame" src="" frameborder="0"></iframe>
   </div>
 </div>
 
-<!-- Slides -->
-<!-- PDF Fold Card -->
-<div class="pdf-card" onclick="togglePDF('pdf-box', 'arrow1')">
+<div class="pdf-card" data-pdf="/files/thesis-defense-slides.pdf">
   <div class="pdf-card-header">
     <span>Thesis Defense Slides</span>
-    <span id="arrow1" class="arrow">▶</span>
+    <span class="arrow">▶</span>
   </div>
-
-  <div id="pdf-box" class="pdf-card-content">
-    <div id="skeleton-pdf" class="skeleton"></div>
-
-    <iframe
-      id="pdf-frame"
-      class="pdf-frame"
-      src="/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf&download=false">
-    </iframe>
+  <div class="pdf-card-content">
+    <div class="skeleton"></div>
+    <iframe class="pdf-frame" src="" frameborder="0"></iframe>
   </div>
 </div>
 
 <script>
-// Toggle Card
-function togglePDF(id, arrowId) {
-  const box = document.getElementById(id);
-  const arrow = document.getElementById(arrowId);
+// Fold Card Toggle
+document.querySelectorAll('.pdf-card').forEach(card => {
+  const header = card.querySelector('.pdf-card-header');
+  const content = card.querySelector('.pdf-card-content');
+  const arrow = card.querySelector('.arrow');
+  const iframe = card.querySelector('.pdf-frame');
+  const skeleton = card.querySelector('.skeleton');
+  const pdfUrl = card.dataset.pdf;
 
-  if (box.classList.contains("open")) {
-    box.style.maxHeight = "0px";
-    box.classList.remove("open");
-    arrow.style.transform = "rotate(0deg)";
-  } else {
-    box.classList.add("open");
-    box.style.maxHeight = box.scrollHeight + "px";
-    arrow.style.transform = "rotate(90deg)";
-  }
-}
+  header.addEventListener('click', () => {
+    if(content.classList.contains('open')){
+      content.style.maxHeight = "0px";
+      content.classList.remove('open');
+      arrow.style.transform = "rotate(0deg)";
+    } else {
+      content.classList.add('open');
+      content.style.maxHeight = content.scrollHeight + "px";
+      arrow.style.transform = "rotate(90deg)";
 
-// PDF load + auto-resize
-document.getElementById("pdf-frame").addEventListener("load", function () {
-  const iframe = this.contentDocument || this.contentWindow.document;
+      // 如果 iframe 还没加载过，设置 src
+      if(!iframe.src){
+        iframe.src = "/pdfjs/web/viewer.html?file=" + pdfUrl + "&download=false";
 
-  // Hide Skeleton
-  document.getElementById("skeleton-pdf").style.display = "none";
-  document.getElementById("pdf-frame").style.display = "block";
+        iframe.addEventListener('load', () => {
+          // Hide Skeleton
+          skeleton.style.display = "none";
+          iframe.style.display = "block";
 
-  // Disable download buttons (PDF.js internal IDs)
-  function disableButtons() {
-    ["download", "secondaryDownload"].forEach(id => {
-      const btn = iframe.getElementById(id);
-      if (btn) btn.style.display = "none";
-    });
-  }
-
-  disableButtons();
-  setTimeout(disableButtons, 600);
-  setTimeout(disableButtons, 1500);
-
-  // Auto-fit PDF height to 1 full page
-  function fitHeight() {
-    const viewer = iframe.getElementById("viewer");
-    if (!viewer) return;
-
-    const firstPage = viewer.querySelector(".page");
-    if (!firstPage) return;
-
-    // 读取 pdf 页的实际高度
-    const pageHeight = firstPage.clientHeight;
-
-    if (pageHeight > 0) {
-      document.getElementById("pdf-frame").style.height = (pageHeight + 20) + "px";
+          // 禁用 PDF.js 下载按钮
+          const doc = iframe.contentDocument || iframe.contentWindow.document;
+          function disableButtons() {
+            ["download", "secondaryDownload"].forEach(id => {
+              const btn = doc.getElementById(id);
+              if(btn) btn.style.display = "none";
+            });
+          }
+          disableButtons();
+          setTimeout(disableButtons, 500);
+          setTimeout(disableButtons, 1200);
+        });
+      }
     }
-  }
-
-  // 多次尝试以确保 PDF.js 渲染完成
-  setTimeout(fitHeight, 300);
-  setTimeout(fitHeight, 800);
-  setTimeout(fitHeight, 1500);
-  setTimeout(fitHeight, 2500);
+  });
 });
 </script>
 
-
 <style>
-/* --- Fold Card --- */
 .pdf-card {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255,255,255,0.4);
   backdrop-filter: blur(12px);
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  padding: 0;
   margin: 1.5rem 0;
-  transition: all 0.35s ease;
   border: 1px solid rgba(255,255,255,0.4);
+  transition: all 0.35s ease;
 }
-
-.pdf-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
-}
-
-/* Header */
+.pdf-card:hover { transform: translateY(-3px); box-shadow:0 10px 26px rgba(0,0,0,0.12);}
 .pdf-card-header {
   padding: 1rem 1.2rem;
   font-size: 1.1rem;
   font-weight: 600;
   background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
-  color: white;
-  border-radius: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
+  color:white;
+  border-radius:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
 }
-
-.pdf-card-header:hover {
-  filter: brightness(1.06);
-}
-
-/* Arrow */
-.arrow {
-  transition: transform 0.35s ease;
-}
-
-/* Expandable Content */
+.arrow { transition: transform 0.35s ease;}
 .pdf-card-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.45s ease;
-  padding: 0 1rem;
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.45s ease;
+  padding:0 1rem;
 }
-
-/* Show content */
-.pdf-card-content.open {
-  padding: 1rem;
-}
-
-/* Skeleton */
+.pdf-card-content.open { padding:1rem;}
 .skeleton {
-  width: 100%;
-  height: 480px;
-  border-radius: 12px;
-  background: linear-gradient(-90deg, #e0e0e0 0%, #f5f5f5 50%, #e0e0e0 100%);
-  background-size: 400% 400%;
+  width:100%;
+  height:480px;
+  border-radius:12px;
+  background: linear-gradient(-90deg,#e0e0e0 0%,#f5f5f5 50%,#e0e0e0 100%);
+  background-size:400% 400%;
   animation: shimmer 1.4s ease-in-out infinite;
 }
-
-@keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-
-/* PDF iframe */
+@keyframes shimmer {0%{background-position:200% 0;}100%{background-position:-200% 0;}}
 .pdf-frame {
-  width: 100%;
-  height: 0; /* 动态 JS 自动控制 */
-  border-radius: 12px;
-  border: none;
-  display: none;
+  width:100%;
+  height:480px;
+  border-radius:12px;
+  border:none;
+  display:none;
 }
-
-/* Mobile */
-@media (max-width: 768px) {
-  .pdf-frame {
-    width: 100%;
-  }
-}
+@media (max-width:768px){ .pdf-frame {width:100%;} }
 </style>
+
 
 
 
