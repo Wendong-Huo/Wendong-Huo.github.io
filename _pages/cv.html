@@ -163,6 +163,38 @@ redirect_from:
   }
 }
 
+/* CV Card style */
+.cv-card {
+  background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
+  border-radius: 20px;
+  padding: 1.4rem 1.8rem;
+  margin: 1.5rem 0;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: all 0.3s ease;
+}
+
+.cv-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.22);
+  filter: brightness(1.06);
+}
+
+/* Card text */
+.cv-card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.cv-card-sub {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
 
 </style>
 
@@ -184,9 +216,11 @@ function loadPDF(iframeId, skeletonId) {
 </script>
 
 <!-- EN CV -->
-<div class="cv-collapse" onclick="toggleCV('cv-en')">
-  English CV (click to expand / collapse)
+<div class="cv-card" onclick="toggleCV('cv-en')">
+  <div class="cv-card-title">English CV</div>
+  <div class="cv-card-sub">Click to expand / collapse</div>
 </div>
+
 <div id="cv-en" class="cv-content">
   <div id="skeleton-en" class="skeleton"></div>
   <iframe
@@ -198,9 +232,11 @@ function loadPDF(iframeId, skeletonId) {
 </div>
 
 <!-- CH CV -->
-<div class="cv-collapse" onclick="toggleCV('cv-ch')">
-  Chinese CV (click to expand / collapse)
+<div class="cv-card" onclick="toggleCV('cv-ch')">
+  <div class="cv-card-title">Chinese CV</div>
+  <div class="cv-card-sub">Click to expand / collapse</div>
 </div>
+
 <div id="cv-ch" class="cv-content">
   <div id="skeleton-ch" class="skeleton"></div>
   <iframe
@@ -210,6 +246,7 @@ function loadPDF(iframeId, skeletonId) {
   </iframe>
   <script>loadPDF('iframe-ch', 'skeleton-ch');</script>
 </div>
+
 
 <!-- Download buttons -->
 <!-- Download buttons -->
