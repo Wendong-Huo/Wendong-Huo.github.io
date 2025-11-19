@@ -5,78 +5,173 @@ permalink: /publications/
 author_profile: true
 ---
 
-You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
+1You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
 
-<!-- PDF Fold Card Template -->
-<div class="pdf-card" data-pdf="/files/thesis-1.pdf">
-  <div class="pdf-card-header">
+<!-- ========================= -->
+<!-- Finalized Thesis PDF Card -->
+<!-- ========================= -->
+<div class="pdf-card">
+  <div class="pdf-card-header" onclick="togglePDF('pdf-box1', 'arrow1')">
     <span>Finalized Thesis</span>
-    <span class="arrow">▶</span>
+    <span id="arrow1" class="arrow">▶</span>
   </div>
-  <div class="pdf-card-content">
-    <div class="skeleton"></div>
-    <iframe class="pdf-frame" src="" frameborder="0"></iframe>
+
+  <div id="pdf-box1" class="pdf-card-content">
+    <div id="skeleton1" class="skeleton"></div>
+    <iframe
+      id="pdf-frame1"
+      class="pdf-frame"
+      src=""
+      frameborder="0">
+    </iframe>
   </div>
 </div>
 
-<div class="pdf-card" data-pdf="/files/thesis-defense-slides.pdf">
-  <div class="pdf-card-header">
+<!-- ========================= -->
+<!-- Thesis Defense Slides PDF Card -->
+<!-- ========================= -->
+<div class="pdf-card">
+  <div class="pdf-card-header" onclick="togglePDF('pdf-box2', 'arrow2')">
     <span>Thesis Defense Slides</span>
-    <span class="arrow">▶</span>
+    <span id="arrow2" class="arrow">▶</span>
   </div>
-  <div class="pdf-card-content">
-    <div class="skeleton"></div>
-    <iframe class="pdf-frame" src="" frameborder="0"></iframe>
+
+  <div id="pdf-box2" class="pdf-card-content">
+    <div id="skeleton2" class="skeleton"></div>
+    <iframe
+      id="pdf-frame2"
+      class="pdf-frame"
+      src=""
+      frameborder="0">
+    </iframe>
   </div>
 </div>
 
 <script>
-// Fold Card Toggle + PDF Loader
-document.querySelectorAll('.pdf-card').forEach(card => {
-  const header = card.querySelector('.pdf-card-header');
-  const content = card.querySelector('.pdf-card-content');
-  const arrow = card.querySelector('.arrow');
-  const iframe = card.querySelector('.pdf-frame');
-  const skeleton = card.querySelector('.skeleton');
-  const pdfUrl = card.dataset.pdf;
+// --------------------------
+// Fold Card Toggle
+// --------------------------
+function togglePDF(boxId, arrowId) {
+  const box = document.getElementById(boxId);
+  const arrow = document.getElementById(arrowId);
 
-  header.addEventListener('click', () => {
-    // Toggle
-    if(content.classList.contains('open')){
-      content.style.maxHeight = "0px";
-      content.classList.remove('open');
-      arrow.style.transform = "rotate(0deg)";
-    } else {
-      content.classList.add('open');
-      arrow.style.transform = "rotate(90deg)";
+  if(box.classList.contains("open")) {
+    box.style.maxHeight = "0px";
+    box.classList.remove("open");
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    box.classList.add("open");
+    box.style.maxHeight = "80vh"; // 初始展开高度
+    arrow.style.transform = "rotate(90deg)";
 
-      // 先给 content 一个最小高度，保证 iframe 显示
-      content.style.maxHeight = "80vh";
+    // 加载 PDF
+    const iframe = box.querySelector('.pdf-frame');
+    const skeleton = box.querySelector('.skeleton');
+    const pdfUrl = (boxId === 'pdf-box1') ? '/files/thesis-1.pdf' : '/files/thesis-defense-slides.pdf';
 
-      // 如果 iframe 还没加载过
-      if(!iframe.src){
-        iframe.src = "/pdfjs/web/viewer.html?file=" + pdfUrl + "&download=false";
-        iframe.style.height = "80vh";
+    if(!iframe.src) {
+      iframe.src = "/pdfjs/web/viewer.html?file=" + pdfUrl + "&download=false";
+      iframe.style.height = "80vh";
 
-        iframe.addEventListener('load', () => {
-          skeleton.style.display = "none";
-          iframe.style.display = "block";
+      iframe.addEventListener('load', () => {
+        skeleton.style.display = "none";
+        iframe.style.display = "block";
 
-          try {
-            const doc = iframe.contentDocument || iframe.contentWindow.document;
-            ["download", "secondaryDownload"].forEach(id => {
-              const btn = doc.getElementById(id);
-              if(btn) btn.style.display = "none";
-            });
-          } catch(e) {
-            console.warn("无法访问 PDF.js 按钮（跨域问题）", e);
-          }
-        });
-      }
+        try {
+          const doc = iframe.contentDocument || iframe.contentWindow.document;
+          ["download", "secondaryDownload"].forEach(id => {
+            const btn = doc.getElementById(id);
+            if(btn) btn.style.display = "none";
+          });
+        } catch(e) {
+          console.warn("无法访问 PDF.js 下载按钮（可能跨域）", e);
+        }
+      });
     }
-  });
-});
+  }
+}
 </script>
+
+<style>
+/* ========================= */
+/* PDF Fold Card Styles */
+/* ========================= */
+.pdf-card {
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  margin: 1rem 0;
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: all 0.35s ease;
+}
+
+.pdf-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+
+.pdf-card-header {
+  padding: 1rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
+  color: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.arrow {
+  transition: transform 0.35s ease;
+}
+
+/* Expandable content */
+.pdf-card-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+  padding: 0 1rem;
+}
+
+.pdf-card-content.open {
+  padding: 1rem;
+}
+
+/* Skeleton loader */
+.skeleton {
+  width: 100%;
+  height: 480px;
+  border-radius: 12px;
+  background: linear-gradient(-90deg, #e0e0e0 0%, #f5f5f5 50%, #e0e0e0 100%);
+  background-size: 400% 400%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* PDF iframe */
+.pdf-frame {
+  width: 100%;
+  height: 0; /* JS 自动设置 */
+  border-radius: 12px;
+  border: none;
+  display: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .pdf-frame {
+    width: 100%;
+  }
+}
+</style>
+
 
 
 <style>
