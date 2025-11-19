@@ -38,6 +38,25 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 <!-- PDF Fold Card -->
 <div class="pdf-card" onclick="togglePDF('pdf-box', 'arrow1')">
   <div class="pdf-card-header">
+    <span>Finalised Thesis</span>
+    <span id="arrow1" class="arrow">▶</span>
+  </div>
+
+  <div id="pdf-box" class="pdf-card-content">
+    <div id="skeleton-pdf" class="skeleton"></div>
+
+    <iframe
+      id="pdf-frame"
+      class="pdf-frame"
+      src="/pdfjs/web/viewer.html?file=/files/thesis-1.pdf&download=false">
+    </iframe>
+  </div>
+</div>
+
+<!-- Slides -->
+<!-- PDF Fold Card -->
+<div class="pdf-card" onclick="togglePDF('pdf-box', 'arrow1')">
+  <div class="pdf-card-header">
     <span>Thesis Defense Slides</span>
     <span id="arrow1" class="arrow">▶</span>
   </div>
@@ -52,7 +71,6 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
     </iframe>
   </div>
 </div>
-
 
 <script>
 // Toggle Card
