@@ -5,129 +5,245 @@ permalink: /publications/
 author_profile: true
 ---
 
-You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
-
-<!-- PDF Fold Card Template -->
-<div class="pdf-card" data-pdf="/files/thesis-1.pdf">
-  <div class="pdf-card-header">
-    <span>Finalized Thesis</span>
-    <span class="arrow">▶</span>
-  </div>
-  <div class="pdf-card-content">
-    <div class="skeleton"></div>
-    <iframe class="pdf-frame" src="" frameborder="0"></iframe>
-  </div>
-</div>
-
-<div class="pdf-card" data-pdf="/files/thesis-defense-slides.pdf">
-  <div class="pdf-card-header">
+4
+<!-- PDF Fold Card -->
+<div class="pdf-card">
+  <div class="pdf-card-header" onclick="togglePDF('pdf-box1', 'arrow1', '/files/thesis-defense-slides.pdf')">
     <span>Thesis Defense Slides</span>
-    <span class="arrow">▶</span>
+    <span id="arrow1" class="arrow">▶</span>
   </div>
-  <div class="pdf-card-content">
-    <div class="skeleton"></div>
-    <iframe class="pdf-frame" src="" frameborder="0"></iframe>
+
+  <div id="pdf-box1" class="pdf-card-content">
+    <div id="skeleton1" class="skeleton"></div>
+    <iframe id="pdf-frame1" class="pdf-frame" src="" frameborder="0"></iframe>
   </div>
 </div>
 
 <script>
-// Fold Card Toggle
-document.querySelectorAll('.pdf-card').forEach(card => {
-  const header = card.querySelector('.pdf-card-header');
-  const content = card.querySelector('.pdf-card-content');
-  const arrow = card.querySelector('.arrow');
-  const iframe = card.querySelector('.pdf-frame');
-  const skeleton = card.querySelector('.skeleton');
-  const pdfUrl = card.dataset.pdf;
+function togglePDF(boxId, arrowId, pdfUrl) {
+  const box = document.getElementById(boxId);
+  const arrow = document.getElementById(arrowId);
+  const iframe = box.querySelector('.pdf-frame');
+  const skeleton = box.querySelector('.skeleton');
 
-  header.addEventListener('click', () => {
-    if(content.classList.contains('open')){
-      content.style.maxHeight = "0px";
-      content.classList.remove('open');
-      arrow.style.transform = "rotate(0deg)";
-    } else {
-      content.classList.add('open');
-      content.style.maxHeight = content.scrollHeight + "px";
-      arrow.style.transform = "rotate(90deg)";
+  if (box.classList.contains('open')) {
+    box.style.maxHeight = "0px";
+    box.classList.remove('open');
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    box.classList.add('open');
+    box.style.maxHeight = "570px";
+    arrow.style.transform = "rotate(90deg)";
 
-      // 如果 iframe 还没加载过，设置 src
-      if(!iframe.src){
-        iframe.src = "/pdfjs/web/viewer.html?file=" + pdfUrl + "&download=false";
+    if (!iframe.dataset.loaded) {
+      iframe.src = "/pdfjs/web/viewer.html?file=" + pdfUrl + "&download=false";
+      iframe.dataset.loaded = "true";
 
-        iframe.addEventListener('load', () => {
-          // Hide Skeleton
-          skeleton.style.display = "none";
-          iframe.style.display = "block";
+      iframe.addEventListener('load', () => {
+        skeleton.style.display = "none";
+        iframe.style.display = "block";
 
-          // 禁用 PDF.js 下载按钮
+        try {
           const doc = iframe.contentDocument || iframe.contentWindow.document;
-          function disableButtons() {
-            ["download", "secondaryDownload"].forEach(id => {
-              const btn = doc.getElementById(id);
-              if(btn) btn.style.display = "none";
-            });
-          }
-          disableButtons();
-          setTimeout(disableButtons, 500);
-          setTimeout(disableButtons, 1200);
-        });
-      }
+          ["download", "secondaryDownload"].forEach(id => {
+            const btn = doc.getElementById(id);
+            if (btn) btn.style.display = "none";
+          });
+        } catch(e) {
+          console.warn("无法访问 PDF.js 下载按钮（跨域）", e);
+        }
+      });
     }
-  });
-});
+  }
+}
+</script>
+
+<!-- PDF Fold Card2 -->
+<div class="pdf-card2">
+  <div class="pdf-card-header2" onclick="togglePDF2('pdf-box2', 'arrow', '/files/thesis-1.pdf')">
+    <span>Finalized Thesis</span>
+    <span id="arrow" class="arrow">▶</span>
+  </div>
+
+  <div id="pdf-box2" class="pdf-card-content2">
+    <div id="skeleton2" class="skeleton"></div>
+    <iframe id="pdf-frame2" class="pdf-frame" src="" frameborder="0"></iframe>
+  </div>
+</div>
+
+<script>
+function togglePDF2(boxId, arrowId, pdfUrl) {
+  const box = document.getElementById(boxId);
+  const arrow = document.getElementById(arrowId);
+  const iframe = box.querySelector('.pdf-frame');
+  const skeleton = box.querySelector('.skeleton');
+
+  if (box.classList.contains('open')) {
+    box.style.maxHeight = "0px";
+    box.classList.remove('open');
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    box.classList.add('open');
+    box.style.maxHeight = "1200px";
+    arrow.style.transform = "rotate(90deg)";
+
+    if (!iframe.dataset.loaded) {
+      iframe.src = "/pdfjs/web/viewer.html?file=" + pdfUrl + "&download=false";
+      iframe.dataset.loaded = "true";
+
+      iframe.addEventListener('load', () => {
+        skeleton.style.display = "none";
+        iframe.style.display = "block";
+
+        try {
+          const doc = iframe.contentDocument || iframe.contentWindow.document;
+          ["download", "secondaryDownload"].forEach(id => {
+            const btn = doc.getElementById(id);
+            if (btn) btn.style.display = "none";
+          });
+        } catch(e) {
+          console.warn("无法访问 PDF.js 下载按钮（跨域）", e);
+        }
+      });
+    }
+  }
+}
 </script>
 
 <style>
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.arrow2 {
+  transition: transform 0.35s ease;
+}
+
 .pdf-card {
-  background: rgba(255,255,255,0.4);
-  backdrop-filter: blur(12px);
+  background: rgba(245, 245, 255, 0.25); /* 更淡的半透明淡蓝色 */
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  margin: 1.5rem 0;
-  border: 1px solid rgba(255,255,255,0.4);
+  margin: 1rem 0;
+  border: 1px solid rgba(230,230,250,0.3);
   transition: all 0.35s ease;
 }
-.pdf-card:hover { transform: translateY(-3px); box-shadow:0 10px 26px rgba(0,0,0,0.12);}
+
+.pdf-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+
 .pdf-card-header {
   padding: 1rem 1.2rem;
   font-size: 1.1rem;
   font-weight: 600;
-  background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
-  color:white;
-  border-radius:20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  cursor:pointer;
+  background: linear-gradient(135deg, #7a9efb 0%, #b099e3 100%); /* 颜色稍淡 */
+  color: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 }
-.arrow { transition: transform 0.35s ease;}
+
+/* 内容折叠区 */
 .pdf-card-content {
-  max-height:0;
-  overflow:hidden;
-  transition:max-height 0.45s ease;
-  padding:0 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+  padding: 0 1rem;
 }
-.pdf-card-content.open { padding:1rem;}
+
+.pdf-card-content.open {
+  padding: 1rem;
+}
+
+/* Skeleton loader */
 .skeleton {
-  width:100%;
-  height:480px;
-  border-radius:12px;
-  background: linear-gradient(-90deg,#e0e0e0 0%,#f5f5f5 50%,#e0e0e0 100%);
-  background-size:400% 400%;
+  width: 100%;
+  height: 570px;
+  border-radius: 12px;
+  background: linear-gradient(-90deg, #f0f0f0 0%, #fafafa 50%, #f0f0f0 100%);
+  background-size: 400% 400%;
   animation: shimmer 1.4s ease-in-out infinite;
 }
-@keyframes shimmer {0%{background-position:200% 0;}100%{background-position:-200% 0;}}
+
+/* PDF iframe */
 .pdf-frame {
-  width:100%;
-  height:480px;
-  border-radius:12px;
-  border:none;
-  display:none;
+  width: 100%;
+  height: 570px;
+  border-radius: 12px;
+  border: none;
+  display: none;
 }
-@media (max-width:768px){ .pdf-frame {width:100%;} }
+
+
+/* --- PDF Card 2 样式修改 --- */
+.pdf-card2 {
+  background: rgba(245, 245, 255, 0.25); /* 更淡的半透明淡蓝色 */
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  margin: 1rem 0;
+  border: 1px solid rgba(230,230,250,0.3);
+  transition: all 0.35s ease;
+}
+
+.pdf-card2:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+
+.pdf-card-header2 {
+  padding: 1rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #7a9efb 0%, #b099e3 100%); /* 颜色稍淡 */
+  color: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* 内容折叠区 */
+.pdf-card-content2 {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+  padding: 0 1rem;
+}
+
+.pdf-card-content2.open {
+  padding: 1rem;
+}
+
+/* Skeleton loader */
+.skeleton2 {
+  width: 100%;
+  height: 570px;
+  border-radius: 12px;
+  background: linear-gradient(-90deg, #f0f0f0 0%, #fafafa 50%, #f0f0f0 100%);
+  background-size: 400% 400%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+/* PDF iframe */
+.pdf-frame2 {
+  width: 100%;
+  height: 570px;
+  border-radius: 12px;
+  border: none;
+  display: none;
+}
+
+
+/* 手机响应 */
+@media (max-width: 768px){
+  .pdf-frame { width: 100%; }
+}
 </style>
-
-
 
 
 
@@ -167,19 +283,8 @@ document.querySelectorAll('.pdf-card').forEach(card => {
   </div>
 </div>
 
-<style>
-/* Compact Card */
-.thesis-card { background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%); border-radius:16px; padding:1.5rem; margin-bottom:2rem; box-shadow:0 4px 12px rgba(0,0,0,0.08); backdrop-filter:blur(5px); border:1px solid rgba(200,200,200,0.3); }
-.thesis-section-title { font-size:1.6rem; font-weight:700; margin-bottom:1rem; background:linear-gradient(90deg,#4a4a9e,#6f6fd8); -webkit-background-clip:text; color:transparent; }
-.thesis-title a { font-size:1.25rem; font-weight:600; color:#2c2c54; text-decoration:none; transition:0.2s ease; }
-.thesis-title a:hover { color:#5a5ad6; text-shadow:0 0 6px rgba(90,90,214,0.3); }
-.thesis-info { font-size:0.9rem; margin:0.25rem 0; color:#555; }
-.thesis-excerpt summary { cursor:pointer; font-size:0.95rem; color:#333; margin-top:0.8rem; }
-.thesis-excerpt p { margin-top:0.5rem; padding:0.6rem 1rem; background:#ffffff; border-radius:10px; border-left:3px solid #6f6fd8; font-size:0.9rem; box-shadow:0 2px 6px rgba(0,0,0,0.05); }
-</style>
 
 <h2>Journal Publications (pre-postdoc)</h2>
-
 <div class="publications-grid">
 {% for post in site.publications reversed %}
   <div class="publication-card">
@@ -223,6 +328,19 @@ document.querySelectorAll('.pdf-card').forEach(card => {
 </div>
 
 <style>
+/* Compact Card */
+.thesis-card { background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%); border-radius:16px; padding:1.5rem; margin-bottom:0.4rem; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition: transform 0.25s ease, box-shadow 0.25s ease;backdrop-filter:blur(5px); border:1px solid rgba(200,200,200,0.3); }
+.thesis-card:hover {transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,0.12);}
+.thesis-section-title { font-size:1.6rem; font-weight:700; margin: 0 0 0.4rem 0; background:linear-gradient(90deg,#4a4a9e,#6f6fd8); -webkit-background-clip:text; color:transparent; }
+.thesis-title a { font-size:1.25rem; font-weight:600; color:#2c2c54; text-decoration:none; transition:0.2s ease;margin-bottom:0.8rem; }
+.thesis-title a:hover { color:#5a5ad6; text-shadow:0 0 6px rgba(90,90,214,0.3); }
+
+.thesis-info { font-size:0.9rem; margin:0.25rem 0; color:#555; }
+.thesis-excerpt summary { cursor:pointer; font-size:0.95rem; color:#333; margin-top:0.8rem; }
+.thesis-excerpt p { margin-top:0.5rem; padding:0.6rem 1rem; background:#ffffff; border-radius:10px; border-left:3px solid #6f6fd8; font-size:0.9rem; box-shadow:0 2px 6px rgba(0,0,0,0.05); }
+</style>
+
+<style>
 /* --- Publications Grid --- */
 .publications-grid {
   display: grid;
@@ -236,7 +354,7 @@ document.querySelectorAll('.pdf-card').forEach(card => {
   background: linear-gradient(135deg, #e6f5e9 0%, #ffffff 80%);
   border-radius: 24px;
   padding: 1.8rem;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   border: 1px solid rgba(200,200,200,0.3);
 }
@@ -264,7 +382,12 @@ document.querySelectorAll('.pdf-card').forEach(card => {
   text-shadow: 0 0 6px rgba(39,174,96,0.3);
 }
 
-.publication-authors,
+.publication-authors {
+  font-size: 0.8rem; /* 原来可能是 0.9rem，调小一点 */
+  margin: 0.25rem 0;  /* 可根据需要调整上下间距 */
+  color: #444;
+}
+
 .publication-venue,
 .publication-doi,
 .publication-date {
@@ -293,6 +416,4 @@ document.querySelectorAll('.pdf-card').forEach(card => {
 
 </style>
 
-
-
-
+You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
