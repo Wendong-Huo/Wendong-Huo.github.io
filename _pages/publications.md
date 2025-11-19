@@ -31,7 +31,7 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 </div>
 
 <script>
-// Fold Card Toggle
+// Fold Card Toggle + PDF Loader
 document.querySelectorAll('.pdf-card').forEach(card => {
   const header = card.querySelector('.pdf-card-header');
   const content = card.querySelector('.pdf-card-content');
@@ -41,41 +41,43 @@ document.querySelectorAll('.pdf-card').forEach(card => {
   const pdfUrl = card.dataset.pdf;
 
   header.addEventListener('click', () => {
+    // Toggle
     if(content.classList.contains('open')){
       content.style.maxHeight = "0px";
       content.classList.remove('open');
       arrow.style.transform = "rotate(0deg)";
     } else {
       content.classList.add('open');
-      content.style.maxHeight = content.scrollHeight + "px";
       arrow.style.transform = "rotate(90deg)";
 
-      // 如果 iframe 还没加载过，设置 src
+      // 先给 content 一个最小高度，保证 iframe 显示
+      content.style.maxHeight = "80vh";
+
+      // 如果 iframe 还没加载过
       if(!iframe.src){
         iframe.src = "/pdfjs/web/viewer.html?file=" + pdfUrl + "&download=false";
+        iframe.style.height = "80vh";
 
         iframe.addEventListener('load', () => {
-          // Hide Skeleton
           skeleton.style.display = "none";
           iframe.style.display = "block";
 
-          // 禁用 PDF.js 下载按钮
-          const doc = iframe.contentDocument || iframe.contentWindow.document;
-          function disableButtons() {
+          try {
+            const doc = iframe.contentDocument || iframe.contentWindow.document;
             ["download", "secondaryDownload"].forEach(id => {
               const btn = doc.getElementById(id);
               if(btn) btn.style.display = "none";
             });
+          } catch(e) {
+            console.warn("无法访问 PDF.js 按钮（跨域问题）", e);
           }
-          disableButtons();
-          setTimeout(disableButtons, 500);
-          setTimeout(disableButtons, 1200);
         });
       }
     }
   });
 });
 </script>
+
 
 <style>
 .pdf-card {
