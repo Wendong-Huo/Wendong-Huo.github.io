@@ -7,46 +7,40 @@ author_profile: true
 
 9You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
 
-<!-- Slides -->
-<div class="pdf-card" onclick="togglePDF('thesis-pdf', 'arrow1')">
-  <div class="pdf-card-header">
+<!-- PDF Fold Card -->
+<div class="pdf-card">
+  <div class="pdf-card-header" onclick="togglePDF('pdf-box1', 'arrow1', '/files/thesis-defense-slides.pdf')">
     <span>Thesis Defense Slides</span>
     <span id="arrow1" class="arrow">▶</span>
   </div>
 
-  <div id="thesis-pdf" class="pdf-card-content">
-    <div id="skeleton-pdf" class="skeleton"></div>
-
-    <iframe
-      id="pdf-frame"
-      class="pdf-frame"
-      src="/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf&download=false">
-    </iframe>
+  <div id="pdf-box1" class="pdf-card-content">
+    <div id="skeleton1" class="skeleton"></div>
+    <iframe id="pdf-frame1" class="pdf-frame" src="" frameborder="0"></iframe>
   </div>
 </div>
 
 <script>
-// PDF Fold Toggle
-function togglePDF(boxId, arrowId) {
+function togglePDF(boxId, arrowId, pdfUrl) {
   const box = document.getElementById(boxId);
   const arrow = document.getElementById(arrowId);
   const iframe = box.querySelector('.pdf-frame');
   const skeleton = box.querySelector('.skeleton');
-  
-  if(box.classList.contains('open')) {
+
+  if (box.classList.contains('open')) {
     box.style.maxHeight = "0px";
     box.classList.remove('open');
     arrow.style.transform = "rotate(0deg)";
   } else {
     box.classList.add('open');
-    box.style.maxHeight = "90vh"; // 展开高度
+    box.style.maxHeight = "90vh";
     arrow.style.transform = "rotate(90deg)";
 
-    // 如果 iframe 还没加载
-    if(!iframe.src) {
-      iframe.src = "/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf&download=false";
-      
-      iframe.addEventListener('load', function() {
+    if (!iframe.dataset.loaded) {
+      iframe.src = "/pdfjs/web/viewer.html?file=" + pdfUrl + "&download=false";
+      iframe.dataset.loaded = "true";
+
+      iframe.addEventListener('load', () => {
         skeleton.style.display = "none";
         iframe.style.display = "block";
 
@@ -54,10 +48,10 @@ function togglePDF(boxId, arrowId) {
           const doc = iframe.contentDocument || iframe.contentWindow.document;
           ["download", "secondaryDownload"].forEach(id => {
             const btn = doc.getElementById(id);
-            if(btn) btn.style.display = "none";
+            if (btn) btn.style.display = "none";
           });
         } catch(e) {
-          console.warn("无法访问 PDF.js 下载按钮（可能跨域）", e);
+          console.warn("无法访问 PDF.js 下载按钮（跨域）", e);
         }
       });
     }
@@ -65,56 +59,19 @@ function togglePDF(boxId, arrowId) {
 }
 </script>
 
-
 <style>
-.pdf-card {
-  background: rgba(255,255,255,0.4);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  margin: 1rem 0;
-  border: 1px solid rgba(255,255,255,0.4);
-  transition: all 0.35s ease;
-}
+.pdf-card { background: rgba(255,255,255,0.4); backdrop-filter: blur(12px); border-radius:20px; margin:1rem 0; border:1px solid rgba(255,255,255,0.4); transition:0.35s; }
 .pdf-card:hover { transform: translateY(-3px); box-shadow:0 10px 26px rgba(0,0,0,0.12);}
-.pdf-card-header {
-  padding: 1rem 1.2rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
-  color:white;
-  border-radius:20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  cursor:pointer;
-}
-.arrow { transition: transform 0.35s ease;}
-.pdf-card-content {
-  max-height:0;
-  overflow:hidden;
-  transition:max-height 0.45s ease;
-  padding:0 1rem;
-}
+.pdf-card-header { padding:1rem 1.2rem; font-size:1.1rem; font-weight:600; background: linear-gradient(135deg,#6e8efb 0%,#a777e3 100%); color:white; border-radius:20px; display:flex; justify-content:space-between; align-items:center; cursor:pointer;}
+.arrow { transition:0.35s;}
+.pdf-card-content { max-height:0; overflow:hidden; transition: max-height 0.45s ease; padding:0 1rem;}
 .pdf-card-content.open { padding:1rem;}
-.skeleton {
-  width:100%;
-  height:480px;
-  border-radius:12px;
-  background: linear-gradient(-90deg,#e0e0e0 0%,#f5f5f5 50%,#e0e0e0 100%);
-  background-size:400% 400%;
-  animation: shimmer 1.4s ease-in-out infinite;
-}
+.skeleton { width:100%; height:480px; border-radius:12px; background: linear-gradient(-90deg,#e0e0e0 0%,#f5f5f5 50%,#e0e0e0 100%); background-size:400% 400%; animation: shimmer 1.4s ease-in-out infinite;}
 @keyframes shimmer {0%{background-position:200% 0;}100%{background-position:-200% 0;}}
-.pdf-frame {
-  width:100%;
-  height:90vh;
-  border-radius:12px;
-  border:none;
-  display:none;
-}
+.pdf-frame { width:100%; height:90vh; border-radius:12px; border:none; display:none;}
 @media (max-width:768px){ .pdf-frame {width:100%;} }
 </style>
+
 
 
 
