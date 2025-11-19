@@ -9,6 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
+<!-- Title -->
 <h1 style="text-align:center; margin-bottom: 0.5em;">Curriculum Vitae</h1>
 
 <p style="text-align:center; font-size:1rem; color:#555; margin-bottom:2em;">
@@ -16,7 +17,11 @@ redirect_from:
 </p>
 
 <style>
-/* Collapse panel style */
+/* ====================================================================== */
+/*                          GLOBAL CV PAGE STYLE                          */
+/* ====================================================================== */
+
+/* Collapse panel style (old version) – kept for compatibility */
 .cv-collapse {
   background-color: #f5f5f5;
   border-radius: 8px;
@@ -27,10 +32,7 @@ redirect_from:
   font-weight: 600;
   transition: background-color 0.2s ease;
 }
-
-.cv-collapse:hover {
-  background-color: #e5e5e5;
-}
+.cv-collapse:hover { background-color: #e5e5e5; }
 
 .cv-content {
   display: none;
@@ -38,7 +40,9 @@ redirect_from:
   position: relative;
 }
 
-/* Skeleton loading */
+/* ====================================================================== */
+/*                              Skeleton Loader                           */
+/* ====================================================================== */
 .skeleton {
   width: 100%;
   height: 780px;
@@ -47,19 +51,20 @@ redirect_from:
   background-size: 400% 400%;
   animation: shimmer 1.5s ease-in-out infinite;
 }
-
 @keyframes shimmer {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
 
-/* PDF.js iframe container */
+/* ====================================================================== */
+/*                             PDF Container                               */
+/* ====================================================================== */
 .pdf-container {
   width: 100%;
   height: 780px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  display: none; /* initially hidden until loaded */
+  display: none; /* hidden until loaded */
   overflow: auto;
   position: relative;
 }
@@ -75,52 +80,31 @@ redirect_from:
   pointer-events: none;
   z-index: 10;
 }
-
 .pdf-container::before {
   top: 0;
   background: linear-gradient(to bottom, rgba(0,0,0,0.15), transparent);
 }
-
 .pdf-container::after {
   bottom: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.15), transparent);
 }
 
-/* Dark mode support */
+/* ====================================================================== */
+/*                           DARK MODE SUPPORT                             */
+/* ====================================================================== */
 @media (prefers-color-scheme: dark) {
   .cv-collapse {
     background-color: #2e2e2e;
     color: #eee;
   }
-  .cv-collapse:hover {
-    background-color: #3a3a3a;
-  }
-  .pdf-container {
-    border: 1px solid #444;
-  }
-  .skeleton {
-    background: linear-gradient(-90deg, #444 0%, #555 50%, #444 100%);
-  }
+  .cv-collapse:hover { background-color: #3a3a3a; }
+  .pdf-container { border: 1px solid #444; }
+  .skeleton { background: linear-gradient(-90deg, #444 0%, #555 50%, #444 100%); }
 }
 
-/* Download button style */
-.download-btn {
-  display: inline-block;
-  padding: 0.6em 1.2em;
-  margin: 0.5em;
-  background-color: #007acc;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.download-btn:hover {
-  background-color: #005f99;
-  transform: scale(1.05);
-}
-
-/* CV Download Buttons - matching Publications / Thesis style */
+/* ====================================================================== */
+/*                           DOWNLOAD BUTTONS                              */
+/* ====================================================================== */
 .cv-download-area {
   text-align: center;
   margin: 2.5em 0 3.5em 0;
@@ -138,10 +122,10 @@ redirect_from:
   color: white;
   text-decoration: none;
 
-  /* 与 thesis 卡片一致的渐变 */
+  /* 与 Thesis 卡片一致的渐变 */
   background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
 
-  /* 毛玻璃风格边框 */
+  /* 毛玻璃感 */
   border: 1px solid rgba(255,255,255,0.4);
   backdrop-filter: blur(10px);
 
@@ -163,7 +147,9 @@ redirect_from:
   }
 }
 
-/* CV Card style */
+/* ====================================================================== */
+/*                          CARD STYLE FOR COLLAPSE                        */
+/* ====================================================================== */
 .cv-card {
   background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
   border-radius: 20px;
@@ -176,35 +162,33 @@ redirect_from:
   border: 1px solid rgba(255,255,255,0.4);
   transition: all 0.3s ease;
 }
-
 .cv-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0,0,0,0.22);
   filter: brightness(1.06);
 }
 
-/* Card text */
 .cv-card-title {
   font-size: 1.35rem;
   font-weight: 700;
   margin-bottom: 0.2rem;
 }
-
 .cv-card-sub {
   font-size: 0.95rem;
   opacity: 0.9;
 }
-
-
 </style>
 
+<!-- ====================================================================== -->
+<!--                            JAVASCRIPT                                  -->
+<!-- ====================================================================== -->
 <script>
 function toggleCV(id) {
   const content = document.getElementById(id);
   content.style.display = (content.style.display === "block") ? "none" : "block";
 }
 
-// PDF skeleton loader
+// Skeleton → PDF loader
 function loadPDF(iframeId, skeletonId) {
   const iframe = document.getElementById(iframeId);
   const skeleton = document.getElementById(skeletonId);
@@ -215,7 +199,9 @@ function loadPDF(iframeId, skeletonId) {
 }
 </script>
 
-<!-- EN CV -->
+<!-- ====================================================================== -->
+<!--                          ENGLISH CV SECTION                             -->
+<!-- ====================================================================== -->
 <div class="cv-card" onclick="toggleCV('cv-en')">
   <div class="cv-card-title">English CV</div>
   <div class="cv-card-sub">Click to expand / collapse</div>
@@ -231,7 +217,9 @@ function loadPDF(iframeId, skeletonId) {
   <script>loadPDF('iframe-en', 'skeleton-en');</script>
 </div>
 
-<!-- CH CV -->
+<!-- ====================================================================== -->
+<!--                           CHINESE CV SECTION                            -->
+<!-- ====================================================================== -->
 <div class="cv-card" onclick="toggleCV('cv-ch')">
   <div class="cv-card-title">Chinese CV</div>
   <div class="cv-card-sub">Click to expand / collapse</div>
@@ -247,16 +235,14 @@ function loadPDF(iframeId, skeletonId) {
   <script>loadPDF('iframe-ch', 'skeleton-ch');</script>
 </div>
 
-
-<!-- Download buttons -->
-<!-- Download buttons -->
+<!-- ====================================================================== -->
+<!--                          DOWNLOAD BUTTONS                               -->
+<!-- ====================================================================== -->
 <div class="cv-download-area">
   <a href="../files/CV-Files/CV-en-Wendong_Huo.pdf" download="CV-en-Wendong_Huo.pdf" class="cv-download-btn">
     Download CV (EN)
   </a>
-
   <a href="../files/CV-Files/CV-ch-Wendong_Huo.pdf" download="CV-ch-Wendong_Huo.pdf" class="cv-download-btn">
     Download CV (CH)
   </a>
 </div>
-
