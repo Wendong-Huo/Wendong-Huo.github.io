@@ -5,7 +5,7 @@ permalink: /publications/
 author_profile: true
 ---
 
-3You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
+4You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
 
 <!-- PDF Fold Card -->
 <div class="pdf-card">
@@ -33,7 +33,7 @@ function togglePDF(boxId, arrowId, pdfUrl) {
     arrow.style.transform = "rotate(0deg)";
   } else {
     box.classList.add('open');
-    box.style.maxHeight = "600px";
+    box.style.maxHeight = "570px";
     arrow.style.transform = "rotate(90deg)";
 
     if (!iframe.dataset.loaded) {
@@ -61,9 +61,9 @@ function togglePDF(boxId, arrowId, pdfUrl) {
 
 <!-- PDF Fold Card2 -->
 <div class="pdf-card2">
-  <div class="pdf-card2-header" onclick="togglePDF2('pdf-box2', 'arrow2', '/files/thesis-1.pdf')">
+  <div class="pdf-card-header2" onclick="togglePDF2('pdf-box2', 'arrow', '/files/thesis-1.pdf')">
     <span>Finalized Thesis</span>
-    <span id="arrow2" class="arrow">▶</span>
+    <span id="arrow" class="arrow">▶</span>
   </div>
 
   <div id="pdf-box2" class="pdf-card-content2">
@@ -112,12 +112,13 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
 </script>
 
 <style>
-.arrow { transition:0.35s;}
-/* PDF Card 样式（和 Thesis 卡片保持一致） */
 
 @keyframes shimmer {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
+}
+.arrow2 {
+  transition: transform 0.35s ease;
 }
 
 .pdf-card {
@@ -162,9 +163,9 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
 /* Skeleton loader */
 .skeleton {
   width: 100%;
-  height: 600px;
+  height: 570px;
   border-radius: 12px;
-background: linear-gradient(-90deg, #f0f0f0 0%, #fafafa 50%, #f0f0f0 100%);
+  background: linear-gradient(-90deg, #f0f0f0 0%, #fafafa 50%, #f0f0f0 100%);
   background-size: 400% 400%;
   animation: shimmer 1.4s ease-in-out infinite;
 }
@@ -172,12 +173,14 @@ background: linear-gradient(-90deg, #f0f0f0 0%, #fafafa 50%, #f0f0f0 100%);
 /* PDF iframe */
 .pdf-frame {
   width: 100%;
-  height: 600px;
+  height: 570px;
   border-radius: 12px;
   border: none;
   display: none;
 }
 
+
+/* --- PDF Card 2 样式修改 --- */
 .pdf-card2 {
   background: rgba(245, 245, 255, 0.25); /* 更淡的半透明淡蓝色 */
   border-radius: 20px;
@@ -192,11 +195,11 @@ background: linear-gradient(-90deg, #f0f0f0 0%, #fafafa 50%, #f0f0f0 100%);
   box-shadow: 0 10px 26px rgba(0,0,0,0.12);
 }
 
-.pdf-card2-header {
+.pdf-card-header2 {
   padding: 1rem 1.2rem;
   font-size: 1.1rem;
   font-weight: 600;
-  background: linear-gradient(135deg, #8aa0fb 0%, #c0a8e8 100%); /* 淡化 Header 渐变颜色 */
+  background: linear-gradient(135deg, #7a9efb 0%, #b099e3 100%); /* 颜色稍淡 */
   color: white;
   border-radius: 20px;
   display: flex;
@@ -205,42 +208,7 @@ background: linear-gradient(-90deg, #f0f0f0 0%, #fafafa 50%, #f0f0f0 100%);
   cursor: pointer;
 }
 
-
-.arrow2 {
-  transition: transform 0.35s ease;
-}
-
-/* --- PDF Card 2 样式修改 --- */
-.pdf-card2 {
-  background: rgba(245, 245, 255, 0.4);  /* 类似第一个的半透明毛玻璃，但略带淡蓝色 */
-  backdrop-filter: blur(12px);           /* 毛玻璃效果 */
-  border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  margin: 1rem 0;
-  border: 1px solid rgba(230,230,250,0.4); /* 边框颜色轻微区别 */
-  transition: all 0.35s ease;
-}
-
-.pdf-card2:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
-}
-
-/* Header 样式 */
-.pdf-card2-header {
-  padding: 1rem 1.2rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, #7a8efb 0%, #b088e3 100%); /* 颜色略微调整，和第一个协调 */
-  color: white;
-  border-radius: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
-
-/* 折叠内容区 */
+/* 内容折叠区 */
 .pdf-card-content2 {
   max-height: 0;
   overflow: hidden;
@@ -255,18 +223,17 @@ background: linear-gradient(-90deg, #f0f0f0 0%, #fafafa 50%, #f0f0f0 100%);
 /* Skeleton loader */
 .skeleton2 {
   width: 100%;
-  height: 1200px;
+  height: 570px;
   border-radius: 12px;
   background: linear-gradient(-90deg, #f0f0f0 0%, #fafafa 50%, #f0f0f0 100%);
   background-size: 400% 400%;
   animation: shimmer 1.4s ease-in-out infinite;
 }
 
-
 /* PDF iframe */
 .pdf-frame2 {
   width: 100%;
-  height: 1200px;
+  height: 570px;
   border-radius: 12px;
   border: none;
   display: none;
