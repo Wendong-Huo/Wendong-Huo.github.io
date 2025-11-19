@@ -59,21 +59,21 @@ function togglePDF(boxId, arrowId, pdfUrl) {
 }
 </script>
 
-<!-- PDF Fold Card -->
-<div class="pdf-card">
-  <div class="pdf-card-header" onclick="togglePDF('pdf-box1', 'arrow1', '/files/thesis-defense-slides.pdf')">
+<!-- PDF Fold Card2 -->
+<div class="pdf-card2">
+  <div class="pdf-card2-header" onclick="togglePDF2('pdf-box2', 'arrow2', '/files/thesis-1.pdf')">
     <span>Thesis Defense Slides</span>
-    <span id="arrow1" class="arrow">▶</span>
+    <span id="arrow2" class="arrow">▶</span>
   </div>
 
-  <div id="pdf-box1" class="pdf-card-content">
-    <div id="skeleton1" class="skeleton"></div>
-    <iframe id="pdf-frame1" class="pdf-frame" src="" frameborder="0"></iframe>
+  <div id="pdf-box2" class="pdf-card-content2">
+    <div id="skeleton2" class="skeleton"></div>
+    <iframe id="pdf-frame2" class="pdf-frame" src="" frameborder="0"></iframe>
   </div>
 </div>
 
 <script>
-function togglePDF(boxId, arrowId, pdfUrl) {
+function togglePDF2(boxId, arrowId, pdfUrl) {
   const box = document.getElementById(boxId);
   const arrow = document.getElementById(arrowId);
   const iframe = box.querySelector('.pdf-frame');
@@ -215,6 +215,108 @@ function togglePDF(boxId, arrowId, pdfUrl) {
   .pdf-frame { width: 100%; }
 }
 
+.pdf-card2 {
+  background: #ffffff; /* 或者使用弹出框同样的渐变，例如 linear-gradient(...) */
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  margin: 1rem 0;
+  border: 1px solid rgba(200,200,200,0.3);
+  transition: all 0.35s ease;
+}
+
+.pdf-card2:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+
+.pdf-card2-header {
+  padding: 1rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: #f0f0f0; /* 与弹出框顶部背景一致 */
+  color: #333;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.arrow { transition:0.35s;}
+/* PDF Card 样式（和 Thesis 卡片保持一致） */
+.pdf-card {
+  background: rgba(255, 255, 255, 0.4);      /* 半透明背景 */
+  backdrop-filter: blur(12px);               /* 毛玻璃效果 */
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  margin: 1rem 0;
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: all 0.35s ease;
+}
+
+.pdf-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+
+/* 卡片 Header（和 Thesis 按钮一致） */
+.pdf-card-header {
+  padding: 1rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%); /* Thesis 卡片按钮颜色 */
+  color: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.arrow2 {
+  transition: transform 0.35s ease;
+}
+
+/* 内容折叠区 */
+.pdf-card-content2 {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+  padding: 0 1rem;
+}
+
+.pdf-card-content2.open {
+  padding: 1rem;
+}
+
+/* Skeleton loader */
+.skeleton2 {
+  width: 100%;
+  height: 480px;
+  border-radius: 12px;
+  background: linear-gradient(-90deg, #e0e0e0 0%, #f5f5f5 50%, #e0e0e0 100%);
+  background-size: 400% 400%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* PDF iframe */
+.pdf-frame2 {
+  width: 100%;
+  height: 90vh;
+  border-radius: 12px;
+  border: none;
+  display: none;
+}
+
+/* 手机响应 */
+@media (max-width: 768px){
+  .pdf-frame { width: 100%; }
+}
 </style>
 
 
