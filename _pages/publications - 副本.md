@@ -31,73 +31,140 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
       </p>
     </details>
 
-    <div class="thesis-buttons">
-      <!-- PPT Modal Trigger -->
-      <button class="btn-icon ppt-btn" onclick="openPPTModal()" title="Preview Defense Slides">🎤
-
-      </button>
-    </div>
-
   </div>
 </div>
 
-<!-- PPT Modal -->
-<div id="pptModal" class="ppt-modal hidden">
-  <div class="ppt-modal-content">
-    <span class="close" onclick="closePPTModal()">&times;</span>
-    <div id="skeleton-ppt" class="skeleton"></div>
+<!-- Slides -->
+<div class="pdf-card" onclick="togglePDF('thesis-pdf', 'arrow1')">
+  <div class="pdf-card-header">
+    <span>Thesis Defense Slides</span>
+    <span id="arrow1" class="arrow">▶</span>
+  </div>
+
+  <div id="thesis-pdf" class="pdf-card-content">
+    <div id="skeleton-pdf" class="skeleton"></div>
+
     <iframe
-      id="iframe-ppt"
-      class="pdf-container"
-      src=""
-    ></iframe>
-    <div style="text-align:center; margin-top:1em;">
-      <a href="/files/thesis-defense-slides.pdf" download="thesis-defense-slides.pdf" class="download-btn">
-        Download PPT PDF
-      </a>
-    </div>
+      id="pdf-frame"
+      class="pdf-frame"
+      src="/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf&download=false">
+    </iframe>
   </div>
 </div>
 
-<!-- JS -->
 <script>
-function openPPTModal() {
-  const modal = document.getElementById('pptModal');
-  const iframe = document.getElementById('iframe-ppt');
-  const skeleton = document.getElementById('skeleton-ppt');
+function togglePDF(contentId, arrowId) {
+  const content = document.getElementById(contentId);
+  const arrow = document.getElementById(arrowId);
 
-  modal.classList.remove('hidden');
-
-  // 只在第一次打开时加载 PDF
-  if (!iframe.src) {
-    iframe.src = "/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf";
-    iframe.onload = () => {
-      skeleton.style.display = "none";
-      iframe.style.display = "block";
-    };
-  }
+  const isVisible = content.style.display === "block";
+  content.style.display = isVisible ? "none" : "block";
+  arrow.classList.toggle("open");
 }
 
-function closePPTModal() {
-  document.getElementById('pptModal').classList.add('hidden');
-}
+// PDF Loader + Hide Download Button
+document.getElementById('pdf-frame').addEventListener("load", function() {
+  const iframe = this.contentDocument || this.contentWindow.document;
+
+  const hideDownload = () => {
+    const btn1 = iframe.getElementById("download");
+    const btn2 = iframe.getElementById("secondaryDownload");
+
+    [btn1, btn2].forEach(btn => {
+      if (btn) btn.style.display = "none";
+    });
+  };
+
+  // Remove Skeleton & Show PDF
+  document.getElementById('skeleton-pdf').style.display = "none";
+  document.getElementById('pdf-frame').style.display = "block";
+
+  // PDF.js 按钮加载较慢，所以多次尝试
+  hideDownload();
+  setTimeout(hideDownload, 500);
+  setTimeout(hideDownload, 1500);
+  setTimeout(hideDownload, 3000);
+});
 </script>
 
-<!-- PPT 按钮 -->
-<button class="btn-icon ppt-btn" onclick="openPPTModal()" title="Preview Defense Slides">🎤</button>
+<style>
+/* ---------- 卡片外壳 ---------- */
+.pdf-card {
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 1rem 1.2rem;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  margin-bottom: 1.2rem;
+  transition: 0.3s ease;
+}
+
+/* ---------- 折叠标题 ---------- */
+.pdf-card-header {
+  font-size: 1.15rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* 箭头旋转动画 */
+.arrow {
+  transition: transform 0.3s;
+}
+.arrow.open {
+  transform: rotate(90deg);
+}
+
+/* ---------- 折叠内容 ---------- */
+.pdf-card-content {
+  margin-top: 1rem;
+  display: none;
+}
+
+/* ---------- Skeleton Loader ---------- */
+.skeleton {
+  width: 100%;
+  height: 420px;
+  background: linear-gradient(90deg, #f0f0f0 0%, #e5e5e5 50%, #f0f0f0 100%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.2s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0 }
+  100% { background-position: -200% 0 }
+}
+
+/* ---------- PDF iframe ---------- */
+.pdf-frame {
+  width: 100%;
+  height: 420px;
+  border: none;
+  border-radius: 8px;
+  display: none;
+}
+.pdf-frame {
+  width: 100%;
+  height: calc(100vh - 220px); /* 自动撑满屏幕高度，展示完整第一页 */
+  border: none;
+  display: none; /* 初始隐藏 */
+}
+
+
+/* ---------- Mobile 响应式 ---------- */
+@media (max-width: 768px) {
+  .pdf-frame,
+  .skeleton {
+    height: 65vh;
+  }
+}
+</style>
 
 
 <style>
-.pdf-container { width:100%; height:600px; border:1px solid #ccc; border-radius:8px; display:none; }
-.skeleton { width:100%; height:600px; border-radius:8px; background:linear-gradient(-90deg,#e0e0e0 0%,#f5f5f5 50%,#e0e0e0 100%); background-size:400% 400%; animation:shimmer 1.5s ease-in-out infinite; }
-@keyframes shimmer { 0%{background-position:200% 0;} 100%{background-position:-200% 0;} }
-.ppt-modal { display:flex; justify-content:center; align-items:center; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index:9999; }
-.ppt-modal.hidden { display:none; }
-.ppt-modal-content { background:linear-gradient(135deg,#e6f5e9 0%,#ffffff 80%); padding:1rem; border-radius:24px; max-width:90%; max-height:90%; position:relative; box-shadow:0 6px 20px rgba(0,0,0,0.08); border:1px solid rgba(200,200,200,0.3);}
-.ppt-modal-content .close { position:absolute; top:8px; right:12px; font-size:1.5rem; cursor:pointer; color:#555; }
-.download-btn { display:inline-block; padding:0.6em 1.2em; margin:0.5em; background-color:#007acc; color:white; text-decoration:none; border-radius:5px; transition:all 0.3s ease; }
-.download-btn:hover { background-color:#005f99; transform:scale(1.05); }
-
 /* Compact Card */
 .thesis-card { background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%); border-radius:16px; padding:1.5rem; margin-bottom:2rem; box-shadow:0 4px 12px rgba(0,0,0,0.08); backdrop-filter:blur(5px); border:1px solid rgba(200,200,200,0.3); }
 .thesis-section-title { font-size:1.6rem; font-weight:700; margin-bottom:1rem; background:linear-gradient(90deg,#4a4a9e,#6f6fd8); -webkit-background-clip:text; color:transparent; }
@@ -137,30 +204,7 @@ function closePPTModal() {
   cursor: pointer;
   color: #555;
 }
-
-
 </style>
-
-<script>
-// Toggle inline PDF viewer
-function togglePDF(id) {
-  const content = document.getElementById(id);
-  content.style.display = (content.style.display === "block") ? "none" : "block";
-
-  if(content.style.display === "block") {
-    const iframe = document.getElementById('iframe-thesis');
-    const skeleton = document.getElementById('skeleton-thesis');
-    iframe.onload = () => {
-      skeleton.style.display = "none";
-      iframe.style.display = "block";
-    };
-  }
-}
-
-
-</script>
-
-
 
 <h2>Journal Publications (pre-postdoc)</h2>
 
@@ -267,7 +311,7 @@ function togglePDF(id) {
 .publication-excerpt p {
   margin-top: 0.5rem;
   padding: 0.6rem 0.9rem;
-  background: #f0fdf4;
+  background: #ffffff;
   border-radius: 12px;
   border-left: 3px solid #27ae60;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
@@ -299,5 +343,99 @@ function togglePDF(id) {
 /* --- PDF Inline Viewer --- */
 .pdf-viewer.hidden { display:none; }
 </style>
+
+
+
+<style>
+/* Collapse panel style */
+.cv-collapse {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 12px 18px;
+  margin: 1.5em 0;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.cv-collapse:hover {
+  background-color: #e5e5e5;
+}
+
+.cv-content {
+  display: none;
+  margin-top: 1em;
+  position: relative;
+}
+
+/* Skeleton loading */
+.skeleton {
+  width: 100%;
+  height: 780px;
+  border-radius: 8px;
+  background: linear-gradient(-90deg, #e0e0e0 0%, #f5f5f5 50%, #e0e0e0 100%);
+  background-size: 400% 400%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* PDF.js iframe container */
+.pdf-container {
+  width: 100%;
+  height: 780px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: none; /* initially hidden until loaded */
+  overflow: auto;
+  position: relative;
+}
+
+/* Scroll shadow */
+.pdf-container::before,
+.pdf-container::after {
+  content: '';
+  position: sticky;
+  left: 0;
+  right: 0;
+  height: 20px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.pdf-container::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15), transparent);
+}
+
+.pdf-container::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.15), transparent);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .cv-collapse {
+    background-color: #2e2e2e;
+    color: #eee;
+  }
+  .cv-collapse:hover {
+    background-color: #3a3a3a;
+  }
+  .pdf-container {
+    border: 1px solid #444;
+  }
+  .skeleton {
+    background: linear-gradient(-90deg, #444 0%, #555 50%, #444 100%);
+  }
+}
+
+</style>
+
+
 
 

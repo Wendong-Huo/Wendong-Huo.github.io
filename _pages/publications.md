@@ -141,19 +141,20 @@ document.getElementById('pdf-frame').addEventListener("load", function() {
 /* ---------- PDF iframe ---------- */
 .pdf-frame {
   width: 100%;
-  height: 420px;
+  height: calc(100vh - 220px); /* 自动撑满屏幕高度，展示完整第一页 */
   border: none;
-  border-radius: 8px;
-  display: none;
+  display: none; /* 初始隐藏 */
 }
+
 
 /* ---------- Mobile 响应式 ---------- */
 @media (max-width: 768px) {
   .pdf-frame,
   .skeleton {
-    height: 65vh;
+    height: calc(100vh - 150px);
   }
 }
+
 </style>
 
 
