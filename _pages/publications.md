@@ -5,7 +5,7 @@ permalink: /publications/
 author_profile: true
 ---
 
-15You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
+1You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
 
 <!-- PDF Fold Card -->
 <div class="pdf-card">
@@ -113,11 +113,12 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
 
 <style>
 .pdf-card {
-  background: #ffffff; /* 或者使用弹出框同样的渐变，例如 linear-gradient(...) */
+  background:rgba(255, 255, 255, 0.25); /* 更淡的半透明白色 */
+  backdrop-filter: blur(12px);           /* 毛玻璃效果 */
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   margin: 1rem 0;
-  border: 1px solid rgba(200,200,200,0.3);
+  border: 1px solid rgba(255,255,255,0.3);
   transition: all 0.35s ease;
 }
 
@@ -130,14 +131,15 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
   padding: 1rem 1.2rem;
   font-size: 1.1rem;
   font-weight: 600;
-  background: #f0f0f0; /* 与弹出框顶部背景一致 */
-  color: #333;
+  background: linear-gradient(135deg, #7a9efb 0%, #b099e3 100%); /* 颜色稍淡 */
+  color: white;
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
 }
+
 
 .arrow { transition:0.35s;}
 /* PDF Card 样式（和 Thesis 卡片保持一致） */
@@ -191,7 +193,7 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
   width: 100%;
   height: 550px;
   border-radius: 12px;
-  background: linear-gradient(-90deg, #e0e0e0 0%, #f5f5f5 50%, #e0e0e0 100%);
+background: linear-gradient(-90deg, #f0f0f0 0%, #fafafa 50%, #f0f0f0 100%);
   background-size: 400% 400%;
   animation: shimmer 1.4s ease-in-out infinite;
 }
@@ -211,11 +213,11 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
 }
 
 .pdf-card2 {
-  background: #ffffff; /* 或者使用弹出框同样的渐变，例如 linear-gradient(...) */
+  background: rgba(245, 245, 255, 0.25); /* 更淡的半透明淡蓝色 */
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   margin: 1rem 0;
-  border: 1px solid rgba(200,200,200,0.3);
+  border: 1px solid rgba(230,230,250,0.3);
   transition: all 0.35s ease;
 }
 
@@ -228,14 +230,15 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
   padding: 1rem 1.2rem;
   font-size: 1.1rem;
   font-weight: 600;
-  background: #f0f0f0; /* 与弹出框顶部背景一致 */
-  color: #333;
+  background: linear-gradient(135deg, #8aa0fb 0%, #c0a8e8 100%); /* 淡化 Header 渐变颜色 */
+  color: white;
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
 }
+
 
 .arrow2 {
   transition: transform 0.35s ease;
@@ -288,10 +291,11 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
   width: 100%;
   height: 1200px;
   border-radius: 12px;
-  background: linear-gradient(-90deg, #e0e0f0 0%, #f5f5ff 50%, #e0e0f0 100%); /* 颜色稍微偏蓝，协调 */
+  background: linear-gradient(-90deg, #f0f0f0 0%, #fafafa 50%, #f0f0f0 100%);
   background-size: 400% 400%;
   animation: shimmer 1.4s ease-in-out infinite;
 }
+
 
 /* PDF iframe */
 .pdf-frame2 {
