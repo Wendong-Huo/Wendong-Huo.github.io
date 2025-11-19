@@ -59,34 +59,6 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
   </div>
 </div>
 
-<!-- JS -->
-<script>
-function openPPTModal() {
-  const modal = document.getElementById('pptModal');
-  const iframe = document.getElementById('iframe-ppt');
-  const skeleton = document.getElementById('skeleton-ppt');
-
-  modal.classList.remove('hidden');
-
-  // 只在第一次打开时加载 PDF
-  if (!iframe.src) {
-    iframe.src = "/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf";
-    iframe.onload = () => {
-      skeleton.style.display = "none";
-      iframe.style.display = "block";
-    };
-  }
-}
-
-function closePPTModal() {
-  document.getElementById('pptModal').classList.add('hidden');
-}
-</script>
-
-<!-- PPT 按钮 -->
-<button class="btn-icon ppt-btn" onclick="openPPTModal()" title="Preview Defense Slides">🎤</button>
-
-
 <style>
 .pdf-container { width:100%; height:600px; border:1px solid #ccc; border-radius:8px; display:none; }
 .skeleton { width:100%; height:600px; border-radius:8px; background:linear-gradient(-90deg,#e0e0e0 0%,#f5f5f5 50%,#e0e0e0 100%); background-size:400% 400%; animation:shimmer 1.5s ease-in-out infinite; }
@@ -141,24 +113,7 @@ function closePPTModal() {
 
 </style>
 
-<script>
-// Toggle inline PDF viewer
-function togglePDF(id) {
-  const content = document.getElementById(id);
-  content.style.display = (content.style.display === "block") ? "none" : "block";
 
-  if(content.style.display === "block") {
-    const iframe = document.getElementById('iframe-thesis');
-    const skeleton = document.getElementById('skeleton-thesis');
-    iframe.onload = () => {
-      skeleton.style.display = "none";
-      iframe.style.display = "block";
-    };
-  }
-}
-
-
-</script>
 
 
 
@@ -299,5 +254,173 @@ function togglePDF(id) {
 /* --- PDF Inline Viewer --- */
 .pdf-viewer.hidden { display:none; }
 </style>
+
+
+<h1 style="text-align:center; margin-bottom: 0.5em;">Curriculum Vitae</h1>
+
+<p style="text-align:center; font-size:1rem; color:#555; margin-bottom:2em;">
+  Latest updated: EN 2025.11.18 | CH 2025.04.18
+</p>
+
+<style>
+/* Collapse panel style */
+.cv-collapse {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 12px 18px;
+  margin: 1.5em 0;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.cv-collapse:hover {
+  background-color: #e5e5e5;
+}
+
+.cv-content {
+  display: none;
+  margin-top: 1em;
+  position: relative;
+}
+
+/* Skeleton loading */
+.skeleton {
+  width: 100%;
+  height: 780px;
+  border-radius: 8px;
+  background: linear-gradient(-90deg, #e0e0e0 0%, #f5f5f5 50%, #e0e0e0 100%);
+  background-size: 400% 400%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* PDF.js iframe container */
+.pdf-container {
+  width: 100%;
+  height: 780px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: none; /* initially hidden until loaded */
+  overflow: auto;
+  position: relative;
+}
+
+/* Scroll shadow */
+.pdf-container::before,
+.pdf-container::after {
+  content: '';
+  position: sticky;
+  left: 0;
+  right: 0;
+  height: 20px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.pdf-container::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15), transparent);
+}
+
+.pdf-container::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.15), transparent);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .cv-collapse {
+    background-color: #2e2e2e;
+    color: #eee;
+  }
+  .cv-collapse:hover {
+    background-color: #3a3a3a;
+  }
+  .pdf-container {
+    border: 1px solid #444;
+  }
+  .skeleton {
+    background: linear-gradient(-90deg, #444 0%, #555 50%, #444 100%);
+  }
+}
+
+/* Download button style */
+.download-btn {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  margin: 0.5em;
+  background-color: #007acc;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #005f99;
+  transform: scale(1.05);
+}
+</style>
+
+<script>
+function toggleCV(id) {
+  const content = document.getElementById(id);
+  content.style.display = (content.style.display === "block") ? "none" : "block";
+}
+
+// PDF skeleton loader
+function loadPDF(iframeId, skeletonId) {
+  const iframe = document.getElementById(iframeId);
+  const skeleton = document.getElementById(skeletonId);
+  iframe.onload = () => {
+    skeleton.style.display = "none";
+    iframe.style.display = "block";
+  };
+}
+</script>
+
+<!-- EN CV -->
+<div class="cv-collapse" onclick="toggleCV('cv-en')">
+  English CV (click to expand / collapse)
+</div>
+<div id="cv-en" class="cv-content">
+  <div id="skeleton-en" class="skeleton"></div>
+  <iframe
+    id="iframe-en"
+    class="pdf-container"
+    src="/pdfjs/web/viewer.html?file=/files/CV-Files/CV-en-Wendong_Huo.pdf">
+  </iframe>
+  <script>loadPDF('iframe-en', 'skeleton-en');</script>
+</div>
+
+<!-- CH CV -->
+<div class="cv-collapse" onclick="toggleCV('cv-ch')">
+  Chinese CV (click to expand / collapse)
+</div>
+<div id="cv-ch" class="cv-content">
+  <div id="skeleton-ch" class="skeleton"></div>
+  <iframe
+    id="iframe-ch"
+    class="pdf-container"
+    src="/pdfjs/web/viewer.html?file=/files/CV-Files/CV-ch-Wendong_Huo.pdf">
+  </iframe>
+  <script>loadPDF('iframe-ch', 'skeleton-ch');</script>
+</div>
+
+<!-- Download buttons -->
+<div style="text-align:center; margin-bottom:3em;">
+  <a href="../files/CV-Files/CV-en-Wendong_Huo.pdf" download="CV-en-Wendong_Huo.pdf" class="download-btn">
+    Download CV (EN)
+  </a>
+  <a href="../files/CV-Files/CV-ch-Wendong_Huo.pdf" download="CV-ch-Wendong_Huo.pdf" class="download-btn">
+    Download CV (CH)
+  </a>
+</div>
 
 

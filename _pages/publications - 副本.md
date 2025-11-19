@@ -7,9 +7,7 @@ author_profile: true
 
 You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
 
-<h2>Doctoral Thesis</h2>
 <!-- Upgraded Thesis Card with Modern Styling -->
-<!-- Compact Thesis Card with Inline PDF Viewer and Modal PPT -->
 <div class="thesis-card">
   <h2 class="thesis-section-title">Doctoral Thesis</h2>
 
@@ -34,10 +32,9 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
     </details>
 
     <div class="thesis-buttons">
-      <!-- PDF Inline Viewer Button -->
       <!-- PPT Modal Trigger -->
-      <button class="btn-icon ppt-btn" onclick="document.getElementById('pptModal').classList.toggle('hidden')" title="Preview Defense Slides">
-        🎤📊
+      <button class="btn-icon ppt-btn" onclick="openPPTModal()" title="Preview Defense Slides">🎤
+
       </button>
     </div>
 
@@ -47,12 +44,60 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 <!-- PPT Modal -->
 <div id="pptModal" class="ppt-modal hidden">
   <div class="ppt-modal-content">
-    <span class="close" onclick="document.getElementById('pptModal').classList.add('hidden')">&times;</span>
-    <iframe src="http://wendong-huo.github.io/files/thesis-defense-slides.pptx#toolbar=0" width="100%" height="600px" style="border:none;"></iframe>
+    <span class="close" onclick="closePPTModal()">&times;</span>
+    <div id="skeleton-ppt" class="skeleton"></div>
+    <iframe
+      id="iframe-ppt"
+      class="pdf-container"
+      src=""
+    ></iframe>
+    <div style="text-align:center; margin-top:1em;">
+      <a href="/files/thesis-defense-slides.pdf" download="thesis-defense-slides.pdf" class="download-btn">
+        Download PPT PDF
+      </a>
+    </div>
   </div>
 </div>
 
+<!-- JS -->
+<script>
+function openPPTModal() {
+  const modal = document.getElementById('pptModal');
+  const iframe = document.getElementById('iframe-ppt');
+  const skeleton = document.getElementById('skeleton-ppt');
+
+  modal.classList.remove('hidden');
+
+  // 只在第一次打开时加载 PDF
+  if (!iframe.src) {
+    iframe.src = "/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf";
+    iframe.onload = () => {
+      skeleton.style.display = "none";
+      iframe.style.display = "block";
+    };
+  }
+}
+
+function closePPTModal() {
+  document.getElementById('pptModal').classList.add('hidden');
+}
+</script>
+
+<!-- PPT 按钮 -->
+<button class="btn-icon ppt-btn" onclick="openPPTModal()" title="Preview Defense Slides">🎤</button>
+
+
 <style>
+.pdf-container { width:100%; height:600px; border:1px solid #ccc; border-radius:8px; display:none; }
+.skeleton { width:100%; height:600px; border-radius:8px; background:linear-gradient(-90deg,#e0e0e0 0%,#f5f5f5 50%,#e0e0e0 100%); background-size:400% 400%; animation:shimmer 1.5s ease-in-out infinite; }
+@keyframes shimmer { 0%{background-position:200% 0;} 100%{background-position:-200% 0;} }
+.ppt-modal { display:flex; justify-content:center; align-items:center; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index:9999; }
+.ppt-modal.hidden { display:none; }
+.ppt-modal-content { background:linear-gradient(135deg,#e6f5e9 0%,#ffffff 80%); padding:1rem; border-radius:24px; max-width:90%; max-height:90%; position:relative; box-shadow:0 6px 20px rgba(0,0,0,0.08); border:1px solid rgba(200,200,200,0.3);}
+.ppt-modal-content .close { position:absolute; top:8px; right:12px; font-size:1.5rem; cursor:pointer; color:#555; }
+.download-btn { display:inline-block; padding:0.6em 1.2em; margin:0.5em; background-color:#007acc; color:white; text-decoration:none; border-radius:5px; transition:all 0.3s ease; }
+.download-btn:hover { background-color:#005f99; transform:scale(1.05); }
+
 /* Compact Card */
 .thesis-card { background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%); border-radius:16px; padding:1.5rem; margin-bottom:2rem; box-shadow:0 4px 12px rgba(0,0,0,0.08); backdrop-filter:blur(5px); border:1px solid rgba(200,200,200,0.3); }
 .thesis-section-title { font-size:1.6rem; font-weight:700; margin-bottom:1rem; background:linear-gradient(90deg,#4a4a9e,#6f6fd8); -webkit-background-clip:text; color:transparent; }
@@ -69,47 +114,52 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 .btn-icon.pdf-btn { background:#6f6fd8; }
 .btn-icon.ppt-btn { background:#34d399; }
 
-/* Inline PDF Viewer */
-.pdf-viewer.hidden { display:none; }
-
-/* PPT Modal 调整为与小卡片风格一致 */
-.ppt-modal-content {
-  background: linear-gradient(135deg, #e6f5e9 0%, #ffffff 80%); /* 与小卡片一致 */
-  padding: 1rem;
-  border-radius: 24px; /* 与小卡片一致 */
-  max-width: 90%;
-  max-height: 90%;
-  position: relative;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08); /* 小卡片阴影 */
-  border: 1px solid rgba(200,200,200,0.3); /* 小卡片边框 */
+/* Skeleton loader */
+.skeleton {
+  width: 100%;
+  height: 600px;
+  border-radius: 8px;
+  background: linear-gradient(-90deg, #e0e0e0 0%, #f5f5f5 50%, #e0e0e0 100%);
+  background-size: 400% 400%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
-/* Close 按钮颜色可以更柔和 */
+/* Close button */
 .ppt-modal-content .close {
   position: absolute;
   top: 8px;
   right: 12px;
   font-size: 1.5rem;
   cursor: pointer;
-  color: #555; /* 比纯黑柔和 */
+  color: #555;
 }
 
-/* Modal 背景半透明保持不变 */
-.ppt-modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: rgba(0,0,0,0.6);
-  z-index: 9999;
-}
 
-.ppt-modal.hidden { display:none; }
 </style>
+
+<script>
+// Toggle inline PDF viewer
+function togglePDF(id) {
+  const content = document.getElementById(id);
+  content.style.display = (content.style.display === "block") ? "none" : "block";
+
+  if(content.style.display === "block") {
+    const iframe = document.getElementById('iframe-thesis');
+    const skeleton = document.getElementById('skeleton-thesis');
+    iframe.onload = () => {
+      skeleton.style.display = "none";
+      iframe.style.display = "block";
+    };
+  }
+}
+
+
+</script>
+
 
 
 <h2>Journal Publications (pre-postdoc)</h2>
