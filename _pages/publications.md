@@ -5,7 +5,7 @@ permalink: /publications/
 author_profile: true
 ---
 
-14You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
+15You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
 
 <!-- PDF Fold Card -->
 <div class="pdf-card">
@@ -230,37 +230,6 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
   font-weight: 600;
   background: #f0f0f0; /* 与弹出框顶部背景一致 */
   color: #333;
-  border-radius: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
-
-.arrow { transition:0.35s;}
-/* PDF Card 样式（和 Thesis 卡片保持一致） */
-.pdf-card {
-  background: rgba(255, 255, 255, 0.4);      /* 半透明背景 */
-  backdrop-filter: blur(12px);               /* 毛玻璃效果 */
-  border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  margin: 1rem 0;
-  border: 1px solid rgba(255,255,255,0.4);
-  transition: all 0.35s ease;
-}
-
-.pdf-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
-}
-
-/* 卡片 Header（和 Thesis 按钮一致） */
-.pdf-card-header {
-  padding: 1rem 1.2rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%); /* Thesis 卡片按钮颜色 */
-  color: white;
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
