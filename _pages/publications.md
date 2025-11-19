@@ -136,11 +136,26 @@ function togglePDF(boxId, arrowId, pdfUrl) {
   box-shadow:0 6px 20px rgba(0,0,0,0.08); transition: all 0.35s ease;;
 }
 .pdf-card:hover, .pdf-card2:hover { transform: translateY(-3px); box-shadow:0 10px 26px rgba(0,0,0,0.12); }
+
+/* PDF Card Header - 浅色风格，与 Thesis 卡片统一 */
 .pdf-card-header, .pdf-card-header2 {
-  padding: 1rem 1.2rem;font-size: 1.1rem;font-weight:600; color:white; border-radius:20px;
-  display:flex; justify-content:space-between; align-items:center;
-  cursor:pointer; background: linear-gradient(135deg, #7a9efb 0%, #b099e3 100%); /* 颜色稍淡 */
+  padding: 1rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c2c54; /* 深色文字，更好区分浅背景 */
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f9f9ff 0%, #ffffff 80%); /* 与 Thesis 卡片一致的浅蓝渐变 */
+  border: 1px solid rgba(200,200,200,0.3); /* 可选，增加边框层次 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
 }
+
+
+
 .pdf-card-content, .pdf-card-content2 { max-height:0; overflow:hidden; transition:max-height 0.45s ease; padding:0 1rem; }
 .pdf-card-content.open, .pdf-card-content2.open { padding:1rem; }
 .skeleton, .skeleton2 { width:100%; height:570px; border-radius:12px; background:linear-gradient(-90deg,#f0f0f0 0%,#fafafa 50%,#f0f0f0 100%); background-size:400% 400%; animation:shimmer 1.4s ease-in-out infinite; }
