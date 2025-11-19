@@ -5,11 +5,53 @@ permalink: /publications/
 author_profile: true
 ---
 
-2You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
+3You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
 
 <!-- ========================= -->
 <!-- Finalized Thesis PDF Card -->
 <!-- ========================= -->
+<div class="pdf-card" onclick="togglePDF('thesis-pdf', 'arrow1')">
+  <div class="pdf-card-header">
+    <span>Thesis Defense Slides</span>
+    <span id="arrow1" class="arrow">▶</span>
+  </div>
+
+  <div id="thesis-pdf" class="pdf-card-content">
+    <div id="skeleton-pdf" class="skeleton"></div>
+
+    <iframe
+      id="pdf-frame"
+      class="pdf-frame"
+      src="/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf&download=false">
+    </iframe>
+  </div>
+</div>
+
+<script>
+// PDF Loader + Hide Download Button
+document.getElementById('pdf-frame').addEventListener("load", function() {
+  const iframeDoc = this.contentDocument || this.contentWindow.document;
+
+  const hideDownload = () => {
+    const btn1 = iframeDoc.getElementById("download");
+    const btn2 = iframeDoc.getElementById("secondaryDownload");
+    [btn1, btn2].forEach(btn => {
+      if (btn) btn.style.display = "none";
+    });
+  };
+
+  // Remove Skeleton & Show PDF
+  document.getElementById('skeleton-pdf').style.display = "none";
+  this.style.display = "block";
+
+  // 多次尝试隐藏按钮
+  hideDownload();
+  setTimeout(hideDownload, 500);
+  setTimeout(hideDownload, 1500);
+  setTimeout(hideDownload, 3000);
+});
+</script>
+
 <div class="pdf-card">
   <div class="pdf-card-header" onclick="togglePDF('pdf-box1', 'arrow1', '/files/thesis-1.pdf', 'pdf-frame1', 'skeleton1')">
     <span>Finalized Thesis</span>
@@ -169,6 +211,8 @@ function togglePDF(boxId, arrowId, pdfUrl, iframeId, skeletonId) {
   </div>
 </div>
 
+
+<h2>Journal Publications (pre-postdoc)</h2>
 <div class="publications-grid">
 {% for post in site.publications reversed %}
   <div class="publication-card">
@@ -221,10 +265,6 @@ function togglePDF(boxId, arrowId, pdfUrl, iframeId, skeletonId) {
 .thesis-excerpt summary { cursor:pointer; font-size:0.95rem; color:#333; margin-top:0.8rem; }
 .thesis-excerpt p { margin-top:0.5rem; padding:0.6rem 1rem; background:#ffffff; border-radius:10px; border-left:3px solid #6f6fd8; font-size:0.9rem; box-shadow:0 2px 6px rgba(0,0,0,0.05); }
 </style>
-
-<h2>Journal Publications (pre-postdoc)</h2>
-
-
 
 <style>
 /* --- Publications Grid --- */
