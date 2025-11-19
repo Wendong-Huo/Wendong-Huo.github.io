@@ -5,7 +5,7 @@ permalink: /publications/
 author_profile: true
 ---
 
-13You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
+14You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
 
 <!-- PDF Fold Card -->
 <div class="pdf-card">
@@ -33,7 +33,7 @@ function togglePDF(boxId, arrowId, pdfUrl) {
     arrow.style.transform = "rotate(0deg)";
   } else {
     box.classList.add('open');
-    box.style.maxHeight = "90vh";
+    box.style.maxHeight = "480px";
     arrow.style.transform = "rotate(90deg)";
 
     if (!iframe.dataset.loaded) {
@@ -85,7 +85,7 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
     arrow.style.transform = "rotate(0deg)";
   } else {
     box.classList.add('open');
-    box.style.maxHeight = "90vh";
+    box.style.maxHeight = "480px";
     arrow.style.transform = "rotate(90deg)";
 
     if (!iframe.dataset.loaded) {
@@ -204,15 +204,10 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
 /* PDF iframe */
 .pdf-frame {
   width: 100%;
-  height: 90vh;
+  height: 480px;
   border-radius: 12px;
   border: none;
   display: none;
-}
-
-/* 手机响应 */
-@media (max-width: 768px){
-  .pdf-frame { width: 100%; }
 }
 
 .pdf-card2 {
