@@ -5,10 +5,55 @@ permalink: /publications/
 author_profile: true
 ---
 
-4You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
+5You can also find my articles on [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao).
 
 <!-- ========================= -->
 <!-- Finalized Thesis PDF Card -->
+<!-- ========================= -->
+<div class="pdf-card" onclick="togglePDF('thesis-pdf', 'arrow1')">
+  <div class="pdf-card-header">
+    <span>Finalized Thesis</span>
+    <span id="arrow1" class="arrow">▶</span>
+  </div>
+
+  <div id="thesis-pdf" class="pdf-card-content">
+    <div id="skeleton-pdf" class="skeleton"></div>
+
+    <iframe
+      id="pdf-frame"
+      class="pdf-frame"
+      src="/pdfjs/web/viewer.html?file=/files/thesis-1.pdf&download=false">
+    </iframe>
+  </div>
+</div>
+
+<script>
+// PDF Loader + Hide Download Button
+document.getElementById('pdf-frame').addEventListener("load", function() {
+  const iframeDoc = this.contentDocument || this.contentWindow.document;
+
+  const hideDownload = () => {
+    const btn1 = iframeDoc.getElementById("download");
+    const btn2 = iframeDoc.getElementById("secondaryDownload");
+    [btn1, btn2].forEach(btn => {
+      if (btn) btn.style.display = "none";
+    });
+  };
+
+  // Remove Skeleton & Show PDF
+  document.getElementById('skeleton-pdf').style.display = "none";
+  this.style.display = "block";
+
+  // 多次尝试隐藏按钮
+  hideDownload();
+  setTimeout(hideDownload, 500);
+  setTimeout(hideDownload, 1500);
+  setTimeout(hideDownload, 3000);
+});
+</script>
+
+<!-- ========================= -->
+<!-- Doctor Defense PDF Card -->
 <!-- ========================= -->
 <div class="pdf-card" onclick="togglePDF('thesis-pdf', 'arrow1')">
   <div class="pdf-card-header">
@@ -50,74 +95,6 @@ document.getElementById('pdf-frame').addEventListener("load", function() {
   setTimeout(hideDownload, 1500);
   setTimeout(hideDownload, 3000);
 });
-</script>
-
-<div class="pdf-card">
-  <div class="pdf-card-header" onclick="togglePDF('pdf-box1', 'arrow1', '/files/thesis-1.pdf', 'pdf-frame1', 'skeleton1')">
-    <span>Finalized Thesis</span>
-    <span id="arrow1" class="arrow">▶</span>
-  </div>
-
-  <div id="pdf-box1" class="pdf-card-content">
-    <div id="skeleton1" class="skeleton"></div>
-    <iframe id="pdf-frame1" class="pdf-frame" src="/pdfjs/web/viewer.html?file=/files/thesis-1.pdf&download=false" frameborder="0"></iframe>
-  </div>
-</div>
-
-<!-- ========================= -->
-<!-- Thesis Defense Slides PDF Card -->
-<!-- ========================= -->
-<div class="pdf-card">
-  <div class="pdf-card-header" onclick="togglePDF('pdf-box2', 'arrow2', '/files/thesis-defense-slides.pdf', 'pdf-frame2', 'skeleton2')">
-    <span>Thesis Defense Slides</span>
-    <span id="arrow2" class="arrow">▶</span>
-  </div>
-
-  <div id="pdf-box2" class="pdf-card-content">
-    <div id="skeleton2" class="skeleton"></div>
-    <iframe id="pdf-frame2" class="pdf-frame" src="/pdfjs/web/viewer.html?file=/files/thesis-defense-slides.pdf&download=false" frameborder="0"></iframe>
-  </div>
-</div>
-
-<script>
-// Fold Card Toggle + PDF Load
-function togglePDF(boxId, arrowId, pdfUrl, iframeId, skeletonId) {
-  const box = document.getElementById(boxId);
-  const arrow = document.getElementById(arrowId);
-  const iframe = document.getElementById(iframeId);
-  const skeleton = document.getElementById(skeletonId);
-
-  if(box.classList.contains("open")) {
-    box.style.maxHeight = "0px";
-    box.classList.remove("open");
-    arrow.style.transform = "rotate(0deg)";
-  } else {
-    box.classList.add("open");
-    box.style.maxHeight = "90vh"; // 展开高度
-    arrow.style.transform = "rotate(90deg)";
-
-    if(!iframe.src) {
-      iframe.src = "/pdfjs/web/viewer.html?file=" + pdfUrl + "&download=false";
-      iframe.style.display = "none";
-      iframe.style.height = "90vh";
-
-      iframe.onload = () => {
-        skeleton.style.display = "none";
-        iframe.style.display = "block";
-
-        try {
-          const doc = iframe.contentDocument || iframe.contentWindow.document;
-          ["download", "secondaryDownload"].forEach(id => {
-            const btn = doc.getElementById(id);
-            if(btn) btn.style.display = "none";
-          });
-        } catch(e) {
-          console.warn("PDF.js 下载按钮无法访问（可能跨域）");
-        }
-      };
-    }
-  }
-}
 </script>
 
 <style>
