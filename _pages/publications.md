@@ -35,13 +35,14 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
 </div>
 
 <!-- Slides -->
-<div class="pdf-card" onclick="togglePDF('thesis-pdf', 'arrow1')">
+<!-- PDF Fold Card -->
+<div class="pdf-card" onclick="togglePDF('pdf-box', 'arrow1')">
   <div class="pdf-card-header">
     <span>Thesis Defense Slides</span>
     <span id="arrow1" class="arrow">▶</span>
   </div>
 
-  <div id="thesis-pdf" class="pdf-card-content">
+  <div id="pdf-box" class="pdf-card-content">
     <div id="skeleton-pdf" class="skeleton"></div>
 
     <iframe
@@ -52,108 +53,154 @@ You can also find my articles on [Google Scholar](https://scholar.google.com/cit
   </div>
 </div>
 
+
 <script>
-function togglePDF(contentId, arrowId) {
-  const content = document.getElementById(contentId);
+// Toggle Card
+function togglePDF(id, arrowId) {
+  const box = document.getElementById(id);
   const arrow = document.getElementById(arrowId);
 
-  const isVisible = content.style.display === "block";
-  content.style.display = isVisible ? "none" : "block";
-  arrow.classList.toggle("open");
+  if (box.classList.contains("open")) {
+    box.style.maxHeight = "0px";
+    box.classList.remove("open");
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    box.classList.add("open");
+    box.style.maxHeight = box.scrollHeight + "px";
+    arrow.style.transform = "rotate(90deg)";
+  }
 }
 
-// PDF Loader + Hide Download Button
-document.getElementById('pdf-frame').addEventListener("load", function() {
+// PDF load + auto-resize
+document.getElementById("pdf-frame").addEventListener("load", function () {
   const iframe = this.contentDocument || this.contentWindow.document;
 
-  const hideDownload = () => {
-    const btn1 = iframe.getElementById("download");
-    const btn2 = iframe.getElementById("secondaryDownload");
+  // Hide Skeleton
+  document.getElementById("skeleton-pdf").style.display = "none";
+  document.getElementById("pdf-frame").style.display = "block";
 
-    [btn1, btn2].forEach(btn => {
+  // Disable download buttons (PDF.js internal IDs)
+  function disableButtons() {
+    ["download", "secondaryDownload"].forEach(id => {
+      const btn = iframe.getElementById(id);
       if (btn) btn.style.display = "none";
     });
-  };
+  }
 
-  // Remove Skeleton & Show PDF
-  document.getElementById('skeleton-pdf').style.display = "none";
-  document.getElementById('pdf-frame').style.display = "block";
+  disableButtons();
+  setTimeout(disableButtons, 600);
+  setTimeout(disableButtons, 1500);
 
-  // PDF.js 按钮加载较慢，所以多次尝试
-  hideDownload();
-  setTimeout(hideDownload, 500);
-  setTimeout(hideDownload, 1500);
-  setTimeout(hideDownload, 3000);
+  // Auto-fit PDF height to 1 full page
+  function fitHeight() {
+    const viewer = iframe.getElementById("viewer");
+    if (!viewer) return;
+
+    const firstPage = viewer.querySelector(".page");
+    if (!firstPage) return;
+
+    // 读取 pdf 页的实际高度
+    const pageHeight = firstPage.clientHeight;
+
+    if (pageHeight > 0) {
+      document.getElementById("pdf-frame").style.height = (pageHeight + 20) + "px";
+    }
+  }
+
+  // 多次尝试以确保 PDF.js 渲染完成
+  setTimeout(fitHeight, 300);
+  setTimeout(fitHeight, 800);
+  setTimeout(fitHeight, 1500);
+  setTimeout(fitHeight, 2500);
 });
 </script>
 
+
 <style>
-/* ---------- 卡片外壳 ---------- */
+/* --- Fold Card --- */
 .pdf-card {
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-  padding: 1rem 1.2rem;
-  background: #ffffff;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-  margin-bottom: 1.2rem;
-  transition: 0.3s ease;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  padding: 0;
+  margin: 1.5rem 0;
+  transition: all 0.35s ease;
+  border: 1px solid rgba(255,255,255,0.4);
 }
 
-/* ---------- 折叠标题 ---------- */
+.pdf-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+
+/* Header */
 .pdf-card-header {
-  font-size: 1.15rem;
+  padding: 1rem 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
+  background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
+  color: white;
+  border-radius: 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   cursor: pointer;
-  user-select: none;
 }
 
-/* 箭头旋转动画 */
+.pdf-card-header:hover {
+  filter: brightness(1.06);
+}
+
+/* Arrow */
 .arrow {
-  transition: transform 0.3s;
-}
-.arrow.open {
-  transform: rotate(90deg);
+  transition: transform 0.35s ease;
 }
 
-/* ---------- 折叠内容 ---------- */
+/* Expandable Content */
 .pdf-card-content {
-  margin-top: 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+  padding: 0 1rem;
+}
+
+/* Show content */
+.pdf-card-content.open {
+  padding: 1rem;
+}
+
+/* Skeleton */
+.skeleton {
+  width: 100%;
+  height: 480px;
+  border-radius: 12px;
+  background: linear-gradient(-90deg, #e0e0e0 0%, #f5f5f5 50%, #e0e0e0 100%);
+  background-size: 400% 400%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* PDF iframe */
+.pdf-frame {
+  width: 100%;
+  height: 0; /* 动态 JS 自动控制 */
+  border-radius: 12px;
+  border: none;
   display: none;
 }
 
-/* ---------- Skeleton Loader ---------- */
-.skeleton {
-  width: 100%;
-  height: 420px;
-  background: linear-gradient(90deg, #f0f0f0 0%, #e5e5e5 50%, #f0f0f0 100%);
-  background-size: 200% 100%;
-  animation: skeleton-loading 1.2s ease-in-out infinite;
-  border-radius: 8px;
-}
-
-@keyframes skeleton-loading {
-  0% { background-position: 200% 0 }
-  100% { background-position: -200% 0 }
-}
-
-/* ---------- PDF iframe ---------- */
-.pdf-frame {
-  width: 100%;
-  height: calc(100vh - 220px); /* 自动撑满屏幕高度，展示完整第一页 */
-  border: none;
-  display: none; /* 初始隐藏 */
-}
-
-
-/* ---------- Mobile 响应式 ---------- */
+/* Mobile */
 @media (max-width: 768px) {
-  .pdf-frame,
-  .skeleton {
-    height: calc(100vh - 150px);
+  .pdf-frame {
+    width: 100%;
   }
 }
+
 
 </style>
 
