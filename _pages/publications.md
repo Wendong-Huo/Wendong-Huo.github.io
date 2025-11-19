@@ -33,7 +33,7 @@ function togglePDF(boxId, arrowId, pdfUrl) {
     arrow.style.transform = "rotate(0deg)";
   } else {
     box.classList.add('open');
-    box.style.maxHeight = "550px";
+    box.style.maxHeight = "600px";
     arrow.style.transform = "rotate(90deg)";
 
     if (!iframe.dataset.loaded) {
@@ -162,7 +162,7 @@ function togglePDF2(boxId, arrowId, pdfUrl) {
 /* Skeleton loader */
 .skeleton {
   width: 100%;
-  height: 550px;
+  height: 600px;
   border-radius: 12px;
 background: linear-gradient(-90deg, #f0f0f0 0%, #fafafa 50%, #f0f0f0 100%);
   background-size: 400% 400%;
@@ -172,7 +172,7 @@ background: linear-gradient(-90deg, #f0f0f0 0%, #fafafa 50%, #f0f0f0 100%);
 /* PDF iframe */
 .pdf-frame {
   width: 100%;
-  height: 550px;
+  height: 600px;
   border-radius: 12px;
   border: none;
   display: none;
