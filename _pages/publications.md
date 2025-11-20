@@ -110,8 +110,6 @@ author_profile: true
 </style>
 
 
-
-
 <!-- PDF Fold Cards -->
 <div class="pdf-card">
   <div class="pdf-card-header" onclick="togglePDF('pdf-box1', 'arrow1', '/files/thesis-defense-slides.pdf')">
