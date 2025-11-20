@@ -86,10 +86,6 @@ author_profile: true
   margin-bottom: 0.6rem;
 }
 
-.thesis-info-row p {
-  margin: 0;
-  white-space: nowrap; /* 防止换行 */
-}
 
 .thesis-excerpt summary {
   cursor: pointer;
