@@ -86,6 +86,9 @@ author_profile: true
   margin-bottom: 0.6rem;
 }
 
+.thesis-info-row p {
+  margin: 0;
+}
 
 .thesis-excerpt summary {
   cursor: pointer;
