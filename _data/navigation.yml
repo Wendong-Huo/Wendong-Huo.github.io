@@ -9,11 +9,14 @@ main:
   - title: "Publications"
     url: /publications/
 
-  - title: "Blog Posts"
+  - title: "Posts"
     url: /posts/
 
   - title: "CV"
     url: /cv/
+
+  - title: "Misc"
+    url: /Misc/
 
 #  - title: "Talks"
 #    url: /talks/
