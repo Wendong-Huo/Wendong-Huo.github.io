@@ -8,26 +8,72 @@ redirect_from:
   - /about.html
 ---
 
-Hi, I am a sixth-year Ph.D. candidate from the Department of Engineering Mechanics, Dalian University of Technology. 
-I am very fortunate to be supervised by Prof. Xu Guo and Prof. Chang Liu. 
-Previously, I received my bachelor's degree (Engineering Mechanics) from Hefei University of Technology in 2019, supervised by Prof. Bo Yu. 
-My research interests include applied and computational mechanics, structure analysis and design, computer graphics, computer-aided geometric design, and engineering computing.
+👋 Hi, I'm Wendong Huo  
+🔬 Postdoctoral Researcher in Mechanical Engineering  
+🏫 The University of Hong Kong  
 
-I am working to improve the understanding of complex surface structures. 
-The most intuitive feature, the curved and slender geometry, profoundly influences every aspect of such a structure form, e.g., displacement pattern, strain energy distribution, etc., resulting in abnormal phenomena in various scenarios. 
-How to analyze and further use these novel mechanisms forms the cornerstones of my research.
+## 🔍 About Me
 
-The methodology includes analysis, simulation, design, optimization, etc. 
-One achieved study can be concluded as "Explicit Structure Optimization TOwards Complex Shell Structures, ESOTOCSS." 
-We construct a general framework to design complex surface structures based on the explicit structure optimization method and the computational conformal mapping technique. 
-Potential applications include the {lightweight design, stiffness enhancement, and structure manipulation} of {shells, membranes, and low-dimensional materials}.
+I am a Postdoctoral Researcher in the Department of Mechanical Engineering at The University of Hong Kong. My research lies at the intersection of computational mechanics, structural design, computational geometry, and advanced material systems, with interests spanning structural optimization, micro-/nano-mechanics, shell and thin-walled structures, metamaterials, and engineering computation.
 
-Other research includes phase field modeling, intelligent engineering computing, and general structure optimization. 
-I'm also learning measurement, experimentation, manufacturing, and applications, which will be reflected in future research. 
-Please feel free to contact me if you are interested in my research and work. My Email is huowd@mail.dlut.edu.cn.
+Previously, I received my Ph.D. in Engineering Mechanics from Dalian University of Technology, where I was fortunate to be supervised by Prof. Xu Guo and Prof. Chang Liu. Before that, I obtained my bachelor’s degree in Engineering Mechanics from Hefei University of Technology in 2019, under the supervision of Prof. Bo Yu.
 
+My previous research focused on the explicit design of complex shell structures. In particular, I developed computational frameworks that combine the Moving Morphable Components (MMC) method with computational conformal mapping and related geometric techniques to address optimization and design problems on complex curved surfaces. This line of work aimed to better understand how curved and slender geometries influence the mechanical behavior of structures and how such geometric characteristics can be exploited for improved structural performance.
 
-<!-- In my spare time, I enjoy exploring fantastic technology world. -->
+I am currently extending these interests to micro-/nano-systems, multifunctional metamaterials, and AI-enabled computational design, with the goal of developing mechanics- and geometry-guided design frameworks for advanced materials and structural systems.
+
+## 🧪 Research Interests
+
+- structural optimization and design  
+- deep elastic strain engineering for diamond semiconductors  
+- computational geometry for mechanics and computational mechanics for graphics  
+- AI-assisted design in mechanics and materials  
+- shell and thin-walled structures  
+- stiffener and topography-based attachment design  
+- mechanics of metamaterials and multifunctional structures  
+
+## 🛠 Technical Skills
+
+### Programming & Computing
+Python, MATLAB, C#, C++, Fortran
+
+### Numerical Methods
+FEM, BEM, IGA, PDE-constrained optimization, topology/shape/size/layout modeling and design, conformal mapping, surrogate modeling
+
+### Software & Tools
+ABAQUS, OptiStruct, ANSYS, COMSOL, Rhino/Grasshopper, LAMMPS
+
+## 📝 Publications
+
+📚 [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao)
+
+## 🤝 Collaboration
+
+I am open to academic collaborations in areas including, but not limited to, the following:
+
+- computational structural mechanics  
+- geometry-informed mechanical design  
+- structural optimization and topology optimization  
+- shell and thin-walled structures  
+- lightweight and flexible structures  
+- metamaterials and multifunctional design  
+- AI for mechanics and materials design  
+
+## 📬 Contact
+
+- Email: huowd@hku.hk, huowd.cmech@gmail.com  
+- GitHub: [@Wendong-Huo](https://github.com/Wendong-Huo)  
+- Languages: Chinese | English  
+
+Thanks for visiting my GitHub! Feel free to explore my repositories or reach out if you are interested in collaborating.
+
+<!-- Hi, I am a sixth-year Ph.D. candidate from the Department of Engineering Mechanics, Dalian University of Technology. I am very fortunate to be supervised by Prof. Xu Guo and Prof. Chang Liu. Previously, I received my bachelor’s degree (Engineering Mechanics) from Hefei University of Technology in 2019, supervised by Prof. Bo Yu. My research interests include applied and computational mechanics, structure analysis and design, computer graphics, computer-aided geometric design, and engineering computing.
+
+I am working to improve the understanding of complex surface structures. The most intuitive feature, the curved and slender geometry, profoundly influences every aspect of such a structure form, e.g., displacement pattern, strain energy distribution, etc., resulting in abnormal phenomena in various scenarios. How to analyze and further use these novel mechanisms forms the cornerstones of my research.
+
+The methodology includes analysis, simulation, design, optimization, etc. One achieved study can be concluded as “Explicit Structure Optimization TOwards Complex Shell Structures, ESOTOCSS.” We construct a general framework to design complex surface structures based on the explicit structure optimization method and the computational conformal mapping technique. Potential applications include the {lightweight design, stiffness enhancement, and structure manipulation} of {shells, membranes, and low-dimensional materials}.
+
+Other research includes phase field modeling, intelligent engineering computing, and general structure optimization. I’m also learning measurement, experimentation, manufacturing, and applications, which will be reflected in future research. Please feel free to contact me if you are interested in my research and work. My Email is huowd@mail.dlut.edu.cn.-->
 
 <!-- You can find my CV here: [XX's Curriculum Vitae](../assets/Curriculum_Vitae.pdf). -->
 
