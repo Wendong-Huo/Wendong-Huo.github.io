@@ -41,7 +41,7 @@ ABAQUS, OptiStruct, ANSYS, COMSOL, Rhino/Grasshopper, LAMMPS
 
 ## 🤝 Collaboration
 
-I am open to academic collaborations in areas including, but not limited to, the following:
+I am open to academic/engineering collaborations in areas including, but not limited to, the following:
 
 - computational structural mechanics  
 - geometry-informed mechanical design  
@@ -54,8 +54,7 @@ I am open to academic collaborations in areas including, but not limited to, the
 ## 📬 Contact
 
 - Email: huowd@hku.hk, huowd.cmech@gmail.com  
-- GitHub: [@Wendong-Huo](https://github.com/Wendong-Huo)  
-- Languages: Chinese | English  
+- Languages: Chinese & English  
 
 Thanks for visiting my GitHub! Feel free to explore my repositories or reach out if you are interested in collaborating.
 
