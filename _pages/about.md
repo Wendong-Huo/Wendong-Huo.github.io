@@ -8,15 +8,11 @@ redirect_from:
   - /about.html
 ---
 
-👋 Hi, I'm Wendong Huo  
-🔬 Postdoctoral Researcher in Mechanical Engineering  
-🏫 The University of Hong Kong  
-
 ## 🔍 About Me
 
-I am a Postdoctoral Researcher in the Department of Mechanical Engineering at The University of Hong Kong. My research lies at the intersection of computational mechanics, structural design, computational geometry, and advanced material systems, with interests spanning structural optimization, micro-/nano-mechanics, shell and thin-walled structures, metamaterials, and engineering computation.
+👋 Hi, I'm Wendong HUO, a Postdoctoral Fellow in the Department of Mechanical Engineering at The University of Hong Kong, under the supervision of Prof. Yang LU. My research lies at the intersection of computational mechanics, structural design, computational geometry, and advanced material systems, with interests spanning structural optimization, micro-/nano-mechanics, shell and thin-walled structures, metamaterials, and engineering computation.
 
-Previously, I received my Ph.D. in Engineering Mechanics from Dalian University of Technology, where I was fortunate to be supervised by Prof. Xu Guo and Prof. Chang Liu. Before that, I obtained my bachelor’s degree in Engineering Mechanics from Hefei University of Technology in 2019, under the supervision of Prof. Bo Yu.
+Previously, I received my Ph.D. in Solid Mechanics from Dalian University of Technology, where I was fortunate to be supervised by Prof. Xu GUO and Prof. Chang LIU. Before that, I obtained my bachelor's degree in Engineering Mechanics from Hefei University of Technology in 2019, under the supervision of Prof. Bo YU.
 
 My previous research focused on the explicit design of complex shell structures. In particular, I developed computational frameworks that combine the Moving Morphable Components (MMC) method with computational conformal mapping and related geometric techniques to address optimization and design problems on complex curved surfaces. This line of work aimed to better understand how curved and slender geometries influence the mechanical behavior of structures and how such geometric characteristics can be exploited for improved structural performance.
 
@@ -43,13 +39,9 @@ FEM, BEM, IGA, PDE-constrained optimization, topology/shape/size/layout modeling
 ### Software & Tools
 ABAQUS, OptiStruct, ANSYS, COMSOL, Rhino/Grasshopper, LAMMPS
 
-## 📝 Publications
-
-📚 [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao)
-
 ## 🤝 Collaboration
 
-I am open to academic collaborations in areas including, but not limited to, the following:
+I am open to academic/engineering collaborations in areas including, but not limited to, the following:
 
 - computational structural mechanics  
 - geometry-informed mechanical design  
@@ -62,8 +54,7 @@ I am open to academic collaborations in areas including, but not limited to, the
 ## 📬 Contact
 
 - Email: huowd@hku.hk, huowd.cmech@gmail.com  
-- GitHub: [@Wendong-Huo](https://github.com/Wendong-Huo)  
-- Languages: Chinese | English  
+- Languages: Chinese & English  
 
 Thanks for visiting my GitHub! Feel free to explore my repositories or reach out if you are interested in collaborating.
 
