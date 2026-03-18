@@ -7,6 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
+## 🔍 About Me
 
 👋 Hi, I'm Wendong Huo, a Postdoctoral Fellow in the Department of Mechanical Engineering at The University of Hong Kong, under the supervision of Prof. Yang Lu. My research lies at the intersection of computational mechanics, structural design, computational geometry, and advanced material systems, with interests spanning structural optimization, micro-/nano-mechanics, shell and thin-walled structures, metamaterials, and engineering computation.
 
