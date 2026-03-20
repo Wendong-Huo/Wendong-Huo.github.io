@@ -8,13 +8,13 @@ redirect_from:
   - /about.html
 ---
 
-# 🔍 About Me
+# 👋 About Me
 
-👋 Hi, I'm Wendong Huo, a Postdoctoral Fellow in the Department of Mechanical Engineering at The University of Hong Kong, under the supervision of Prof. Yang Lu. My research lies at the intersection(s) of computational mechanics, structural design, computational geometry, and advanced material systems, with interests spanning structural optimization, micro-/nano-mechanics, shell and thin-walled structures, metamaterials, and engineering computation.
+Hi, I'm Wendong Huo, a Postdoctoral Fellow in the Department of Mechanical Engineering at The University of Hong Kong, under the supervision of Prof. Yang Lu. My research lies at the intersection(s) of computational mechanics, structural design, computational geometry, and advanced materials, with interests spanning structural optimization, micro-/nano-mechanics, shell and thin-walled structures, metamaterials, and engineering computation.
 
 Previously, I received my Ph.D. in Solid Mechanics from Dalian University of Technology, where I was fortunate to be supervised by Prof. Xu Guo and Prof. Chang Liu. Before that, I obtained my bachelor's degree in Engineering Mechanics from Hefei University of Technology in 2019, under the supervision of Prof. Bo Yu.
 
-My previous research focused on the explicit design of complex shell structures. In particular, I developed computational frameworks that combine the Moving Morphable Components (MMC) method with computational conformal mapping and related geometric techniques to address optimization and design problems on complex curved surfaces. This line of work aimed to better understand how curved and slender geometries influence the mechanical behavior of structures and how such geometric characteristics can be exploited for improved structural performance.
+My previous research focused on the explicit design of complex shell structures. In particular, I developed a computational framework that combines the Moving Morphable Components (MMC) method with computational conformal mapping and related geometric techniques to address optimization and design problems on complex curved surfaces. This line of work aimed to better understand how curved and slender geometries influence the mechanical behavior of structures and how such geometric characteristics can be exploited for improved structural performance.
 
 I am currently extending these interests to micro-/nano-systems, multifunctional metamaterials, and AI-enabled computational design, with the goal of developing mechanics- and geometry-guided design frameworks for advanced materials and structural systems.
 
