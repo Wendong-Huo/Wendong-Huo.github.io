@@ -41,7 +41,7 @@ ABAQUS, OptiStruct, ANSYS, COMSOL, Rhino/Grasshopper, LAMMPS
 
 ## 🤝 Collaboration
 
-I am open to academic/engineering collaborations in areas including, but not limited to, the following:
+I am open to academic collaborations in areas including, but not limited to, the following:
 
 - computational structural mechanics  
 - geometry-informed mechanical design  
