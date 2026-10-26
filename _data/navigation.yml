@@ -1,31 +1,13 @@
-# main links links
 main:
-  - title: "Gallery"
+  - title: "Research"
     url: /portfolio/
-
-  - title: "Experiences"
-    url: /experiences/
-
   - title: "Publications"
     url: /publications/
-
-  - title: "Posts"
+  - title: "Experience"
+    url: /experiences/
+  - title: "Notes"
     url: /posts/
-
   - title: "CV"
     url: /cv/
-
-  - title: "Misc"
+  - title: "Links"
     url: /Misc/
-
-#  - title: "Talks"
-#    url: /talks/
-#
-#  - title: "Teaching"
-#    url: /teaching/
-    
-#  - title: "Portfolio"
-#    url: /portfolio/
-
-#  - title: "Guide"
-#    url: /markdown/

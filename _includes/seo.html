@@ -4,7 +4,7 @@
 {% if site.url %}
   {% assign seo_url = site.url | append: site.baseurl %}
 {% endif %}
-{% assign seo_url = seo_url | default: site.github.url %}
+{% unless seo_url %}{% assign seo_url = site.github.url %}{% endunless %}
 
 {% if page.title %}
   {% assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site.title %}
@@ -48,7 +48,8 @@
   <meta property="og:url" content="{{ page.url | prepend: seo_url | replace: "/index.html", "/" }}">
 {% endif %}
 
-{% if page.excerpt %}
+{% if seo_description %}
+  <meta name="description" content="{{ seo_description }}">
   <meta property="og:description" content="{{ seo_description }}">
 {% endif %}
 
@@ -60,11 +61,11 @@
 
   {% if page.header.image %}
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="{% if page.header.image contains "://" %}{{ page.header.image }}{% else %}{{ page.header.image | prepend: "/images/" | prepend: base_path }}{% endif %}">
+    <meta name="twitter:image" content="{% if page.header.image contains "://" %}{{ page.header.image }}{% else %}{{ page.header.image | prepend: "/images/" | absolute_url }}{% endif %}">
   {% else %}
     <meta name="twitter:card" content="summary">
     {% if site.og_image %}
-      <meta name="twitter:image" content="{{ site.og_image | prepend: "/images/" | prepend: base_path }}">
+      <meta name="twitter:image" content="{{ site.og_image | prepend: "/images/" | absolute_url }}">
     {% endif %}
   {% endif %}
 
@@ -84,10 +85,12 @@
 {% endif %}
 
 {% if page.header.image %}
-  <meta property="og:image" content="{% if page.header.image contains "://" %}{{ page.header.image }}{% else %}{{ page.header.image | prepend: "/images/" | prepend: base_path }}{% endif %}">
+  <meta property="og:image" content="{% if page.header.image contains "://" %}{{ page.header.image }}{% else %}{{ page.header.image | prepend: "/images/" | absolute_url }}{% endif %}">
 {% elsif page.header.overlay_image %}
-  <meta property="og:image" content="{% if page.header.overlay_image contains "://" %}{{ page.header.overlay_image }}{% else %}{{ page.header.overlay_image | prepend: "/images/" | prepend: base_path }}{% endif %}">
+  <meta property="og:image" content="{% if page.header.overlay_image contains "://" %}{{ page.header.overlay_image }}{% else %}{{ page.header.overlay_image | prepend: "/images/" | absolute_url }}{% endif %}">
 {% endif %}
+
+{% if site.og_image and page.header.image == nil and page.header.overlay_image == nil %}<meta property="og:image" content="{{ site.og_image | prepend: "/images/" | absolute_url }}">{% endif %}
 
 {% if page.date %}
   <meta property="og:type" content="article">
@@ -99,17 +102,6 @@
 {% endif %}
 {% if paginator.next_page %}
   <link rel="next" href="{{ paginator.next_page_path | prepend: seo_url }}">
-{% endif %}
-
-{% if site.og_image %}
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "url": {{ seo_url | jsonify }},
-      "logo": {{ site.og_image | prepend: "/images/" | prepend: base_path | jsonify }}
-    }
-  </script>
 {% endif %}
 
 {% if site.social %}

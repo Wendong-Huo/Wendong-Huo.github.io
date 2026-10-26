@@ -1,17 +1,37 @@
-See more info at https://academicpages.github.io/
+# Wendong Huo — academic website
 
-## To run locally (not on GitHub Pages, to serve on your own computer)
+Personal academic website built with Jekyll, based on AcademicPages / Minimal Mistakes.
 
-1. Clone the repository and made updates as detailed above
-1. Make sure you have ruby-dev, bundler, and nodejs installed: `sudo apt install ruby-dev ruby-bundler nodejs`
-1. Run `bundle clean` to clean up the directory (no need to run `--force`)
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `bundle exec jekyll liveserve` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+## Local preview
 
-# Changelog -- bugfixes and enhancements
+Ruby 3.2 and Bundler are required. Install dependencies with `bundle install`, then run:
 
-There is one logistical issue with a ready-to-fork template theme like academic pages that makes it a little tricky to get bug fixes and updates to the core theme. If you fork this repository, customize it, then pull again, you'll probably get merge conflicts. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch. 
+```sh
+bundle exec jekyll serve --config _config.yml,_config.dev.yml
+```
 
-To support this, all changes to the underlying code appear as a closed issue with the tag 'code change' -- get the list [here](https://github.com/academicpages/academicpages.github.io/issues?q=is%3Aclosed%20is%3Aissue%20label%3A%22code%20change%22%20). Each issue thread includes a comment linking to the single commit or a diff across multiple commits, so those with forked repositories can easily identify what they need to patch.
+Open http://localhost:4000. For a production build and internal-link validation:
 
-<a href="https://info.flagcounter.com/w949"><img src="https://s01.flagcounter.com/count/w949/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_18/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+```sh
+bundle exec jekyll build
+python3 scripts/check_site.py
+```
+
+## Edit content
+
+- `_pages/about.md`: homepage.
+- `_data/research.yml`: selected research cards.
+- `_portfolio/`: detailed research pages.
+- `_publications/`: journal articles (`type: journal`) and thesis (`type: thesis`).
+- `_pages/Experiences.md`, `_pages/cv.html`: experience and web CV.
+- `_posts/`: notes; keep each permalink unique. `published: false` preserves a draft without publishing it.
+- `_config.yml`: identity, links, publication exclusions, and site settings.
+- `assets/css/site.css`: shared visual styles and responsive behavior.
+
+Use existing PDFs and attributed research images. New dates, credentials, and quantitative claims must be verified before publishing. The current CV page uses email requests until up-to-date CV PDFs are supplied.
+
+## Publishing
+
+GitHub Actions builds pushes to `main` and validates internal links before deploying to GitHub Pages. Pull requests targeting `main` are validated without deployment. Keep `Gemfile.lock` committed for reproducible dependencies.
+
+See `docs/WEBSITE_STATE.md` for the refresh decisions, verification evidence, and remaining content inputs. Documentation and scratch folders are excluded from the published site.

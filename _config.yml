@@ -14,8 +14,8 @@ locale                   : "en-US"
 title                    : "Wendong Huo"
 title_separator          : "-"
 name                     : &name "Wendong Huo"
-description              : &description "personal description"
-url                      : https://Wendong-Huo.github.io
+description              : &description "Wendong Huo — computational mechanics, geometry-informed structural design, and optimization at The University of Hong Kong."
+url                      : https://wendong-huo.github.io
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Wendong-Huo/Wendong-Huo.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -25,7 +25,7 @@ future                   : false
 read_more                : "enabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false #change to true to add link to talkmap on talks page
 comments:
-  provider               : true, "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
+  provider               : false
   disqus:
     shortname            :
   discourse:
@@ -54,7 +54,7 @@ atom_feed:
   path                   : # blank (default) uses feed.xml
 
 # SEO Related
-google_site_verification : https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao
+google_site_verification :
 bing_site_verification   :
 alexa_site_verification  :
 yandex_site_verification :
@@ -66,18 +66,20 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  # Open Graph/Twitter default site image
+og_image                 : "profile.jpg" # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  links:
+    - https://github.com/Wendong-Huo
+    - https://orcid.org/0000-0002-6328-1378
 
 
 # Analytics
 analytics:
-  provider               :  "google-universal" # false (default), "google", "google-universal", "custom"
+  provider               :  false # false (default), "google", "google-universal", "custom"
   google:
     tracking_id          :
 
@@ -85,10 +87,11 @@ analytics:
 # Site Author
 author:
   name             : "Wendong Huo"
-  avatar           : "profile.png"
-  bio              : "Analysis, simulation, design, and optimization of complex surface structures."
-  location         : "Dalian, Liaoning"
-  employer         :
+  avatar           : "profile.jpg"
+  bio              : "Postdoctoral Fellow · Computational mechanics & structural design"
+  location         : "Hong Kong"
+  employer         : "The University of Hong Kong"
+  email            : "huowd@hku.hk"
 #   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com/citations?user=1q1nLY8AAAAJ&hl=en&oi=ao"
   researchgate     : "https://www.researchgate.net/profile/Wendong-Huo"
@@ -105,8 +108,8 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  LinkedIn         : "https://www.linkedin.com/in/wendong-huo-665aaa267"
-  orcid            : "https://orcid.org/my-orcid?orcid=0000-0002-6328-1378"
+  linkedin         : "wendong-huo-665aaa267"
+  orcid            : "https://orcid.org/0000-0002-6328-1378"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
@@ -126,6 +129,15 @@ include:
   - _pages
   - files
 exclude:
+  - temp
+  - 新建文件夹
+  - scripts
+  - docs
+  - files/thesis-defense-slides.pptx
+  - CONTRIBUTING.md
+  - talkmap.ipynb
+  - talkmap.py
+  - _config.dev.yml
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
@@ -258,7 +270,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Hong_Kong # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins

@@ -1,4 +1,5 @@
 ---
+published: false
 title: "Texture synthesis and its application to computational mechanics"
 excerpt: "We develop 1"
 img:

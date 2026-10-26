@@ -1,15 +1,25 @@
 ---
 layout: archive
-title: ""
+title: Links
 permalink: /Misc/
 author_profile: true
+description: Academic profiles, research repositories, and contact links for Wendong
+  Huo.
 ---
 
-<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-<div class="elfsight-app-e7efe66a-1130-4c9e-863a-08db40b6e4d2" data-elfsight-app-lazy></div>
+## Academic profiles
 
-<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-<div class="elfsight-app-06cf9f1a-4c15-4a48-92e5-75c678b94214" data-elfsight-app-lazy></div>
+- [Google Scholar](https://scholar.google.com/citations?user=1q1nLY8AAAAJ)
+- [ORCID: 0000-0002-6328-1378](https://orcid.org/0000-0002-6328-1378)
+- [ResearchGate](https://www.researchgate.net/profile/Wendong-Huo)
+- [LinkedIn](https://www.linkedin.com/in/wendong-huo-665aaa267)
 
-<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-<div class="elfsight-app-f0c889a8-527c-43c9-9bc2-95e467a790c3" data-elfsight-app-lazy></div>
+## Code & research
+
+- [GitHub repositories](https://github.com/Wendong-Huo)
+- [Selected research]({{ '/portfolio/' | relative_url }})
+- [Publications and thesis]({{ '/publications/' | relative_url }})
+
+## Contact
+
+[University email](mailto:huowd@hku.hk) · [Alternative email](mailto:huowd.cmech@gmail.com)
