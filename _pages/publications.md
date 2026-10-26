@@ -18,6 +18,8 @@ description: Journal publications and doctoral thesis by Wendong Huo, with DOI l
 <p class="eyebrow">{{ paper.date | date: '%Y' }} · {{ paper.venue }}</p>
 <h3><a href="https://doi.org/{{ paper.doi }}">{{ paper.title }}</a></h3>
 <p class="publication-authors">{{ paper.authors | replace: 'Huo W.', '<strong>Huo W.</strong>' }}</p>
+{% if paper.volume %}<p class="muted">Volume {{ paper.volume }}{% if paper.article_number %} · Article {{ paper.article_number }}{% endif %}</p>{% endif %}
+{% if paper.publication_note %}<p class="muted">{{ paper.publication_note }}</p>{% endif %}
 <p>{{ paper.excerpt }}</p>
 <div class="action-row"><a class="text-link" href="https://doi.org/{{ paper.doi }}">DOI ↗</a><a class="text-link" href="{{ paper.paperurl | relative_url }}">PDF</a><a class="text-link" href="{{ paper.url | relative_url }}">Abstract & details</a></div>
 </article>
