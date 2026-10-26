@@ -1,13 +1,18 @@
 ---
 layout: archive
-title: ""
+title: Research
 permalink: /portfolio/
 author_profile: true
+description: Selected studies in complex shell structures, explicit structural optimization,
+  and computational geometry.
 ---
 
-{% include base_path %}
-Under construction...
-{% assign sorted-portfolio = site.portfolio | sort: 'date' | reverse %}
-{% for post in sorted-portfolio limit:20 %}
-  {% include archive-single.html %}
-{% endfor %}
+<p class="page-lead">Connecting geometric representation, mechanical analysis, and structural optimization.</p>
+{% include research-cards.html %}
+
+<h2>Recent publication</h2>
+<div class="publication-card"><p class="eyebrow">2026 · THIN-WALLED STRUCTURES</p><h3><a href="{{ '/publication/2026-08-07-journal-number-7' | relative_url }}">Fundamental frequency optimization of curved stiffened shells</a></h3><p>Explicit stiffener layout design on complex surfaces, with a dual penalty mechanism to suppress artificial localized modes.</p><p class="muted">Liu C., Gao J., Huo W., & Guo X. · Corresponding authors: Wendong Huo and Xu Guo.</p><a class="text-link" href="{{ '/publication/2026-08-07-journal-number-7' | relative_url }}">Publication & PDF →</a></div>
+
+<h2>Foundations</h2>
+<div class="publication-card"><h3><a href="{{ '/portfolio/portfolio-6/' | relative_url }}">Topology optimization on complex surfaces</a></h3><p>Moving morphable components and computational conformal mapping for explicit design on curved surfaces.</p><p class="muted">ASME Journal of Applied Mechanics · 2022</p></div>
+<div class="publication-card"><h3><a href="{{ '/portfolio/portfolio-2/' | relative_url }}">Isogeometric boundary element methods</a></h3><p>Transient heat conduction with heat sources using an isogeometric dual reciprocity boundary element method.</p><p class="muted">Journal of Computational and Applied Mathematics · 2021</p></div>

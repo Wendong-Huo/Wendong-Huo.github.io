@@ -1,0 +1,52 @@
+- slug: portfolio-9
+  title: Topography design on complex shells
+  year: 2024
+  paper: 5
+  doi: 10.1016/j.jmps.2024.105974
+  image: topography.webp
+  alt: Four stages of topography optimization on an eight-shaped torus shell
+  source: Figure 27, paper PDF p. 23
+  caption: Topography optimization on an eight-shaped torus shell.
+  summary: Embedded spline components describe surface topography, while conformal
+    parameterization extends the design approach to complex shell geometries.
+  question: How can local surface features improve the structural response of curved,
+    thin-walled shells?
+  method: The approach combines explicit MMC-based geometry descriptions, embedded
+    spline components, and computational conformal mapping.
+  result: The paper demonstrates topography design on plates and complex shells, including
+    saddle, cone, torus, and vase geometries.
+- slug: portfolio-8
+  title: Embedded solid components for thin-walled structures
+  year: 2023
+  paper: 4
+  doi: 10.1016/j.cma.2023.116431
+  image: embedded-solid.webp
+  alt: Four panels illustrating solid components and removal of inactive degrees of
+    freedom
+  source: Figure 10, paper PDF p. 15
+  caption: Solid components and the removal of inactive degrees of freedom.
+  summary: A solid-component formulation connects geometric design and finite-element
+    analysis for topology, rib layouts, and sandwich structures.
+  question: How can one explicit framework accommodate complex geometry and varying
+    thickness without relying on shell assumptions?
+  method: Solid moving morphable components are embedded into a curved design domain
+    and coupled to finite-element analysis.
+  result: The framework supports several design tasks for complex thin-walled structures.
+    The paper provides numerical examples and discusses computational efficiency.
+- slug: portfolio-7
+  title: Rib layout optimization on curved surfaces
+  year: 2023
+  paper: 3
+  doi: 10.1016/j.cma.2022.115745
+  image: rib-layout.webp
+  alt: CAD model of an optimized rib-reinforced torus shell
+  source: Figure 25, paper PDF p. 26
+  caption: CAD model of an optimized rib-reinforced torus shell.
+  summary: Computational conformal mapping and explicit components produce interpretable
+    reinforcing-rib layouts on complex surfaces.
+  question: How can reinforcing ribs be placed efficiently on surfaces with complex
+    geometry?
+  method: The method couples surface parameterization, MMC-based layout optimization,
+    and multi-patch stitching.
+  result: The published examples include blunt, torus, flower-shaped, and tee-branch
+    shells, with explicit designs suitable for CAD/CAE workflows.

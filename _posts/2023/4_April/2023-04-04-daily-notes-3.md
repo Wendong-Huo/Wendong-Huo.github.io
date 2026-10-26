@@ -1,11 +1,11 @@
 ---
-title: 'Robot-A Road to the Future for Mechanics'
-excerpt: "Reflections on the potential development of mechanics."
+title: Robot-A Road to the Future for Mechanics
+excerpt: Reflections on the potential development of mechanics.
 date: 2023-04-04
 permalink: /posts/2023/04/daily-notes-3/
-Tags:
-  - Daily
-  - Project
+tags:
+- Daily
+- Project
 ---
 
 Recently, the success of ChatGPT has swept the whole media world. Major newspapers, websites, and we-media rushed to report it, and it's impossible to tell whether this is the hope or the hype for a moment.

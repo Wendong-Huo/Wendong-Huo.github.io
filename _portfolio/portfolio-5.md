@@ -1,4 +1,5 @@
 ---
+published: false
 title: "Substructuring multi-resolution topology optimization with template"
 excerpt: "We develop 1"
 img:
