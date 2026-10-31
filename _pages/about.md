@@ -11,30 +11,40 @@ redirect_from:
 - /about.html
 ---
 
-<section class="research-hero">
-  <p class="eyebrow">MECHANICS · GEOMETRY · DESIGN</p>
-  <h1>Mechanics, geometry<br>&amp; structural design.</h1>
-  <p class="hero-intro">I’m Wendong Huo, a Postdoctoral Fellow in Mechanical Engineering at The University of Hong Kong, working with Prof. Yang Lu.</p>
-  <p>I study how geometry shapes mechanical behavior, and use that understanding to design complex shells, thin-walled structures, and advanced material systems.</p>
-  <div class="action-row"><a class="action-link primary" href="{{ '/portfolio/' | relative_url }}">Explore my research <span aria-hidden="true">↗</span></a><a class="action-link" href="mailto:huowd@hku.hk">Get in touch</a></div>
+{% assign latest_paper = site.publications | where: "doi", "10.1016/j.tws.2026.115498" | first %}
+{% assign journal_papers = site.publications | where: "type", "journal" %}
+<div class="home-showcase">
+<section class="home-opening" aria-label="Introduction and latest research">
+  <div class="home-intro">
+    <p class="eyebrow">WENDONG HUO / RESEARCH</p>
+    <h1>Geometry into<br>structural design.</h1>
+    <p class="intro-role">Computational mechanics researcher<br>Postdoctoral Fellow · HKU</p>
+    <p>I study how geometry shapes mechanical behavior—from stiffened shells and explicit topology optimization to the mechanics of advanced materials.</p>
+    <div class="home-signature"><span>Curved surfaces</span><span>Explicit geometry</span><span>Structural mechanics</span></div>
+    <div class="action-row"><a class="action-link primary" href="{{ '/portfolio/' | relative_url }}">Explore research ↗</a><a class="action-link" href="mailto:huowd@hku.hk">Contact</a></div>
+    <a class="publication-count" href="{{ '/publications/' | relative_url }}"><strong>{{ journal_papers | size }}</strong> journal articles <span aria-hidden="true">↗</span></a>
+  </div>
+  <article class="latest-study">
+    <div class="latest-label"><span>Latest publication</span><span>TWS / {{ latest_paper.date | date: '%Y' }}</span></div>
+    <a class="latest-visual" href="{{ latest_paper.url | relative_url }}"><img src="{{ '/images/research/tws-frequency.webp' | relative_url }}" width="1008" height="440" alt="Optimized stiffener layout and first-order mode shape of an orbital cabin-type curved shell, Figure 32(b) of the 2026 TWS paper" fetchpriority="high" decoding="async"></a>
+    <div class="latest-copy">
+      <p class="figure-credit">Orbital cabin-type shell · Fig. 32(b), Liu et al. (2026)</p>
+      <h2><a href="{{ latest_paper.url | relative_url }}">{{ latest_paper.title }}</a></h2>
+      <p class="latest-authors">Liu C., Gao J., <strong>Huo W.</strong>, &amp; Guo X.</p>
+      <p class="latest-summary">Designing stiffeners on complex curved shells to maximize the fundamental natural frequency.</p>
+      <p class="latest-meta">Thin-Walled Structures · 231, 115498<br>Corresponding author · Published {{ latest_paper.date | date: '%B %-d, %Y' }}</p>
+      <div class="action-row"><a class="action-link primary" href="{{ latest_paper.url | relative_url }}">Read study →</a><a class="action-link" href="{{ latest_paper.paperurl | relative_url }}">PDF ↗</a><a class="action-link" href="https://doi.org/{{ latest_paper.doi }}">DOI ↗</a></div>
+    </div>
+  </article>
 </section>
 
-<div class="section-heading"><h2>Selected research</h2><a href="{{ '/publications/' | relative_url }}">All publications →</a></div>
+<div class="section-heading"><div><p class="eyebrow">A RESEARCH THREAD</p><h2>Designing on complex surfaces</h2></div><a href="{{ '/publications/' | relative_url }}">All publications →</a></div>
+<p class="section-intro">From rib layouts to solid components and surface topography: three approaches to making geometry an explicit part of structural optimization.</p>
 {% include research-cards.html %}
 
-## Current interests
-
-My current interests extend from geometry-informed structural optimization to deep elastic strain engineering in diamond semiconductors, micro-/nano-mechanics, multifunctional metamaterials, and AI-assisted computational design.
-
-## Background
-
-I received my Ph.D. in Solid Mechanics from Dalian University of Technology, supervised by Prof. Xu Guo and Prof. Chang Liu. Previously, I obtained my bachelor’s degree in Engineering Mechanics from Hefei University of Technology in 2019, working with Prof. Bo Yu.
-
-My doctoral research combined the Moving Morphable Components (MMC) method with computational conformal mapping to enable explicit design on complex curved surfaces. [Read more about my experience →]({{ '/experiences/' | relative_url }})
-
-<section class="contact-panel" id="contact">
-<h2>Let’s connect</h2>
-<p>I welcome conversations about computational mechanics, geometry-informed design, structural optimization, and mechanics of advanced materials.</p>
-<p><a href="mailto:huowd@hku.hk">huowd@hku.hk</a> · <a href="mailto:huowd.cmech@gmail.com">huowd.cmech@gmail.com</a></p>
-<p class="muted">Chinese & English</p>
+<section class="research-outlook" aria-labelledby="outlook-title">
+  <div><p class="eyebrow">WHAT CONNECTS MY WORK</p><h2 id="outlook-title">Geometry, across scales.</h2><p>My doctoral work at Dalian University of Technology connected the Moving Morphable Components method with computational conformal mapping. At HKU, working with Prof. Yang Lu, my interests extend toward advanced materials and small-scale mechanics.</p><a class="text-link" href="{{ '/experiences/' | relative_url }}">My academic path →</a></div>
+  <ol class="research-directions"><li><span>01 / STRUCTURES</span><h3>Shape &amp; stiffness</h3><p>Curved shells, reinforcing ribs, and explicit structural optimization.</p></li><li><span>02 / MATERIALS</span><h3>Strain &amp; function</h3><p>Deep elastic strain engineering in diamond and micro-/nano-mechanics.</p></li><li><span>03 / METHODS</span><h3>Models &amp; design</h3><p>Computational geometry, multifunctional metamaterials, and AI-assisted design.</p></li></ol>
 </section>
+<section class="contact-panel" id="contact"><p class="eyebrow">LET’S CONNECT</p><h2>Ideas at the intersection of geometry and mechanics?</h2><p>I welcome conversations about computational mechanics, structural optimization, and advanced materials.</p><a href="mailto:huowd@hku.hk">huowd@hku.hk ↗</a><span class="contact-language">Chinese / English</span></section>
+</div>
