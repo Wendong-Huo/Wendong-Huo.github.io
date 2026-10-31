@@ -13,7 +13,7 @@ redirect_from:
 
 <section class="research-hero">
   <p class="eyebrow">MECHANICS · GEOMETRY · DESIGN</p>
-  <h1>Understanding geometry.<br>Designing better structures.</h1>
+  <h1>Mechanics, geometry<br>&amp; structural design.</h1>
   <p class="hero-intro">I’m Wendong Huo, a Postdoctoral Fellow in Mechanical Engineering at The University of Hong Kong, working with Prof. Yang Lu.</p>
   <p>I study how geometry shapes mechanical behavior, and use that understanding to design complex shells, thin-walled structures, and advanced material systems.</p>
   <div class="action-row"><a class="action-link primary" href="{{ '/portfolio/' | relative_url }}">Explore my research <span aria-hidden="true">↗</span></a><a class="action-link" href="mailto:huowd@hku.hk">Get in touch</a></div>
