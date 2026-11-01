@@ -36,7 +36,7 @@ class Document(HTMLParser):
         attrs = dict(attrs)
         if attrs.get('id'):
             self.ids.add(attrs['id'])
-        for key in ('href', 'src', 'poster'):
+        for key in ('href', 'src', 'poster', 'data-viewer-script', 'data-model-src'):
             if attrs.get(key):
                 self.links.append(attrs[key])
         if tag == 'img' and 'alt' not in attrs:

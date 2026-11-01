@@ -26,7 +26,7 @@ redirect_from:
   </div>
   <article class="latest-study">
     <div class="latest-label"><span>Latest publication</span><span>TWS / {{ latest_paper.date | date: '%Y' }}</span></div>
-    <a class="latest-visual" href="{{ latest_paper.url | relative_url }}"><img src="{{ '/images/research/tws-frequency.webp' | relative_url }}" width="1008" height="440" alt="Optimized stiffener layout and first-order mode shape of an orbital cabin-type curved shell, Figure 32(b) of the 2026 TWS paper" fetchpriority="high" decoding="async"></a>
+    <a class="latest-visual" data-lightbox data-caption="Orbital cabin-type shell — Liu et al. (2026), Fig. 32(b)." href="{{ '/images/research/tws-frequency.webp' | relative_url }}" aria-label="Enlarge TWS research figure"><img src="{{ '/images/research/tws-frequency.webp' | relative_url }}" width="1008" height="440" alt="Optimized stiffener layout and first-order mode shape of an orbital cabin-type curved shell, Figure 32(b) of the 2026 TWS paper" fetchpriority="high" decoding="async"></a>
     <div class="latest-copy">
       <p class="figure-credit">Orbital cabin-type shell · Fig. 32(b), Liu et al. (2026)</p>
       <h2><a href="{{ latest_paper.url | relative_url }}">{{ latest_paper.title }}</a></h2>
@@ -41,6 +41,17 @@ redirect_from:
 <div class="section-heading"><div><p class="eyebrow">A RESEARCH THREAD</p><h2>Designing on complex surfaces</h2></div><a href="{{ '/publications/' | relative_url }}">All publications →</a></div>
 <p class="section-intro">From rib layouts to solid components and surface topography: three approaches to making geometry an explicit part of structural optimization.</p>
 {% include research-cards.html %}
+
+<section class="surface-explorer" aria-labelledby="surface-title">
+  <div class="section-heading"><div><p class="eyebrow">EXPLORE THE GEOMETRY</p><h2 id="surface-title">A curved surface, in your hands.</h2></div><a href="{{ '/assets/models/torus-surface.glb' | relative_url }}" download>Download model · GLB</a></div>
+  <p class="section-intro">An actual torus shell mesh from my computational research archive. Drag to rotate, scroll or pinch to zoom. This is the geometric model, not an optimized layout or a simulation result.</p>
+  <div class="surface-stage" data-viewer-script="{{ '/assets/js/lib/model-viewer-4.4.0.min.js' | relative_url }}" data-model-src="{{ '/assets/models/torus-surface.glb' | relative_url }}">
+    <div class="surface-placeholder"><span class="surface-monogram" aria-hidden="true">↻</span><p>Explore a torus shell in 3D</p><button type="button" class="load-surface" hidden>Load interactive model</button><noscript><p>Enable JavaScript to rotate the model, or download the GLB above.</p></noscript></div>
+    <div class="surface-controls" hidden><button type="button" class="rotate-surface" aria-pressed="false">Auto-rotate</button><button type="button" class="reset-surface">Reset view</button></div>
+    <p class="surface-status" role="status" aria-live="polite"></p>
+  </div>
+  <p class="muted">Original finite-element surface · 31,840 vertices · 63,680 triangles. Geometry and connectivity preserved.</p>
+</section>
 
 <section class="research-outlook" aria-labelledby="outlook-title">
   <div><p class="eyebrow">WHAT CONNECTS MY WORK</p><h2 id="outlook-title">Geometry, across scales.</h2><p>My doctoral work at Dalian University of Technology connected the Moving Morphable Components method with computational conformal mapping. At HKU, working with Prof. Yang Lu, my interests extend toward advanced materials and small-scale mechanics.</p><a class="text-link" href="{{ '/experiences/' | relative_url }}">My academic path →</a></div>

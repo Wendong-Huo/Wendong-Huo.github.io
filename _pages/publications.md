@@ -13,8 +13,15 @@ description: Journal publications and doctoral thesis by Wendong Huo, with DOI l
 ## Journal articles
 
 {% assign papers = site.publications | where: 'type', 'journal' | sort: 'date' | reverse %}
+<div class="publication-tools" hidden>
+  <div class="filter-fields"><label>Search papers<input type="search" id="paper-search" placeholder="Title, author, DOI or keyword"></label><label>Year<select id="paper-year"><option value="">All years</option></select></label><label>Journal<select id="paper-journal"><option value="">All journals</option></select></label></div>
+  <div class="filter-actions"><button type="button" id="reset-papers">Reset filters</button><button type="button" id="export-papers">Download results · BibTeX</button><span id="paper-count" role="status" aria-live="polite"></span></div>
+</div>
+<p><a href="{{ '/files/citations/wendong-huo-publications.bib' | relative_url }}" download>Download all journal citations · BibTeX</a></p>
+<p id="no-papers" hidden>No papers match these filters. Try a broader keyword or reset the filters.</p>
 {% for paper in papers %}
-<article class="publication-card">
+{% assign citation = site.data.citations[paper.doi] %}
+<article class="publication-card journal-paper" data-year="{{ paper.date | date: '%Y' }}" data-journal="{{ paper.venue | escape }}">
 <p class="eyebrow">{{ paper.date | date: '%Y' }} · {{ paper.venue }}</p>
 <h3><a href="https://doi.org/{{ paper.doi }}">{{ paper.title }}</a></h3>
 <p class="publication-authors">{{ paper.authors | replace: 'Huo W.', '<strong>Huo W.</strong>' }}</p>
@@ -22,6 +29,8 @@ description: Journal publications and doctoral thesis by Wendong Huo, with DOI l
 {% if paper.publication_note %}<p class="muted">{{ paper.publication_note }}</p>{% endif %}
 <p>{{ paper.excerpt }}</p>
 <div class="action-row"><a class="text-link" href="https://doi.org/{{ paper.doi }}">DOI ↗</a><a class="text-link" href="{{ paper.paperurl | relative_url }}">PDF</a><a class="text-link" href="{{ paper.url | relative_url }}">Abstract & details</a></div>
+<div class="citation-actions"><button type="button" class="copy-citation" hidden>Copy citation</button><a href="{{ citation.bibtex_url | relative_url }}" download>BibTeX ↓</a><a href="{{ citation.ris_url | relative_url }}" download>RIS ↓</a></div>
+<details class="citation-details"><summary>Show citation</summary><p class="citation-text">{{ citation.citation_text | escape }}</p><pre class="bibtex-source">{{ citation.bibtex | escape }}</pre></details>
 </article>
 {% endfor %}
 

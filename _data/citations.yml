@@ -1,0 +1,108 @@
+---
+10.1016/j.tws.2026.115498:
+  bibtex_url: "/files/citations/huo-10-1016-j-tws-2026-115498.bib"
+  ris_url: "/files/citations/huo-10-1016-j-tws-2026-115498.ris"
+  citation_text: Liu C., Gao J., Huo W., & Guo X. (2026). Explicit topology optimization
+    for fundamental frequency maximization of complex curved thin-walled stiffened
+    structures. Thin-Walled Structures. https://doi.org/10.1016/j.tws.2026.115498
+  bibtex: |
+    @article{huo-10-1016-j-tws-2026-115498,
+      title = {{Explicit topology optimization for fundamental frequency maximization of complex curved thin-walled stiffened structures}},
+      author = {Liu, C. and Gao, J. and Huo, W. and Guo, X.},
+      journal = {Thin-Walled Structures},
+      year = {2026},
+      volume = {231},
+      eid = {115498},
+      doi = {10.1016/j.tws.2026.115498},
+      url = {https://doi.org/10.1016/j.tws.2026.115498},
+    }
+10.1007/s00158-025-04128-2:
+  bibtex_url: "/files/citations/huo-10-1007-s00158-025-04128-2.bib"
+  ris_url: "/files/citations/huo-10-1007-s00158-025-04128-2.ris"
+  citation_text: Liu C., Ren Y., Zhao S., Cao X., Guo Y., Huo W., & Guo X. (2025).
+    Hierarchical shape optimization for complex shell structures considering global
+    and local shape perturbations. Struct. Multidiscip. Optim.. https://doi.org/10.1007/s00158-025-04128-2
+  bibtex: |
+    @article{huo-10-1007-s00158-025-04128-2,
+      title = {{Hierarchical shape optimization for complex shell structures considering global and local shape perturbations}},
+      author = {Liu, C. and Ren, Y. and Zhao, S. and Cao, X. and Guo, Y. and Huo, W. and Guo, X.},
+      journal = {Struct. Multidiscip. Optim.},
+      year = {2025},
+      doi = {10.1007/s00158-025-04128-2},
+      url = {https://doi.org/10.1007/s00158-025-04128-2},
+    }
+10.1016/j.jmps.2024.105974:
+  bibtex_url: "/files/citations/huo-10-1016-j-jmps-2024-105974.bib"
+  ris_url: "/files/citations/huo-10-1016-j-jmps-2024-105974.ris"
+  citation_text: Huo W., Liu C., Guo Y., Du Z., Zhang W., & Guo X. (2024). Explicit
+    topography design for complex shell structures based on embedded spline components.
+    J. Mech. Phys. Solids. https://doi.org/10.1016/j.jmps.2024.105974
+  bibtex: |
+    @article{huo-10-1016-j-jmps-2024-105974,
+      title = {{Explicit topography design for complex shell structures based on embedded spline components}},
+      author = {Huo, W. and Liu, C. and Guo, Y. and Du, Z. and Zhang, W. and Guo, X.},
+      journal = {J. Mech. Phys. Solids},
+      year = {2024},
+      doi = {10.1016/j.jmps.2024.105974},
+      url = {https://doi.org/10.1016/j.jmps.2024.105974},
+    }
+10.1016/j.cma.2023.116431:
+  bibtex_url: "/files/citations/huo-10-1016-j-cma-2023-116431.bib"
+  ris_url: "/files/citations/huo-10-1016-j-cma-2023-116431.ris"
+  citation_text: Huo W., Liu C., Liu Y., Du Z., Zhang W., & Guo X. (2023). A novel
+    explicit design method for complex thin-walled structures based on embedded solid
+    moving morphable components. Comput. Methods Appl. Mech. Eng.. https://doi.org/10.1016/j.cma.2023.116431
+  bibtex: |
+    @article{huo-10-1016-j-cma-2023-116431,
+      title = {{A novel explicit design method for complex thin-walled structures based on embedded solid moving morphable components}},
+      author = {Huo, W. and Liu, C. and Liu, Y. and Du, Z. and Zhang, W. and Guo, X.},
+      journal = {Comput. Methods Appl. Mech. Eng.},
+      year = {2023},
+      doi = {10.1016/j.cma.2023.116431},
+      url = {https://doi.org/10.1016/j.cma.2023.116431},
+    }
+10.1016/j.cma.2022.115745:
+  bibtex_url: "/files/citations/huo-10-1016-j-cma-2022-115745.bib"
+  ris_url: "/files/citations/huo-10-1016-j-cma-2022-115745.ris"
+  citation_text: Jiang X., Huo W., Liu C., Du Z., Zhang X., Li X., & Guo X. (2023).
+    Explicit layout optimization of complex rib-reinforced thin-walled structures
+    via computational conformal mapping (CCM). Comput. Methods Appl. Mech. Eng.. https://doi.org/10.1016/j.cma.2022.115745
+  bibtex: |
+    @article{huo-10-1016-j-cma-2022-115745,
+      title = {{Explicit layout optimization of complex rib-reinforced thin-walled structures via computational conformal mapping (CCM)}},
+      author = {Jiang, X. and Huo, W. and Liu, C. and Du, Z. and Zhang, X. and Li, X. and Guo, X.},
+      journal = {Comput. Methods Appl. Mech. Eng.},
+      year = {2023},
+      doi = {10.1016/j.cma.2022.115745},
+      url = {https://doi.org/10.1016/j.cma.2022.115745},
+    }
+10.1115/1.4053727:
+  bibtex_url: "/files/citations/huo-10-1115-1-4053727.bib"
+  ris_url: "/files/citations/huo-10-1115-1-4053727.ris"
+  citation_text: Huo W., Liu C., Du Z., Jiang X., Liu Z., & Guo X. (2022). Topology
+    optimization on complex surfaces based on the moving morphable component method
+    and computational conformal mapping. ASME J. Appl. Mech.. https://doi.org/10.1115/1.4053727
+  bibtex: |
+    @article{huo-10-1115-1-4053727,
+      title = {{Topology optimization on complex surfaces based on the moving morphable component method and computational conformal mapping}},
+      author = {Huo, W. and Liu, C. and Du, Z. and Jiang, X. and Liu, Z. and Guo, X.},
+      journal = {ASME J. Appl. Mech.},
+      year = {2022},
+      doi = {10.1115/1.4053727},
+      url = {https://doi.org/10.1115/1.4053727},
+    }
+10.1016/j.cam.2020.113197:
+  bibtex_url: "/files/citations/huo-10-1016-j-cam-2020-113197.bib"
+  ris_url: "/files/citations/huo-10-1016-j-cam-2020-113197.ris"
+  citation_text: Yu B., Cao G., Huo W., Zhou H., & Atroshchenko E. (2021). Isogeometric
+    dual reciprocity boundary element method for solving transient heat conduction
+    problems with heat sources. J. Comput. Appl. Math.. https://doi.org/10.1016/j.cam.2020.113197
+  bibtex: |
+    @article{huo-10-1016-j-cam-2020-113197,
+      title = {{Isogeometric dual reciprocity boundary element method for solving transient heat conduction problems with heat sources}},
+      author = {Yu, B. and Cao, G. and Huo, W. and Zhou, H. and Atroshchenko, E.},
+      journal = {J. Comput. Appl. Math.},
+      year = {2021},
+      doi = {10.1016/j.cam.2020.113197},
+      url = {https://doi.org/10.1016/j.cam.2020.113197},
+    }

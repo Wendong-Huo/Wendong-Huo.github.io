@@ -1,0 +1,20 @@
+{
+  "source_file": "Job-torus_v3.inp",
+  "source_sha256": "e6c78bda2ef305891d4cc5a14f2ccc84d9b81847bb61773a62dc81648b2b0abb",
+  "vertices": 31840,
+  "triangles": 63680,
+  "bounds": [
+    [
+      -2.6256001,
+      -0.778299987,
+      -2.61949992
+    ],
+    [
+      2.6256001,
+      0.778299987,
+      2.61949992
+    ]
+  ],
+  "description": "Archived torus shell geometry; not an optimized layout or simulation result.",
+  "conversion": "Original S3 connectivity; no geometry simplification; coordinates preserved as model units."
+}
