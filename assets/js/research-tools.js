@@ -107,7 +107,7 @@
         if (!customElements.get('model-viewer')) await import(stage.dataset.viewerScript);
         viewer = document.createElement('model-viewer');
         viewer.src = stage.dataset.modelSrc;
-        viewer.alt = 'Torus shell geometry from Wendong Huo’s computational research archive';
+        viewer.alt = 'Topology-optimized torus shell, archived iteration 310, solid-region surface';
         viewer.setAttribute('camera-controls', '');
         viewer.setAttribute('touch-action', 'pan-y');
         viewer.setAttribute('camera-orbit', '35deg 55deg auto');
@@ -142,6 +142,19 @@
       viewer.setAttribute('field-of-view', 'auto');
       viewer.removeAttribute('auto-rotate');
       const rotate = $('.rotate-surface', stage); rotate.setAttribute('aria-pressed', 'false'); rotate.textContent = 'Auto-rotate';
+    });
+    const switchModel = optimized => {
+      status.textContent = 'Loading selected geometry…';
+      viewer.src = optimized ? stage.dataset.modelSrc : stage.dataset.originalSrc;
+      viewer.alt = optimized ? 'Topology-optimized torus shell, archived iteration 310, solid-region surface' : 'Original unoptimized torus design surface';
+      $('.show-optimized', stage).setAttribute('aria-pressed', String(optimized));
+      $('.show-original', stage).setAttribute('aria-pressed', String(!optimized));
+    };
+    $('.show-optimized', stage).addEventListener('click', () => {
+      if ($('.show-optimized', stage).getAttribute('aria-pressed') !== 'true') switchModel(true);
+    });
+    $('.show-original', stage).addEventListener('click', () => {
+      if ($('.show-original', stage).getAttribute('aria-pressed') !== 'true') switchModel(false);
     });
   }
 })();

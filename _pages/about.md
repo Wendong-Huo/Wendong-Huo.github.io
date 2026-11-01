@@ -43,14 +43,14 @@ redirect_from:
 {% include research-cards.html %}
 
 <section class="surface-explorer" aria-labelledby="surface-title">
-  <div class="section-heading"><div><p class="eyebrow">EXPLORE THE GEOMETRY</p><h2 id="surface-title">A curved surface, in your hands.</h2></div><a href="{{ '/assets/models/torus-surface.glb' | relative_url }}" download>Download model · GLB</a></div>
-  <p class="section-intro">An actual torus shell mesh from my computational research archive. Drag to rotate, scroll or pinch to zoom. This is the geometric model, not an optimized layout or a simulation result.</p>
-  <div class="surface-stage" data-viewer-script="{{ '/assets/js/lib/model-viewer-4.4.0.min.js' | relative_url }}" data-model-src="{{ '/assets/models/torus-surface.glb' | relative_url }}">
-    <div class="surface-placeholder"><span class="surface-monogram" aria-hidden="true">↻</span><p>Explore a torus shell in 3D</p><button type="button" class="load-surface" hidden>Load interactive model</button><noscript><p>Enable JavaScript to rotate the model, or download the GLB above.</p></noscript></div>
-    <div class="surface-controls" hidden><button type="button" class="rotate-surface" aria-pressed="false">Auto-rotate</button><button type="button" class="reset-surface">Reset view</button></div>
+  <div class="section-heading"><div><p class="eyebrow">EXPLORE THE GEOMETRY</p><h2 id="surface-title">Topology, on a curved surface.</h2></div><a href="{{ '/assets/models/torus-optimized.glb' | relative_url }}" download>Download optimized model · GLB</a></div>
+  <p class="section-intro">An archived topology-optimization result on a torus shell: diagonal members and open regions follow the curved surface. Compare the optimized layout with its original design surface, and rotate to inspect the geometry.</p>
+  <div class="surface-stage" data-viewer-script="{{ '/assets/js/lib/model-viewer-4.4.0.min.js' | relative_url }}" data-model-src="{{ '/assets/models/torus-optimized.glb' | relative_url }}" data-original-src="{{ '/assets/models/torus-surface.glb' | relative_url }}">
+    <div class="surface-placeholder"><span class="surface-monogram" aria-hidden="true">↻</span><p>Explore the optimized torus in 3D</p><button type="button" class="load-surface" hidden>Load interactive model</button><noscript><p>Enable JavaScript to rotate the model, or download the GLB above.</p></noscript></div>
+    <div class="surface-controls" hidden><button type="button" class="show-optimized" aria-pressed="true">Optimized layout</button><button type="button" class="show-original" aria-pressed="false">Original surface</button><button type="button" class="rotate-surface" aria-pressed="false">Auto-rotate</button><button type="button" class="reset-surface">Reset view</button></div>
     <p class="surface-status" role="status" aria-live="polite"></p>
   </div>
-  <p class="muted">Original finite-element surface · 31,840 vertices · 63,680 triangles. Geometry and connectivity preserved.</p>
+  <p class="muted">Archived iteration 310 · 22,690 solid-region triangles. The source file’s explicit solid element set is shown; void and transition elements are omitted. Original coordinates and connectivity retained, without smoothing.</p>
 </section>
 
 <section class="research-outlook" aria-labelledby="outlook-title">

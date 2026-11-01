@@ -1,0 +1,23 @@
+{
+  "source_file": "iter_310.inp",
+  "source_sha256": "0b84d5332b6c00f76d2640b1c4804358976cbdd93f39ab96006efa291e7b4b76",
+  "vertices": 13155,
+  "triangles": 22690,
+  "source_triangles": 63680,
+  "bounds": [
+    [
+      -2.6256001,
+      -0.778299987,
+      -2.61949992
+    ],
+    [
+      2.6256001,
+      0.778299987,
+      2.61949992
+    ]
+  ],
+  "description": "Archived torus topology optimization, iteration 310, explicitly solid region.",
+  "element_set": "domain_sv100",
+  "excluded_regions": "Void and transition elements",
+  "conversion": "Original S3 connectivity; no smoothing or geometry simplification; coordinates preserved as model units."
+}
