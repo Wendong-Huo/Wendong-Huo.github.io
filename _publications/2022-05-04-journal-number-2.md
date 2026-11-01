@@ -12,6 +12,8 @@ paperurl: /files/paper-2.pdf
 collection: publications
 permalink: /publication/2022-05-04-journal-number-2
 type: journal
+corresponding_authors: ["Liu C.", "Guo X."]
+contribution_role: First author
 share: false
 ---
 

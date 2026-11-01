@@ -11,6 +11,8 @@ paperurl: /files/paper-1.pdf
 collection: publications
 permalink: /publication/2021-03-15-journal-number-1
 type: journal
+corresponding_authors: ["Yu B."]
+contribution_role: Co-author
 share: false
 ---
 

@@ -1,0 +1,4 @@
+{% assign author_names = include.paper.authors | split: ', ' %}
+<p class="publication-authors">{% for author_name in author_names %}{% assign clean_name = author_name | remove: '& ' | strip %}{% unless forloop.first %}, {% endunless %}{% if forloop.last and forloop.length > 1 %}&amp; {% endif %}{% if clean_name == 'Huo W.' %}<strong>{{ clean_name }}</strong>{% else %}{{ clean_name }}{% endif %}{% if include.paper.corresponding_authors contains clean_name %}<sup title="Corresponding author" aria-label="Corresponding author">*</sup>{% endif %}{% if include.paper.equal_contributors contains clean_name %}<sup title="Equal contribution" aria-label="Equal contribution">†</sup>{% endif %}{% endfor %}</p>
+{% if include.paper.contribution_role %}<p class="author-role">{{ include.paper.contribution_role }}</p>{% endif %}
+<p class="author-key">* Corresponding author{% if include.paper.equal_contributors %} · † Equal contribution (co-first authors){% endif %}</p>

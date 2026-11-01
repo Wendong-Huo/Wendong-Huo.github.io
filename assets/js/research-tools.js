@@ -100,6 +100,9 @@
     const load = $('.load-surface', stage), status = $('.surface-status', stage);
     load.hidden = false;
     let viewer, loading = false;
+    const compactView = window.matchMedia('(max-width: 767px)');
+    const defaultOrbit = () => compactView.matches ? '35deg 55deg 105%' : '35deg 55deg 80%';
+    compactView.addEventListener('change', () => { if (viewer) viewer.setAttribute('camera-orbit', defaultOrbit()); });
     load.addEventListener('click', async () => {
       if (loading) return;
       loading = true; load.disabled = true; status.textContent = 'Loading interactive surface…';
@@ -109,8 +112,11 @@
         viewer.src = stage.dataset.modelSrc;
         viewer.alt = (stage.dataset.modelAlt || 'Optimized curved shell');
         viewer.setAttribute('camera-controls', '');
+        viewer.setAttribute('auto-rotate', '');
+        viewer.setAttribute('auto-rotate-delay', '0');
+        viewer.setAttribute('rotation-per-second', '15deg');
         viewer.setAttribute('touch-action', 'pan-y');
-        viewer.setAttribute('camera-orbit', '35deg 55deg auto');
+        viewer.setAttribute('camera-orbit', defaultOrbit());
         viewer.setAttribute('shadow-intensity', '0.5');
         viewer.setAttribute('interaction-prompt', 'none');
         viewer.setAttribute('loading', 'eager');
@@ -137,11 +143,11 @@
       e.target.textContent = on ? 'Pause rotation' : 'Auto-rotate';
     });
     $('.reset-surface', stage).addEventListener('click', () => {
-      viewer.setAttribute('camera-orbit', '35deg 55deg auto');
+      viewer.setAttribute('camera-orbit', defaultOrbit());
       viewer.setAttribute('camera-target', 'auto auto auto');
       viewer.setAttribute('field-of-view', 'auto');
-      viewer.removeAttribute('auto-rotate');
-      const rotate = $('.rotate-surface', stage); rotate.setAttribute('aria-pressed', 'false'); rotate.textContent = 'Auto-rotate';
+      viewer.setAttribute('auto-rotate', '');
+      const rotate = $('.rotate-surface', stage); rotate.setAttribute('aria-pressed', 'true'); rotate.textContent = 'Pause rotation';
     });
     const switchModel = optimized => {
       status.textContent = 'Loading selected geometry…';

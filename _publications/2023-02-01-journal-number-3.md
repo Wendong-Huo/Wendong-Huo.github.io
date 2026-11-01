@@ -12,6 +12,8 @@ paperurl: /files/paper-3.pdf
 collection: publications
 permalink: /publication/2023-02-01-journal-number-3
 type: journal
+corresponding_authors: ["Huo W.", "Liu C.", "Guo X."]
+contribution_role: Corresponding author
 share: false
 ---
 

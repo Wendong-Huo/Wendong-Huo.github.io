@@ -13,6 +13,8 @@ paperurl: /files/paper-7.pdf
 collection: publications
 permalink: /publication/2026-08-07-journal-number-7
 type: journal
+corresponding_authors: ["Huo W.", "Guo X."]
+contribution_role: Corresponding author
 share: false
 citation: 'Liu, C., Gao, J., Huo, W., & Guo, X. (2026). Explicit topology optimization for fundamental frequency maximization of complex curved thin-walled stiffened structures. Thin-Walled Structures, 231, 115498. https://doi.org/10.1016/j.tws.2026.115498'
 ---

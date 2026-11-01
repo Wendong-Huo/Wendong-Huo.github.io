@@ -12,6 +12,8 @@ paperurl: /files/paper-6.pdf
 collection: publications
 permalink: /publication/2025-08-21-journal-number-6
 type: journal
+corresponding_authors: ["Huo W."]
+contribution_role: Corresponding author
 share: false
 ---
 

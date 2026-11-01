@@ -30,7 +30,7 @@ redirect_from:
     <div class="latest-copy">
       <p class="figure-credit">Orbital cabin-type shell · Fig. 32(b), Liu et al. (2026)</p>
       <h2><a href="{{ latest_paper.url | relative_url }}">{{ latest_paper.title }}</a></h2>
-      <p class="latest-authors">Liu C., Gao J., <strong>Huo W.</strong>, &amp; Guo X.</p>
+      <p class="latest-authors">Liu C., Gao J., <strong>Huo W.</strong><sup title="Corresponding author">*</sup>, &amp; Guo X.<sup title="Corresponding author">*</sup></p>
       <p class="latest-summary">Designing stiffeners on complex curved shells to maximize the fundamental natural frequency.</p>
       <p class="latest-meta">Thin-Walled Structures · 231, 115498<br>Corresponding author · Published {{ latest_paper.date | date: '%B %-d, %Y' }}</p>
       <div class="action-row"><a class="action-link primary" href="{{ latest_paper.url | relative_url }}">Read study →</a><a class="action-link" href="{{ latest_paper.paperurl | relative_url }}">PDF ↗</a><a class="action-link" href="https://doi.org/{{ latest_paper.doi }}">DOI ↗</a></div>
@@ -47,7 +47,7 @@ redirect_from:
   <p class="section-intro">An archived topology-optimization result on a tee-branch shell: connected members and open regions follow the branching curved surface. Compare the optimized layout with its original design surface, and rotate to inspect the geometry.</p>
   <div class="surface-stage" data-viewer-script="{{ '/assets/js/lib/model-viewer-4.4.0.min.js' | relative_url }}" data-model-alt="Topology-optimized tee-branch shell, archived iteration 200" data-original-alt="Complete tee-branch design surface" data-model-src="{{ '/assets/models/tee-optimized.glb' | relative_url }}" data-original-src="{{ '/assets/models/tee-surface.glb' | relative_url }}">
     <div class="surface-placeholder"><span class="surface-monogram" aria-hidden="true">↻</span><p>Explore the optimized tee-branch in 3D</p><button type="button" class="load-surface" hidden>Load interactive model</button><noscript><p>Enable JavaScript to rotate the model, or download the GLB above.</p></noscript></div>
-    <div class="surface-controls" hidden><button type="button" class="show-optimized" aria-pressed="true">Optimized layout</button><button type="button" class="show-original" aria-pressed="false">Original surface</button><button type="button" class="rotate-surface" aria-pressed="false">Auto-rotate</button><button type="button" class="reset-surface">Reset view</button></div>
+    <div class="surface-controls" hidden><button type="button" class="show-optimized" aria-pressed="true">Optimized layout</button><button type="button" class="show-original" aria-pressed="false">Original surface</button><button type="button" class="rotate-surface" aria-pressed="true">Pause rotation</button><button type="button" class="reset-surface">Reset view</button></div>
     <p class="surface-status" role="status" aria-live="polite"></p>
   </div>
   <p class="muted">Archived iteration 200 · 65,857 solid-region triangles. The source file’s explicit solid element set is shown; void and transition elements are omitted. Original coordinates and connectivity retained, without smoothing.</p>

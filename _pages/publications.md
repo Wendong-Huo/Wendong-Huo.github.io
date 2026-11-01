@@ -24,7 +24,7 @@ description: Journal publications and doctoral thesis by Wendong Huo, with DOI l
 <article class="publication-card journal-paper" data-year="{{ paper.date | date: '%Y' }}" data-journal="{{ paper.venue | escape }}">
 <p class="eyebrow">{{ paper.date | date: '%Y' }} · {{ paper.venue }}</p>
 <h3><a href="https://doi.org/{{ paper.doi }}">{{ paper.title }}</a></h3>
-<p class="publication-authors">{{ paper.authors | replace: 'Huo W.', '<strong>Huo W.</strong>' }}</p>
+{% include publication-authors.html paper=paper %}
 {% if paper.volume %}<p class="muted">Volume {{ paper.volume }}{% if paper.article_number %} · Article {{ paper.article_number }}{% endif %}</p>{% endif %}
 {% if paper.publication_note %}<p class="muted">{{ paper.publication_note }}</p>{% endif %}
 <p>{{ paper.excerpt }}</p>
