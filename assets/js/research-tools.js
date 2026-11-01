@@ -152,7 +152,7 @@
     const switchModel = variant => {
       status.textContent = 'Loading selected geometry…';
       viewer.src = variant === 'smoothed' ? stage.dataset.modelSrc : (variant === 'raw' ? stage.dataset.rawSrc : stage.dataset.originalSrc);
-      viewer.alt = variant === 'smoothed' ? stage.dataset.modelAlt : (variant === 'raw' ? 'Archived tee-branch mesh before display smoothing' : stage.dataset.originalAlt);
+      viewer.alt = variant === 'smoothed' ? stage.dataset.modelAlt : (variant === 'raw' ? (stage.dataset.rawAlt || 'Archived tee-branch mesh before display smoothing') : stage.dataset.originalAlt);
       [['.show-optimized', 'smoothed'], ['.show-raw', 'raw'], ['.show-original', 'original']].forEach(([selector, name]) => {
         $(selector, stage).setAttribute('aria-pressed', String(variant === name));
       });

@@ -38,6 +38,7 @@ redirect_from:
   </article>
 </section>
 
+<section class="identity-feature"><div><p class="eyebrow">GEOMETRY / STRUCTURE / EXPLORATION</p><h2>Many surfaces.<br>One curious mind.</h2><p>Explore the models behind the research, the craft behind the website, and a small space for playful experiments.</p><div class="action-row"><a class="action-link primary" href="/models/">Model gallery →</a><a class="action-link" href="/field-notes/">Field notes →</a><a class="action-link" href="/playground/">Playground →</a></div></div><figure><img src="/images/identity-atlas.png" alt="Blue and gold conceptual manifold, combining solid and wireframe surface patches" loading="lazy" width="1536" height="1024"><figcaption>Surface atlas · AI-assisted visual identity, inspired by geometry and structural design.</figcaption></figure></section>
 <div class="section-heading"><div><p class="eyebrow">A RESEARCH THREAD</p><h2>Designing on complex surfaces</h2></div><a href="{{ '/publications/' | relative_url }}">All publications →</a></div>
 <p class="section-intro">From rib layouts to solid components and surface topography: three approaches to making geometry an explicit part of structural optimization.</p>
 {% include research-cards.html %}

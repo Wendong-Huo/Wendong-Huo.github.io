@@ -1,0 +1,20 @@
+---
+layout: archive
+title: Model gallery
+permalink: /models/
+author_profile: true
+---
+
+<p class="page-lead">Real meshes from my research archive. Rotate, compare and inspect the geometry.</p>
+<div class="gallery-picker" role="group" aria-label="Choose a research model"><button type="button" data-gallery="tee" aria-pressed="true">01 / Branching shell</button><button type="button" data-gallery="torus" aria-pressed="false">02 / Torus shell</button></div>
+<p id="gallery-context">Tee-branch shell · Recovered from an archived MATLAB figure, with a lightly smoothed display version.</p>
+<section class="surface-explorer" aria-labelledby="interactive-surface-title">
+  <div class="section-heading"><div><p class="eyebrow">EXPLORE THE GEOMETRY</p><h2 id="interactive-surface-title">Explore a branching shell in 3D.</h2></div><a href="{{ '/assets/models/tee-smoothed.glb' | relative_url }}" download>Download display model · GLB</a></div>
+  <p class="section-intro">An archived topology-optimization result on a tee-branch shell: connected members and open regions follow the branching curved surface. Compare the optimized layout with its original design surface, and rotate to inspect the geometry.</p>
+  <div class="surface-stage" data-viewer-script="{{ '/assets/js/lib/model-viewer-4.4.0.min.js' | relative_url }}" data-model-alt="Lightly boundary-smoothed display of the archived tee-branch structure" data-raw-src="{{ '/assets/models/tee-processed.glb' | relative_url }}" data-original-alt="Complete tee-branch design surface" data-model-src="{{ '/assets/models/tee-smoothed.glb' | relative_url }}" data-original-src="{{ '/assets/models/tee-surface.glb' | relative_url }}">
+    <div class="surface-placeholder"><span class="surface-monogram" aria-hidden="true">↻</span><p>Explore the optimized tee-branch in 3D</p><button type="button" class="load-surface" hidden>Load interactive model</button><noscript><p>Enable JavaScript to rotate the model, or download the GLB above.</p></noscript></div>
+    <div class="surface-controls" hidden><button type="button" class="show-optimized" aria-pressed="true">Smoothed display</button><button type="button" class="show-raw" aria-pressed="false">Archived mesh</button><button type="button" class="show-original" aria-pressed="false">Original surface</button><button type="button" class="rotate-surface" aria-pressed="true">Pause rotation</button><button type="button" class="reset-surface">Reset view</button></div>
+    <p class="surface-status" role="status" aria-live="polite"></p>
+  </div>
+  <p class="muted">Lightly smoothed for display · Original connectivity and openings retained. Compare with the archived mesh to inspect the unchanged structural layout. <a href="{{ '/assets/models/tee-processed.glb' | relative_url }}" download>Download unsmoothed archive ↗</a></p>
+</section><div class="studio-grid"><article><p class="eyebrow">01 / BRANCHING SHELL</p><h2>From archive to interaction</h2><p>A continuous 76,849-triangle surface recovered from a saved structural visualization. The display smoothing preserves connectivity; the archived geometry is available for comparison.</p><a href="/field-notes/#recovering">Read the recovery note →</a></article><article><p class="eyebrow">02 / TORUS SHELL</p><h2>Topology around a loop</h2><p>An archived iteration 310, showing 22,690 triangles from the explicitly solid element set. Void and transition elements are omitted. This is an intermediate archive, not a claim of final convergence.</p><a href="/assets/models/torus-optimized.glb" download>Download archived GLB →</a></article></div>

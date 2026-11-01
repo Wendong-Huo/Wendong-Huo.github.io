@@ -11,3 +11,10 @@ main:
     url: /cv/
   - title: "Links"
     url: /Misc/
+
+  - title: "Models"
+    url: /models/
+  - title: "Making"
+    url: /field-notes/
+  - title: "Play"
+    url: /playground/
