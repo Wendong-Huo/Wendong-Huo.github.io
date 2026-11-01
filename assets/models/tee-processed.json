@@ -1,0 +1,11 @@
+{
+  "source_file": "200_struct.fig",
+  "source_sha256": "5ce7b302a84ed1cdec8f694659c0294dba3330c6d034608c41f2934c254737ab",
+  "vertices": 41041,
+  "triangles": 76849,
+  "edge_connected_components": 1,
+  "degenerate_triangles": 0,
+  "source_mesh_coordinate_error": 7.050498574023122e-08,
+  "description": "Archived rendered tee-branch structure, saved as 200_struct.fig; not claimed as final convergence.",
+  "conversion": "One of two identical graphics objects exported; Z reflection restores original INP coordinates and corrects face winding. No smoothing, hole filling, component removal or invented geometry."
+}
