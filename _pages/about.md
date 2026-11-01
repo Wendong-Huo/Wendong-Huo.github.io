@@ -42,6 +42,17 @@ redirect_from:
 <p class="section-intro">From rib layouts to solid components and surface topography: three approaches to making geometry an explicit part of structural optimization.</p>
 {% include research-cards.html %}
 
+<section class="surface-explorer" aria-labelledby="interactive-surface-title">
+  <div class="section-heading"><div><p class="eyebrow">EXPLORE THE GEOMETRY</p><h2 id="interactive-surface-title">Explore a branching shell in 3D.</h2></div><a href="{{ '/assets/models/tee-optimized.glb' | relative_url }}" download>Download optimized model · GLB</a></div>
+  <p class="section-intro">An archived topology-optimization result on a tee-branch shell: connected members and open regions follow the branching curved surface. Compare the optimized layout with its original design surface, and rotate to inspect the geometry.</p>
+  <div class="surface-stage" data-viewer-script="{{ '/assets/js/lib/model-viewer-4.4.0.min.js' | relative_url }}" data-model-alt="Topology-optimized tee-branch shell, archived iteration 200" data-original-alt="Complete tee-branch design surface" data-model-src="{{ '/assets/models/tee-optimized.glb' | relative_url }}" data-original-src="{{ '/assets/models/tee-surface.glb' | relative_url }}">
+    <div class="surface-placeholder"><span class="surface-monogram" aria-hidden="true">↻</span><p>Explore the optimized tee-branch in 3D</p><button type="button" class="load-surface" hidden>Load interactive model</button><noscript><p>Enable JavaScript to rotate the model, or download the GLB above.</p></noscript></div>
+    <div class="surface-controls" hidden><button type="button" class="show-optimized" aria-pressed="true">Optimized layout</button><button type="button" class="show-original" aria-pressed="false">Original surface</button><button type="button" class="rotate-surface" aria-pressed="false">Auto-rotate</button><button type="button" class="reset-surface">Reset view</button></div>
+    <p class="surface-status" role="status" aria-live="polite"></p>
+  </div>
+  <p class="muted">Archived iteration 200 · 65,857 solid-region triangles. The source file’s explicit solid element set is shown; void and transition elements are omitted. Original coordinates and connectivity retained, without smoothing.</p>
+</section>
+
 <section class="surface-explorer" aria-labelledby="surface-title">
   <div class="section-heading"><div><p class="eyebrow">GEOMETRY IN PRACTICE / CMAME 2023</p><h2 id="surface-title">A bottle, reimagined through structure.</h2></div><a href="{{ '/files/paper-4.pdf' | relative_url }}">Read the paper →</a></div>
   <p class="section-intro">Embedded solid Moving Morphable Components turn a bottle-shaped design domain into an open thin-walled structure. The final design combines hierarchical components with different structural roles.</p>

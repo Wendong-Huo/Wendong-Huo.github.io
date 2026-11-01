@@ -14,6 +14,7 @@ parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('source', type=Path)
 parser.add_argument('--solid-set', help='Export only this explicit element set; no inferred density threshold.')
 parser.add_argument('--name', default='torus-surface')
+parser.add_argument('--description', help='Verified geometry description for provenance.')
 args = parser.parse_args()
 source = args.source
 nodes, faces, selected = {}, {}, []
@@ -55,7 +56,7 @@ assert len(check.faces) == len(triangles)
 assert np.allclose(check.bounds, mesh.bounds, atol=1e-5)
 record = dict(source_file=source.name, source_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
               vertices=len(mesh.vertices), triangles=len(triangles), source_triangles=len(faces), bounds=mesh.bounds.tolist(),
-              description=('Archived torus topology optimization, iteration 310, explicitly solid region.' if args.solid_set else 'Archived torus shell geometry; not an optimized layout or simulation result.'),
+              description=args.description or ('Archived torus topology optimization, iteration 310, explicitly solid region.' if args.solid_set else 'Archived torus shell geometry; not an optimized layout or simulation result.'),
               element_set=args.solid_set, excluded_regions=('Void and transition elements' if args.solid_set else None),
               conversion='Original S3 connectivity; no smoothing or geometry simplification; coordinates preserved as model units.')
 (out / (args.name + '.json')).write_text(json.dumps(record, indent=2)+'\n')
