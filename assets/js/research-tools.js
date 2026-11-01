@@ -149,18 +149,18 @@
       viewer.setAttribute('auto-rotate', '');
       const rotate = $('.rotate-surface', stage); rotate.setAttribute('aria-pressed', 'true'); rotate.textContent = 'Pause rotation';
     });
-    const switchModel = optimized => {
+    const switchModel = variant => {
       status.textContent = 'Loading selected geometry…';
-      viewer.src = optimized ? stage.dataset.modelSrc : stage.dataset.originalSrc;
-      viewer.alt = optimized ? (stage.dataset.modelAlt || 'Optimized curved shell') : (stage.dataset.originalAlt || 'Original design surface');
-      $('.show-optimized', stage).setAttribute('aria-pressed', String(optimized));
-      $('.show-original', stage).setAttribute('aria-pressed', String(!optimized));
+      viewer.src = variant === 'smoothed' ? stage.dataset.modelSrc : (variant === 'raw' ? stage.dataset.rawSrc : stage.dataset.originalSrc);
+      viewer.alt = variant === 'smoothed' ? stage.dataset.modelAlt : (variant === 'raw' ? 'Archived tee-branch mesh before display smoothing' : stage.dataset.originalAlt);
+      [['.show-optimized', 'smoothed'], ['.show-raw', 'raw'], ['.show-original', 'original']].forEach(([selector, name]) => {
+        $(selector, stage).setAttribute('aria-pressed', String(variant === name));
+      });
     };
-    $('.show-optimized', stage).addEventListener('click', () => {
-      if ($('.show-optimized', stage).getAttribute('aria-pressed') !== 'true') switchModel(true);
-    });
-    $('.show-original', stage).addEventListener('click', () => {
-      if ($('.show-original', stage).getAttribute('aria-pressed') !== 'true') switchModel(false);
+    [['.show-optimized', 'smoothed'], ['.show-raw', 'raw'], ['.show-original', 'original']].forEach(([selector, variant]) => {
+      $(selector, stage).addEventListener('click', () => {
+        if ($(selector, stage).getAttribute('aria-pressed') !== 'true') switchModel(variant);
+      });
     });
   }
 })();

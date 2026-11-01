@@ -1,0 +1,29 @@
+{
+  "source_file": "tee-processed.glb",
+  "source_sha256": "910091dbbcbd99ddff006fec4af2d30c78e152c5da37db3f86edfb21d3940b61",
+  "purpose": "Display-only boundary smoothing, not a new optimization or analysis mesh.",
+  "method": "Up to 20 tangential boundary Laplacian steps; two-ring blending; degree-not-two junctions pinned; displacement capped at one median mesh edge; triangle area/orientation safeguards.",
+  "iterations": 9,
+  "step_rates": [
+    0.35,
+    0.35,
+    0.0875,
+    0.04375,
+    0.0109375,
+    0.00546875,
+    0.0013671875,
+    0.00068359375,
+    0.000341796875
+  ],
+  "median_edge": 0.2677350793203046,
+  "max_displacement": 0.26773507932030594,
+  "rms_displacement": 0.024566348170003523,
+  "max_displacement_fraction_of_diagonal": 0.002490117314053271,
+  "area_change_percent": 0.16494862993050585,
+  "boundary_roughness_before": 0.08692717811869788,
+  "boundary_roughness_after": 0.023464606185574506,
+  "vertices": 41041,
+  "triangles": 76849,
+  "connected_components": 1,
+  "faces_unchanged": true
+}
