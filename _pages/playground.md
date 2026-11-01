@@ -6,6 +6,7 @@ author_profile: true
 ---
 
 <div class="play-intro"><div><p class="eyebrow">A LITTLE ROOM TO PLAY</p><h2>Play with geometry.</h2><p>Surfaces to turn, knots to untangle, curves to collect.</p></div><img src="/images/identity-pixel.png" alt="Blue and yellow pixel topology playground emblem" width="180" height="180"></div>
+<a class="play-art-banner" href="/visual-diary/#play"><img src="/images/studio-play.png" alt="Flowing blue and gold ribbons, coral orbit and a small pixel explorer" width="1254" height="1254"><span>From a sketch to a small adventure.<small>Explore the visual diary ↗</small></span></a>
 <section class="geometry-lab" aria-labelledby="geometry-title">
   <p class="eyebrow">THREE DIMENSIONS / ENDLESS VARIATIONS</p>
   <h2 id="geometry-title">A small cabinet of surfaces.</h2>
