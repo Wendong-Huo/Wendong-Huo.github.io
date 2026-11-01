@@ -17,7 +17,7 @@ redirect_from:
 <section class="home-opening" aria-label="Introduction and latest research">
   <div class="home-intro">
     <p class="eyebrow">WENDONG HUO / RESEARCH</p>
-    <h1>Geometry into<br>structural design.</h1>
+    <h1>Geometry-driven<br>design.</h1>
     <p class="intro-role">Computational mechanics researcher<br>Postdoctoral Fellow · HKU</p>
     <p>I study how geometry shapes mechanical behavior—from stiffened shells and explicit topology optimization to the mechanics of advanced materials.</p>
     <div class="home-signature"><span>Curved surfaces</span><span>Explicit geometry</span><span>Structural mechanics</span></div>
