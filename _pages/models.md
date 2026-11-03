@@ -5,7 +5,7 @@ permalink: /models/
 author_profile: true
 ---
 
-<div class="studio-page-intro"><div><p class="page-lead">Real meshes from my research archive. Rotate, compare and inspect the geometry.</p><a href="/visual-diary/">Visit the visual diary →</a></div><figure><img src="/images/studio-gallery.png" alt="Conceptual porous lattice sculpture" width="1254" height="1254"><figcaption>Concept illustration</figcaption></figure></div>
+<p class="page-lead">Real meshes from my research archive. Rotate, compare and inspect the geometry.</p>
 <div class="gallery-picker" role="group" aria-label="Choose a research model"><button type="button" data-gallery="tee" aria-pressed="true">01 / Branching shell</button><button type="button" data-gallery="torus" aria-pressed="false">02 / Torus shell</button></div>
 <p id="gallery-context">Tee-branch shell · Recovered from an archived MATLAB figure, with a lightly smoothed display version.</p>
 <section class="surface-explorer" aria-labelledby="interactive-surface-title">
