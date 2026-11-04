@@ -12,7 +12,6 @@ redirect_from:
 ---
 
 {% assign latest_paper = site.publications | where: "doi", "10.1016/j.tws.2026.115498" | first %}
-{% assign journal_papers = site.publications | where: "type", "journal" %}
 <div class="home-showcase">
 <section class="home-opening" aria-label="Introduction and latest research">
   <div class="home-intro">
@@ -22,7 +21,6 @@ redirect_from:
     <p>I study how geometry shapes mechanical behavior—from stiffened shells and explicit topology optimization to the mechanics of advanced materials.</p>
     <div class="home-signature"><span>Curved surfaces</span><span>Explicit geometry</span><span>Structural mechanics</span></div>
     <div class="action-row"><a class="action-link primary" href="{{ '/portfolio/' | relative_url }}">Explore research ↗</a><a class="action-link" href="mailto:huowd@hku.hk">Contact</a></div>
-    <a class="publication-count" href="{{ '/publications/' | relative_url }}"><strong>{{ journal_papers | size }}</strong> journal articles <span aria-hidden="true">↗</span></a>
   </div>
   <article class="latest-study">
     <div class="latest-label"><span>Latest publication</span><span>TWS / {{ latest_paper.date | date: '%Y' }}</span></div>
