@@ -1,0 +1,17 @@
+---
+layout: single
+---
+{% assign original = site.posts | where: 'url', page.original_url | first %}
+<div class="essay-context">
+  <p><strong>{{ page.edition }}</strong> · 原记 {{ page.original_date | date: '%Y-%m-%d' }} · {{ page.topic }}</p>
+  <p>根据旧帖整理的中文随笔，经 AI 辅助扩写；保留原文供对照。只有提纲的篇目围绕原题展开，不补写未记录的个人经历。</p>
+  {% if page.editorial_note != '' %}<p>{{ page.editorial_note }}</p>{% endif %}
+  <p><a href="{{ page.original_url | relative_url }}">读当时的原文{% if original %}：{{ original.title }}{% endif %}</a> <span aria-hidden="true"> · </span> <a href="{{ '/posts/' | relative_url }}">返回全部随笔与原记</a></p>
+</div>
+<div class="essay-prose" lang="zh-CN">
+{{ content }}
+</div>
+<nav class="essay-return" aria-label="版本与目录">
+  <a href="{{ page.original_url | relative_url }}">对照原文 ↗</a>
+  <a href="{{ '/posts/' | relative_url }}">全部随笔与原记 →</a>
+</nav>

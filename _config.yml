@@ -190,6 +190,9 @@ kramdown:
 
 # Collections
 collections:
+  essays:
+    output: true
+    permalink: /essays/:path/
   teaching:
     output: true
     permalink: /:collection/:path/

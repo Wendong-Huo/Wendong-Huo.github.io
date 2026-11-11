@@ -1,18 +1,39 @@
 ---
 layout: archive
-title: Notes
+title: 随笔与原记
 permalink: /posts/
 author_profile: true
-description: Research notes and personal reflections by Wendong Huo.
+description: 关于几何、研究与生活的中文随笔，与原始记录并列阅读。
 redirect_from:
 - /wordpress/posts/
 ---
 
-<p class="page-lead">Notes on mechanics, research, and life. Some entries are in Chinese, others in English.</p>
-<p><a href="{{ '/tags/' | relative_url }}">Browse by topic</a> · <a href="{{ '/feed.xml' | relative_url }}">Subscribe via RSS</a></p>
+<p class="notes-intro">有些想法当年只写了几行，有些已经是一段完整的记录。这里把它们接着写下去，也把原来的样子留下来。</p>
+<p class="notes-explanation">34 篇中文随笔于 2026 年 11 月据旧帖整理、经 AI 辅助扩写。按原记时间排列；新稿与原文分别标明日期，提纲扩写不补造个人经历。原始中英文正文保持不变。</p>
+<p class="notes-archive-links"><a href="{{ '/posts/originals/' | relative_url }}">只看原始时间线</a> · <a href="{{ '/tags/' | relative_url }}">原记标签</a> · <a href="{{ '/feed.xml' | relative_url }}">原记 RSS</a></p>
+<nav class="notes-years" aria-label="跳到原记年份"><a href="#year-2025">2025</a><a href="#year-2023">2023</a></nav>
+{% assign entries = site.essays | sort: 'original_date' | reverse %}
 {% assign written_year = '' %}
-{% for post in site.posts %}
-{% assign year = post.date | date: '%Y' %}
-{% if year != written_year %}<h2 class="archive__subtitle">{{ year }}</h2>{% assign written_year = year %}{% endif %}
-{% include archive-single.html %}
+<div class="notes-pairs">
+{% for essay in entries %}
+  {% assign year = essay.original_date | date: '%Y' %}
+  {% assign original = site.posts | where: 'url', essay.original_url | first %}
+  {% if year != written_year %}
+    <h2 class="archive__subtitle" id="year-{{ year }}">{{ year }} <small>原记</small></h2>
+    {% assign written_year = year %}
+  {% endif %}
+  <article class="note-pair">
+    <div class="note-pair__essay">
+      <p class="note-pair__label">随笔 · {{ essay.topic }}</p>
+      <h3><a href="{{ essay.url | relative_url }}">{{ essay.title }}</a></h3>
+      <p>{{ essay.excerpt }}</p>
+      <a class="note-pair__read" href="{{ essay.url | relative_url }}">阅读全文 →</a>
+    </div>
+    <div class="note-pair__original">
+      <p class="note-pair__label">当时的原文 · <time datetime="{{ essay.original_date | date: '%Y-%m-%d' }}">{{ essay.original_date | date: '%Y-%m-%d' }}</time></p>
+      <a href="{{ essay.original_url | relative_url }}">{{ original.title }}</a>
+      <p class="note-pair__edition">{{ essay.edition }} · 新稿 {{ essay.date | date: '%Y-%m-%d' }}</p>
+    </div>
+  </article>
 {% endfor %}
+</div>

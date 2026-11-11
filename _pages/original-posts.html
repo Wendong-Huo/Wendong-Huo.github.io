@@ -1,0 +1,15 @@
+---
+layout: archive
+title: 原始时间线
+permalink: /posts/originals/
+author_profile: true
+description: Wendong Huo 的原始中英文研究与生活记录，保留原文、日期和链接。
+---
+
+<p>这里保留当时写下的内容，包括短句和未展开的提纲。<a href="{{ '/posts/' | relative_url }}">返回随笔与原记，查看对应的新稿 →</a></p>
+{% assign written_year = '' %}
+{% for post in site.posts %}
+{% assign year = post.date | date: '%Y' %}
+{% if year != written_year %}<h2 class="archive__subtitle">{{ year }}</h2>{% assign written_year = year %}{% endif %}
+{% include archive-single.html %}
+{% endfor %}

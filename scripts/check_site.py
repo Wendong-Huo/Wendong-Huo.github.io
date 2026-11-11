@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / '_site'
 errors = []
 urls = {}
-for folder in ('_posts', '_pages', '_portfolio', '_publications'):
+for folder in ('_posts', '_essays', '_pages', '_portfolio', '_publications'):
     for path in (ROOT / folder).rglob('*'):
         if path.suffix not in ('.md', '.html'):
             continue

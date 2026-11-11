@@ -54,13 +54,22 @@ layout: default
       {% endunless %}
 
       <section class="page__content" itemprop="text">
+        {% if page.collection == 'posts' %}
+          {% assign expanded = site.essays | where: 'original_url', page.url | first %}
+          {% if expanded %}
+          <aside class="essay-context" aria-label="关联随笔">
+            <p>这是当时保留下来的原记，正文未改动。另有据此整理的中文随笔：</p>
+            <p><a href="{{ expanded.url | relative_url }}">{{ expanded.title }} →</a> · {{ expanded.date | date: '%Y-%m-%d' }} 整理 · <a href="{{ '/posts/' | relative_url }}">全部版本</a></p>
+          </aside>
+          {% endif %}
+        {% endif %}
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
       {% if page.share %}{% include social-share.html %}{% endif %}
 
-      {% include post_pagination.html %}
+      {% unless page.collection == 'essays' %}{% include post_pagination.html %}{% endunless %}
     </div>
 
     {% if site.comments.provider and page.comments %}
