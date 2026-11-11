@@ -1,67 +1,113 @@
 ---
-layout: archive
-title: About
 permalink: /
+title: ""
+excerpt: "About me (excerpt)"
 author_profile: true
-hide_title: true
-description: Wendong Huo, Postdoctoral Fellow at The University of Hong Kong. Research
-  in computational mechanics, structural optimization, and geometry-informed design.
-redirect_from:
-- /about/
-- /about.html
+redirect_from: 
+  - /about/
+  - /about.html
 ---
 
-{% assign latest_paper = site.publications | where: "doi", "10.1016/j.tws.2026.115498" | first %}
-<div class="home-showcase">
-<section class="home-opening" aria-label="Introduction and latest research">
-  <div class="home-intro">
-    <p class="eyebrow">WENDONG HUO / RESEARCH</p>
-    <h1>Geometry-driven<br>design.</h1>
-    <p class="intro-role">Computational mechanics researcher<br>Postdoctoral Fellow · HKU</p>
-    <p>I study how geometry shapes mechanical behavior—from stiffened shells and explicit topology optimization to the mechanics of advanced materials.</p>
-    <div class="home-signature"><span>Curved surfaces</span><span>Explicit geometry</span><span>Structural mechanics</span></div>
-    <div class="action-row"><a class="action-link primary" href="{{ '/portfolio/' | relative_url }}">Explore research ↗</a><a class="action-link" href="mailto:huowd@hku.hk">Contact</a></div>
-  </div>
-  <article class="latest-study">
-    <div class="latest-label"><span>Latest publication</span><span>TWS / {{ latest_paper.date | date: '%Y' }}</span></div>
-    <a class="latest-visual" data-lightbox data-caption="Orbital cabin-type shell — Liu et al. (2026), Fig. 32(b)." href="{{ '/images/research/tws-frequency.webp' | relative_url }}" aria-label="Enlarge TWS research figure"><img src="{{ '/images/research/tws-frequency.webp' | relative_url }}" width="1008" height="440" alt="Optimized stiffener layout and first-order mode shape of an orbital cabin-type curved shell, Figure 32(b) of the 2026 TWS paper" fetchpriority="high" decoding="async"></a>
-    <div class="latest-copy">
-      <p class="figure-credit">Orbital cabin-type shell · Fig. 32(b), Liu et al. (2026)</p>
-      <h2><a href="{{ latest_paper.url | relative_url }}">{{ latest_paper.title }}</a></h2>
-      <p class="latest-authors">Liu C., Gao J., <strong>Huo W.</strong><sup title="Corresponding author">*</sup>, &amp; Guo X.<sup title="Corresponding author">*</sup></p>
-      <p class="latest-summary">Designing stiffeners on complex curved shells to maximize the fundamental natural frequency.</p>
-      <p class="latest-meta">Thin-Walled Structures · 231, 115498<br>Corresponding author · Published {{ latest_paper.date | date: '%B %-d, %Y' }}</p>
-      <div class="action-row"><a class="action-link primary" href="{{ latest_paper.url | relative_url }}">Read study →</a><a class="action-link" href="{{ latest_paper.paperurl | relative_url }}">PDF ↗</a><a class="action-link" href="https://doi.org/{{ latest_paper.doi }}">DOI ↗</a></div>
-    </div>
-  </article>
-</section>
+# 👋 About Me
 
+Hi, I'm Wendong Huo, a Postdoctoral Fellow in the Department of Mechanical Engineering at The University of Hong Kong, under the supervision of Prof. Yang Lu. My research lies at the intersection(s) of computational mechanics, structural design, computational geometry, and advanced materials, with interests spanning structural optimization, micro-/nano-mechanics, shell and thin-walled structures, metamaterials, and engineering computation.
 
-<div class="section-heading"><div><p class="eyebrow">A RESEARCH THREAD</p><h2>Designing on complex surfaces</h2></div><a href="{{ '/publications/' | relative_url }}">All publications →</a></div>
-<p class="section-intro">From rib layouts to solid components and surface topography: three approaches to making geometry an explicit part of structural optimization.</p>
-{% include research-cards.html %}
+Previously, I received my Ph.D. in Solid Mechanics from Dalian University of Technology, where I was fortunate to be supervised by Prof. Xu Guo and Prof. Chang Liu. Before that, I obtained my bachelor's degree in Engineering Mechanics from Hefei University of Technology in 2019, under the supervision of Prof. Bo Yu.
 
-<section class="surface-explorer" aria-labelledby="interactive-surface-title">
-  <div class="section-heading"><div><p class="eyebrow">EXPLORE THE GEOMETRY</p><h2 id="interactive-surface-title">Explore a branching shell in 3D.</h2></div><a href="{{ '/assets/models/tee-smoothed.glb' | relative_url }}" download>Download display model · GLB</a></div>
-  <p class="section-intro">An archived topology-optimization result on a tee-branch shell: connected members and open regions follow the branching curved surface. Compare the optimized layout with its original design surface, and rotate to inspect the geometry.</p>
-  <div class="surface-stage" data-viewer-script="{{ '/assets/js/lib/model-viewer-4.4.0.min.js' | relative_url }}" data-model-alt="Lightly boundary-smoothed display of the archived tee-branch structure" data-raw-src="{{ '/assets/models/tee-processed.glb' | relative_url }}" data-original-alt="Complete tee-branch design surface" data-model-src="{{ '/assets/models/tee-smoothed.glb' | relative_url }}" data-original-src="{{ '/assets/models/tee-surface.glb' | relative_url }}">
-    <div class="surface-placeholder"><span class="surface-monogram" aria-hidden="true">↻</span><p>Explore the optimized tee-branch in 3D</p><button type="button" class="load-surface" hidden>Load interactive model</button><noscript><p>Enable JavaScript to rotate the model, or download the GLB above.</p></noscript></div>
-    <div class="surface-controls" hidden><button type="button" class="show-optimized" aria-pressed="true">Smoothed display</button><button type="button" class="show-raw" aria-pressed="false">Archived mesh</button><button type="button" class="show-original" aria-pressed="false">Original surface</button><button type="button" class="rotate-surface" aria-pressed="true">Pause rotation</button><button type="button" class="reset-surface">Reset view</button></div>
-    <p class="surface-status" role="status" aria-live="polite"></p>
-  </div>
-  <p class="muted">Lightly smoothed for display · Original connectivity and openings retained. Compare with the archived mesh to inspect the unchanged structural layout. <a href="{{ '/assets/models/tee-processed.glb' | relative_url }}" download>Download unsmoothed archive ↗</a></p>
-</section>
+My previous research focused on the explicit design of complex shell structures. In particular, I developed a computational framework that combines the Moving Morphable Components (MMC) method with computational conformal mapping and related geometric techniques to address optimization and design problems on complex curved surfaces. This line of work aimed to better understand how curved and slender geometries influence the mechanical behavior of structures and how such geometric characteristics can be exploited for improved structural performance.
 
-<section class="surface-explorer" aria-labelledby="surface-title">
-  <div class="section-heading"><div><p class="eyebrow">GEOMETRY IN PRACTICE / CMAME 2023</p><h2 id="surface-title">A bottle, reimagined through structure.</h2></div><a href="{{ '/files/paper-4.pdf' | relative_url }}">Read the paper →</a></div>
-  <p class="section-intro">Embedded solid Moving Morphable Components turn a bottle-shaped design domain into an open thin-walled structure. The final design combines hierarchical components with different structural roles.</p>
-  <a class="bottle-result" data-lightbox data-caption="Final bottle-shaped design, top and side views. Huo et al., CMAME 417 (2023), Fig. 23." href="{{ '/images/research/bottle-final.webp' | relative_url }}" aria-label="Enlarge optimized bottle structure"><img src="{{ '/images/research/bottle-final.webp' | relative_url }}" width="1305" height="267" alt="Published optimized bottle-shaped thin-walled structure: top and side views with open regions and hierarchical solid components" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;background:#fff;border-radius:12px;padding:16px;box-sizing:border-box"></a>
-  <p class="figure-credit">Final optimized design · Top and side views · Fig. 23, Huo et al., CMAME 417 (2023), 116431. Click to enlarge.</p>
-</section>
+I am currently extending these interests to micro-/nano-systems, multifunctional metamaterials, and AI-enabled computational design, with the goal of developing mechanics- and geometry-guided design frameworks for advanced materials and structural systems.
 
-<section class="research-outlook" aria-labelledby="outlook-title">
-  <div><p class="eyebrow">WHAT CONNECTS MY WORK</p><h2 id="outlook-title">Geometry, across scales.</h2><p>My doctoral work at Dalian University of Technology connected the Moving Morphable Components method with computational conformal mapping. At HKU, working with Prof. Yang Lu, my interests extend toward advanced materials and small-scale mechanics.</p><a class="text-link" href="{{ '/experiences/' | relative_url }}">My academic path →</a></div>
-  <ol class="research-directions"><li><span>01 / STRUCTURES</span><h3>Shape &amp; stiffness</h3><p>Curved shells, reinforcing ribs, and explicit structural optimization.</p></li><li><span>02 / MATERIALS</span><h3>Strain &amp; function</h3><p>Deep elastic strain engineering in diamond and micro-/nano-mechanics.</p></li><li><span>03 / METHODS</span><h3>Models &amp; design</h3><p>Computational geometry, multifunctional metamaterials, and AI-assisted design.</p></li></ol>
-</section>
-<section class="contact-panel" id="contact"><p class="eyebrow">LET’S CONNECT</p><h2>Ideas at the intersection of geometry and mechanics?</h2><p>I welcome conversations about computational mechanics, structural optimization, and advanced materials.</p><a href="mailto:huowd@hku.hk">huowd@hku.hk ↗</a><span class="contact-language">Chinese / English</span></section>
-</div>
+## 🧪 Research Interests
+
+- structural optimization and design  
+- deep elastic strain engineering for diamond semiconductors  
+- computational geometry for mechanics and computational mechanics for graphics  
+- AI-assisted design in mechanics and materials  
+- shell and thin-walled structures  
+- stiffener and topography-based attachment design  
+- mechanics of metamaterials and multifunctional structures  
+
+## 🛠 Technical Skills
+
+### Programming & Computing
+Python, MATLAB, C#, C++, Fortran
+
+### Numerical Methods
+FEM, BEM, IGA, PDE-constrained optimization, topology/shape/size/layout modeling and design, conformal mapping, surrogate modeling
+
+### Software & Tools
+ABAQUS, OptiStruct, ANSYS, COMSOL, Rhino/Grasshopper, LAMMPS
+
+## 🤝 Collaboration
+
+I am open to academic collaborations in areas including, but not limited to, the following:
+
+- computational structural mechanics  
+- geometry-informed mechanical design  
+- structural optimization and topology optimization  
+- shell and thin-walled structures  
+- lightweight and flexible structures  
+- metamaterials and multifunctional design  
+- AI for mechanics and materials design  
+
+## 📬 Contact
+
+- Email: huowd@hku.hk, huowd.cmech@gmail.com  
+- Languages: Chinese & English  
+
+Thanks for visiting my GitHub! Feel free to explore my repositories or reach out if you are interested in collaborating.
+
+<!-- Hi, I am a sixth-year Ph.D. candidate from the Department of Engineering Mechanics, Dalian University of Technology. I am very fortunate to be supervised by Prof. Xu Guo and Prof. Chang Liu. Previously, I received my bachelor’s degree (Engineering Mechanics) from Hefei University of Technology in 2019, supervised by Prof. Bo Yu. My research interests include applied and computational mechanics, structure analysis and design, computer graphics, computer-aided geometric design, and engineering computing.
+
+I am working to improve the understanding of complex surface structures. The most intuitive feature, the curved and slender geometry, profoundly influences every aspect of such a structure form, e.g., displacement pattern, strain energy distribution, etc., resulting in abnormal phenomena in various scenarios. How to analyze and further use these novel mechanisms forms the cornerstones of my research.
+
+The methodology includes analysis, simulation, design, optimization, etc. One achieved study can be concluded as “Explicit Structure Optimization TOwards Complex Shell Structures, ESOTOCSS.” We construct a general framework to design complex surface structures based on the explicit structure optimization method and the computational conformal mapping technique. Potential applications include the {lightweight design, stiffness enhancement, and structure manipulation} of {shells, membranes, and low-dimensional materials}.
+
+Other research includes phase field modeling, intelligent engineering computing, and general structure optimization. I’m also learning measurement, experimentation, manufacturing, and applications, which will be reflected in future research. Please feel free to contact me if you are interested in my research and work. My Email is huowd@mail.dlut.edu.cn.-->
+
+<!-- You can find my CV here: [XX's Curriculum Vitae](../assets/Curriculum_Vitae.pdf). -->
+
+<!-- Hi, I am a fourth year PhD candidate from [Department of Engineering Mechanics](http://denm.dlut.edu.cn/), [Dalian University of Technology](https://www.dlut.edu.cn/). I am very fortunate to be advised by Prof. [Xu Guo](http://faculty.dlut.edu.cn/guoxuwebsite/zh_CN/index.htm) and [Chang Liu](http://faculty.dlut.edu.cn/liuchang/zh_CN/index.htm). Previously, I recieved my bachelor's degree (Engineering Mechanics) from [Hefei University of Technology](http://www.hfut.edu.cn/) at 2019, supervised by Prof. [Bo Yu](http://em.hfut.edu.cn/2016/0811/c499a7193/page.htm). -->
+
+<!-- My research interest is deeply rooted in the obsession of pursueing optimum structures in  -->
+
+<!-- A data-driven personal website
+======
+Like many other Jekyll-based GitHub Pages templates, academicpages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+
+Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over -- just be sure to save the markdown files! Finally, you can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+
+Getting started
+======
+1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
+1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
+1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
+1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
+1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
+1. Check status by going to the repository settings, in the "GitHub pages" section
+
+Site-wide configuration
+------
+The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+
+Create content & metadata
+------
+For site content, there is one markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+
+**Markdown generator**
+
+I have also created [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
+) that converts a CSV containing structured data about talks or presentations into individual markdown files that will be properly formatted for the academicpages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the markdown files, then commit and push them to the GitHub repository.
+
+How to edit your site's GitHub repository
+------
+Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+
+Example: editing a markdown file for a talk
+![Editing a markdown file for a talk](/images/editing-talk.png)
+
+For more info
+------
+More info about configuring academicpages can be found in [the guide](https://academicpages.github.io/markdown/). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+ -->
