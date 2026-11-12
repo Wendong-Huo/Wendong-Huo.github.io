@@ -10,7 +10,7 @@
     {% if author.avatar contains "://" %}
     <img src="{{ author.avatar }}" alt="{{ author.name }}">
     {% else %}
-    <img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="Blue multi-hole manifold, the research emblem of {{ author.name }}" width="180" height="180">
+    <img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="Graphite, ochre and stone multi-loop manifold, the research emblem of {{ author.name }}" width="180" height="180">
     {% endif %}
   </div>
 
